@@ -1,0 +1,32 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.searchform {
+  @include border(solid, 1, $primary);
+  @include radius(8);
+  @include flex-center-vert;
+  overflow: hidden;
+
+  @include breakpoint(desktop1200) {
+    min-width: size(400);
+  }
+
+  .searchfield {
+    @include setBgColor(transparent, $bg-color-dark);
+    padding: size(12.5) size(0) size(12.5) size(12.5);
+    font-size: size(14);
+    font-weight: 400;
+    width: calc(100% - size(46));
+
+    &::placeholder {
+      color: $secondetitle;
+    }
+  }
+
+  .btn-search {
+    @include square(46);
+    @include flex-center;
+    overflow: hidden;
+    padding: size(12);
+  }
+}

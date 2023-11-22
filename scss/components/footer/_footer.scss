@@ -1,0 +1,68 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.footer {
+  background: $footerbg;
+  padding: size(32) size(0) size(24);
+
+  @include breakpoint(tab992) {
+    padding: size(96) size(0) size(48);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(64);
+
+    @include breakpoint(desktop1400) {
+      gap: size(76);
+    }
+  }
+
+  &-info {
+    @include flex-column;
+    gap: size(32);
+
+    .info {
+      max-width: size(320);
+
+      .text {
+        color: $textfooter;
+        font-size: size(14);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .footdetail {
+    @include flex-column;
+    gap: size(40);
+
+    &-header {
+      .title {
+        color: $black;
+        font-size: size(20);
+        font-weight: 600;
+      }
+    }
+
+    &-body {
+      .address {
+        color: $textdark;
+        font-size: size(16);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .socialtitle {
+    color: $textdark;
+    font-size: size(14);
+    font-weight: 500;
+  }
+
+  .textcopyright {
+    color: $lightmoodtext;
+    font-size: size(14);
+    font-weight: 400;
+  }
+}

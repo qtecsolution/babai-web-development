@@ -1,0 +1,137 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.customcheck {
+  .checkprivacy {
+    &:checked ~ .checklabel {
+      &::before {
+        background: $primary;
+        border-color: $primary;
+      }
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .checklabel {
+    color: $textplaceholder;
+    cursor: pointer;
+    font-size: size(14);
+    font-weight: 400;
+    position: relative;
+    padding-left: size(30);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      left: 0;
+      top: 50%;
+      @include translateY(-50%);
+      background: $white;
+      @include square(18);
+      @include border(solid, 1, rgba($black, 0.1));
+      @include radius(3);
+      @include transitionsall;
+    }
+
+    &::after {
+      width: size(10);
+      height: size(5);
+      @include border(solid, 2, $white);
+      border-top: 0;
+      left: size(4);
+      border-right: 0;
+      top: 50%;
+      @include transform(translateY(-70%) rotate(-45deg));
+      opacity: 0;
+      visibility: hidden;
+      @include transitiontransform;
+    }
+
+    &::selection {
+      @include setBgColor(transparent, $primary);
+    }
+
+    .checklink {
+      color: $primary;
+      @include transitionscolor;
+      text-decoration: none;
+
+      @include hover {
+        // color: $primarydark;
+      }
+
+      &::selection {
+        @include setBgColor(transparent, $primary);
+      }
+    }
+  }
+}
+
+.filtercheck {
+  .checkinput {
+    &:checked ~ .checklabel {
+      color: $secondetitle;
+      &::before {
+        background: $primary;
+        border-color: $primary;
+      }
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .checklabel {
+    color: $textplaceholder;
+    cursor: pointer;
+    font-size: size(14);
+    font-weight: 500;
+    position: relative;
+    padding-left: size(28);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      left: 0;
+      top: 50%;
+      @include translateY(-50%);
+      background: $white;
+      @include square(18);
+      @include border(solid, 1, rgba($black, 0.1));
+      @include radius(3);
+      @include transitionsall;
+    }
+
+    &::after {
+      width: size(10);
+      height: size(5);
+      @include border(solid, 2, $white);
+      border-top: 0;
+      left: size(4);
+      border-right: 0;
+      top: 50%;
+      @include transform(translateY(-70%) rotate(-45deg));
+      opacity: 0;
+      visibility: hidden;
+      @include transitiontransform;
+    }
+
+    &::selection {
+      @include setBgColor(transparent, $primary);
+    }
+  }
+}

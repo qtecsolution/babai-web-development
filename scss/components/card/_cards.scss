@@ -1,0 +1,72 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.cardcart {
+  @include flex-center-vert;
+  gap: size(24);
+
+  @media screen and (max-width: size(576)) {
+    min-width: size(320);
+  }
+
+  &-thumbnail {
+    @include square(106);
+    background: $inputbg;
+    @include flex-center;
+    @include radius(4);
+    padding: size(12);
+  }
+
+  &-details {
+    width: calc(100% - size(130));
+    @include flex-column;
+    gap: size(14);
+
+    .titlesize {
+      @include flex-column;
+      gap: size(4);
+
+      .title {
+        color: $black;
+        font-size: size(14);
+        font-weight: 600;
+      }
+
+      .size {
+        color: $textplaceholder;
+        font-size: size(12);
+      }
+    }
+
+    .avilablity {
+      .text {
+        color: $primary;
+        font-size: size(12);
+      }
+    }
+  }
+}
+
+.cartcard {
+  background: $inputbg;
+  @include radius(8);
+  padding: size(8) size(14);
+  @include flex-center-vert;
+  gap: size(8);
+
+  &-thumbnail {
+    background: $white;
+    @include square(40);
+    @include radius(10);
+    @include flex-center;
+    padding: size(8);
+  }
+
+  &-details {
+    .title {
+      color: $textplaceholder;
+      font-size: size(12);
+      font-weight: 500;
+    }
+  }
+}

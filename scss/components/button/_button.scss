@@ -1,0 +1,291 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  @include transparent-button;
+  cursor: pointer;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  @include transitionsall;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.btn-hamburger {
+  @include square(24);
+  @include flex-center;
+  overflow: hidden;
+}
+
+.btn-submit {
+  @include setBgColor($primary, $white);
+  @include radius(8);
+  font-size: size(16);
+  font-weight: 700;
+  padding: size(12) size(8);
+  text-align: center;
+
+  @include hover {
+    @include setBgColor($danger, $white);
+  }
+}
+
+.btn-resend {
+  color: $primary;
+  font-size: size(12);
+  font-weight: 600;
+  text-transform: uppercase;
+
+  @include hover {
+    color: $danger;
+  }
+}
+
+.btn-main {
+  background: $white;
+  @include flex-center-vert;
+  @include border(solid, 1, $primary);
+  @include radius(8);
+
+  .leftinfo {
+    position: relative;
+    width: size(49);
+    z-index: 1;
+
+    .arrshape {
+      position: relative;
+      width: size(49);
+      z-index: 1;
+    }
+
+    .usericon,
+    .circleicon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      @include square(24);
+      @include flex-center;
+      overflow: hidden;
+      z-index: 10;
+    }
+  }
+
+  .rightinfo {
+    color: $primary;
+    font-size: size(14);
+    font-weight: 700;
+    width: calc(100% - size(49));
+    padding-inline: size(10);
+  }
+
+  @include hover {
+    background: $primary;
+
+    .leftinfo {
+      .arrshape {
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+
+      .usericon {
+        svg {
+          path {
+            stroke: $primary;
+          }
+        }
+      }
+
+      .circleicon {
+        svg {
+          path {
+            fill: $primary;
+          }
+        }
+      }
+    }
+
+    .rightinfo {
+      color: $white;
+    }
+  }
+}
+
+.btn-main-reverse {
+  background: $primary;
+  @include flex-center-vert;
+  @include border(solid, 1, $primary);
+  @include radius(8);
+
+  .leftinfo {
+    position: relative;
+    width: size(49);
+    z-index: 1;
+
+    .arrshape {
+      position: relative;
+      width: size(49);
+      z-index: 1;
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      @include square(24);
+      @include flex-center;
+      overflow: hidden;
+      z-index: 10;
+    }
+  }
+
+  .rightinfo {
+    color: $white;
+    font-size: size(14);
+    font-weight: 700;
+    width: calc(100% - size(49));
+    padding-inline: size(10);
+  }
+
+  @include hover {
+    background: $white;
+
+    .leftinfo {
+      .arrshape {
+        svg {
+          path {
+            fill: $primary;
+          }
+        }
+      }
+
+      .icon {
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+
+    .rightinfo {
+      color: $primary;
+    }
+  }
+}
+
+.customercare {
+  @include flex-center-vert;
+  gap: size(5);
+
+  .careicon {
+    @include square(24);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  .caretext {
+    color: $bg-color-dark;
+    font-size: size(14);
+    font-weight: 600;
+  }
+
+  @include hover {
+    .caretext {
+      color: $primary;
+    }
+  }
+}
+
+.btn-wishlist {
+  @include flex-center-vert;
+  gap: size(4);
+
+  .icon {
+    @include square(16);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  .text {
+    color: $textplaceholder;
+    font-size: size(12);
+  }
+
+  @include hover {
+    .icon {
+      svg {
+        path {
+          fill: $primary;
+          stroke: $primary;
+        }
+      }
+    }
+
+    .text {
+      color: $primary;
+    }
+  }
+}
+
+.btn-remove {
+  @include square(24);
+  @include circle;
+  @include flex-center;
+  overflow: hidden;
+  margin-inline: auto;
+
+  @include hover {
+    svg {
+      path {
+        fill: $primary;
+      }
+    }
+  }
+}
+
+.btn-apply {
+  color: $textprice;
+  font-family: $inter;
+  font-size: size(14);
+  font-weight: 600;
+  @include transitionscolor;
+
+  @include hover {
+    color: $secondetitle;
+  }
+}
+
+.btn-clear {
+  @include square(24);
+  @include flex-center;
+
+  svg {
+    @include transitionsall;
+
+    path {
+      @include transitionsall;
+    }
+  }
+
+  @include hover {
+    svg {
+      @include rotate(90);
+
+      path {
+        stroke: $primary;
+      }
+    }
+  }
+}

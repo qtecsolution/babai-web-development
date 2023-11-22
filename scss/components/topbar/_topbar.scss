@@ -1,0 +1,64 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.topbar {
+  background: $topbarbg;
+  @include flex-center-vert;
+  height: size(40);
+
+  .topbarcontent {
+    @include flex-center-between;
+    flex-wrap: wrap;
+    gap: size(8);
+  }
+
+  .whatsapp {
+    @include flex-center-vert;
+    gap: size(8);
+
+    .whatsapptitle {
+      color: $black;
+      font-family: $kohinoorbangla;
+      font-size: size(12);
+      font-weight: 500;
+    }
+
+    .whatsapplink {
+      @include flex-center-vert;
+      gap: size(4);
+
+      .icon {
+        @include square(14);
+        @include flex-center;
+        overflow: hidden;
+      }
+
+      .text {
+        color: $lightmoodtext;
+        font-family: $kohinoorbangla;
+        font-size: size(12);
+        font-weight: 500;
+      }
+    }
+  }
+
+  .toplist {
+    @include list-horizontal;
+    gap: size(16);
+
+    @include breakpoint(mobile768) {
+      gap: size(32);
+    }
+
+    &-link {
+      color: $lightmoodtext;
+      font-family: $kohinoorbangla;
+      font-size: size(12);
+      font-weight: 500;
+
+      @include hover {
+        color: $secondetitle;
+      }
+    }
+  }
+}

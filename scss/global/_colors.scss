@@ -1,0 +1,44 @@
+$time: 350ms;
+
+// DEFAULT COLORS
+$white: hsl(0, 0%, 100%); //#ffffff
+$black: hsl(0, 0%, 0%); //#000000
+
+// THEME-COLORS
+$primary: hsl(358, 86%, 43%); //#CE0F14
+
+// BACKGROUND-COLORS
+$bg-color-dark: hsl(245, 81%, 13%); //#0A063A
+$sectionbg-1: hsl(0, 23%, 95%); //#F5EFEF
+$inputbg: hsl(0, 0%, 96%); //#F6F6F6
+$tableheadbg: hsl(0, 38%, 95%); //#F7EDED
+$textprice: hsl(359, 83%, 53%); //#EB2529
+$footerbg: hsl(13, 33%, 95%); //#F6EFED
+
+// GRADIENT-COLORS
+$topbg: hsl(0, 30%, 86%); //#E7D2D2
+
+$topbarbg: linear-gradient(
+  90deg,
+  $topbg 0.72%,
+  rgba(46, 192, 105, 0.18) 100.87%
+);
+
+// TEXT-COLORS
+$secondetitle: hsl(230, 51%, 18%); //#171F46
+$textplaceholder: hsl(225, 3%, 51%); //#7D7F85
+$lightmoodtext: hsl(228, 5%, 38%); //#5D5F67
+$textdark: hsl(231, 100%, 6%); //#000520
+$textfooter: hsl(0, 0%, 26%); //#424242
+
+$danger: hsl(0, 91%, 54%); //#F51F1F
+$success: hsl(140, 75%, 25%); //#107231
+
+// BORDER-COLORS
+$authborder: hsl(0, 0%, 91%); //#E8E8E8
+$tableheadborder: hsl(0, 56%, 87%); //#F0CACA
+
+// SHADOWS
+
+// BOX-SHADOWS
+$authshade: 0 0 0.1898rem 0 rgba($black, 0.05);

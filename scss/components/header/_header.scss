@@ -1,0 +1,51 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.header {
+  background: $white;
+  @include flex-center-vert;
+  padding: size(10) size(12) size(12);
+  height: size(80);
+
+  @include breakpoint(tab992) {
+    padding: size(0);
+  }
+
+  &-nav {
+    @include flex-center-between;
+
+    .desktopmenu {
+      @include flex-center-vert;
+      gap: size(16);
+    }
+
+    .headaccount {
+      @include flex-center-vert;
+      gap: size(16);
+    }
+
+    .offcanvas {
+      &-header {
+        padding: size(18) size(24);
+
+        .closetitle {
+          color: $textprice;
+          font-family: $inter;
+          font-size: size(14);
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        .btn-close {
+          @include hover {
+            svg {
+              path {
+                stroke: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

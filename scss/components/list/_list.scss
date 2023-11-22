@@ -1,0 +1,130 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.iconlist {
+  @include list-horizontal;
+  gap: size(8);
+
+  &-link {
+    @include square(24);
+    @include flex-center;
+    overflow: hidden;
+
+    @include hover {
+      svg {
+        path {
+          stroke: $primary;
+        }
+      }
+    }
+  }
+}
+
+.sociallist {
+  @include list-horizontal;
+  gap: size(16);
+}
+
+.footerlist {
+  @include list-vertical;
+  gap: size(24);
+
+  &-link {
+    color: $bg-color-dark;
+    font-size: size(16);
+    font-weight: 400;
+    @include transitionscolor;
+
+    @include hover {
+      color: $primary;
+    }
+  }
+}
+
+.contactlist {
+  @include list-vertical;
+  gap: size(14);
+
+  &-link {
+    @include flex-center-vert;
+    gap: size(10);
+
+    .text {
+      color: $textdark;
+      font-size: size(16);
+      font-weight: 600;
+      @include transitionscolor;
+    }
+
+    @include hover {
+      .text {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.mobcategorylist {
+  @include list-vertical;
+
+  &-link {
+    @include border-single(bottom, solid, 1, $authborder);
+    @include flex-center-between;
+    padding: size(12) size(16) size(12) size(24);
+    @include transitionsall;
+
+    .ctgtitle {
+      color: $lightmoodtext;
+      font-size: size(14);
+      font-weight: 400;
+    }
+
+    .linkarrow {
+      @include square(24);
+      @include flex-center;
+      overflow: hidden;
+    }
+
+    .linkinfo {
+      @include flex-center-vert;
+      gap: size(8);
+
+      .usericon {
+        @include square(16);
+        @include flex-center;
+        overflow: hidden;
+      }
+    }
+
+    @include hover {
+      border-color: $primary;
+
+      .linkarrow {
+        svg {
+          path {
+            stroke: $primary;
+          }
+        }
+      }
+
+      .ctgtitle {
+        color: $primary;
+      }
+
+      .linkinfo {
+        .usericon {
+          svg {
+            path {
+              stroke: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.filterlist {
+  @include list-vertical;
+  gap: size(16);
+}

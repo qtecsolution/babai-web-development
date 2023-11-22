@@ -1,0 +1,97 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.mobilesearch {
+  @include flex-column;
+  gap: size(24);
+  padding: size(0) size(24) size(24);
+
+  &-header {
+    @include flex-center-between;
+
+    .searchtitle {
+      color: $textdark;
+      font-family: $inter;
+      font-size: size(18);
+      font-weight: 600;
+
+      @include breakpoint(mobile768) {
+        font-size: size(20);
+      }
+    }
+
+    .apply {
+      @include flex-center-vert;
+      gap: size(12);
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(16);
+
+    .filterbox {
+      background: $white;
+      @include border(solid, 1, rgba($black, 0.1));
+      @include radius(16);
+      @include flex-column;
+      overflow: hidden;
+
+      &-header {
+        background: $tableheadbg;
+        @include border-single(bottom, solid, 1, $tableheadborder);
+        padding: size(8) size(24);
+
+        .filtertitle {
+          color: $secondetitle;
+          font-size: size(16);
+          font-weight: 700;
+        }
+      }
+
+      &-body {
+        @include flex-column;
+        gap: size(16);
+        padding: size(24) size(24) size(34);
+
+        .form-select {
+          background-color: $inputbg;
+          color: $black;
+          @include border(solid, 1, rgba($black, 0.1));
+          @include radius(6);
+          font-size: size(14);
+          font-weight: 400;
+          padding: size(6) size(12);
+        }
+
+        .filterprice {
+          @include flex-column;
+
+          &-header {
+            @include flex-center-vert;
+            gap: size(8);
+
+            .pricefield {
+              @include setBgColor($white, $black);
+              @include border(solid, 1, rgba($black, 0.05));
+              @include radius(6);
+              font-size: size(14);
+              font-weight: 400;
+              padding: size(8) size(10);
+              max-width: size(92);
+              @include transitionsall;
+
+              &:focus {
+                border-color: $primary;
+              }
+
+              &::placeholder {
+                color: $textplaceholder;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

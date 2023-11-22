@@ -1,0 +1,140 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.authsection {
+  min-height: 100vh;
+  @include flex-center;
+  background: $sectionbg-1 url(../images/bg/authbg.png) no-repeat center
+    center/cover;
+
+  .auth {
+    background: $white;
+    @include border(solid, 1, $authborder);
+    @include radius(28);
+    box-shadow: $authshade;
+    @include flex-center-column;
+    gap: size(24);
+    padding: size(24) size(24) size(48);
+
+    &-header {
+      @include flex-center-column;
+      gap: size(10);
+      text-align: center;
+
+      .authlogo {
+        width: size(141);
+        height: size(100);
+        @include flex-center;
+        overflow: hidden;
+      }
+
+      .authtitle {
+        color: $secondetitle;
+        font-family: $inter;
+        font-size: size(16);
+        font-weight: 700;
+      }
+    }
+
+    &-body {
+      @include w100;
+
+      .authform {
+        @include flex-column;
+        gap: size(24);
+        @include w100;
+
+        .inputbox {
+          @include w100;
+
+          .inputfield {
+            @include setBgColor($inputbg, $black);
+            @include radius(8);
+            font-size: size(14);
+            font-weight: 500;
+            padding: size(13.5) size(20);
+            @include w100;
+
+            &::placeholder {
+              font-weight: 400;
+            }
+          }
+        }
+
+        .passwordbox {
+          @include w100;
+          @include flex-center-vert;
+          background: $inputbg;
+          @include radius(8);
+
+          .passinput {
+            width: calc(100% - size(48));
+
+            .inputfield {
+              @include setBgColor(transparent, $black);
+              @include radius(8);
+              font-size: size(14);
+              font-weight: 500;
+              padding: size(13.5) size(20);
+              @include w100;
+
+              &::placeholder {
+                font-weight: 400;
+              }
+            }
+          }
+
+          .btn-showhide {
+            @include square(48);
+            @include flex-center;
+            overflow: hidden;
+            padding: size(12);
+
+            @include hover {
+              svg {
+                path {
+                  stroke: $secondetitle;
+                }
+              }
+            }
+          }
+        }
+
+        .forgotlink,
+        .authtext,
+        .authlink {
+          font-size: size(14);
+          font-weight: 500;
+        }
+
+        .forgotlink {
+          color: $secondetitle;
+
+          @include hover {
+            color: $bg-color-dark;
+          }
+        }
+
+        .authtext {
+          color: $secondetitle;
+        }
+
+        .authlink {
+          color: $primary;
+          text-transform: uppercase;
+          text-decoration: underline;
+
+          @include hover {
+            text-decoration: none;
+          }
+        }
+
+        .textverify {
+          color: $secondetitle;
+          font-size: size(12);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

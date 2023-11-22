@@ -1,0 +1,171 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.cart {
+  padding: size(64) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(96) size(0);
+  }
+
+  @include breakpoint(desktop1400) {
+    padding: size(128) size(0);
+  }
+
+  &-details {
+    @include flex-column;
+    gap: size(24);
+
+    &-body {
+      @include flex-end;
+      gap: size(8);
+    }
+  }
+
+  .mycart {
+    @include border(solid, 1, rgba($black, 0.1));
+    @include flex-column;
+    gap: size(16);
+    @include radius(32);
+    overflow: hidden;
+
+    &-header {
+      background: $tableheadbg;
+      @include border-single(bottom, solid, 1, $tableheadborder);
+      @include flex-center-between;
+      gap: size(8);
+      flex-wrap: wrap;
+      padding: size(16) size(32);
+
+      .title {
+        color: $secondetitle;
+        font-size: size(24);
+        font-weight: 500;
+      }
+
+      .price {
+        color: $black;
+        font-size: size(14);
+        font-weight: 400;
+
+        .prevprice {
+          color: $textprice;
+          font: inherit;
+          text-decoration: line-through;
+        }
+
+        .currentprice {
+          color: $success;
+          font: inherit;
+        }
+      }
+    }
+
+    &-body {
+      .table {
+        thead {
+          tr {
+            th {
+              color: $textplaceholder;
+              font-size: size(14);
+              font-weight: 400;
+            }
+          }
+        }
+
+        tbody {
+          .prices {
+            @include flex-center-column;
+
+            span {
+              font-family: $kalpurush;
+              font-size: size(14);
+              font-weight: 400;
+            }
+
+            .currentprice {
+              color: $black;
+            }
+
+            .prviousprice {
+              color: $primary;
+              text-decoration: line-through;
+            }
+          }
+
+          tr {
+            @include border-single(bottom, solid, 1, rgba($black, 0.1));
+
+            &:last-of-type {
+              border-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-info {
+    @include flex-column;
+    gap: size(8);
+    background: $white;
+    @include border(solid, 1, rgba($black, 0.1));
+    @include radius(12);
+    padding: size(14);
+  }
+}
+
+.quantities {
+  @include flex-center-vert;
+  @include border(solid, 1, rgba($black, 0.1));
+  @include radius(8);
+  padding: size(4);
+  min-width: size(106);
+  max-width: size(128);
+
+  button {
+    background: $inputbg;
+    @include radius(5);
+    @include square(24);
+    @include flex-center;
+    padding: size(7);
+  }
+
+  .quantityfield {
+    color: $textdark;
+    width: calc(100% - size(48));
+    @include flex-center;
+    font-size: size(13);
+    font-weight: 500;
+    padding-inline: size(8);
+    text-align: center;
+
+    &::placeholder {
+      color: $textplaceholder;
+    }
+  }
+
+  .btn-decrement {
+    @include hover {
+      background: $authborder;
+
+      svg {
+        path {
+          fill: $primary;
+        }
+      }
+    }
+  }
+
+  .btn-increment {
+    @include hover {
+      background: $secondetitle;
+
+      svg {
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+}
