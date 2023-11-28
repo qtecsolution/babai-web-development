@@ -224,10 +224,6 @@ button,
     @include breakpoint(tab992) {
       font-size: size(10);
     }
-
-    @include breakpoint(desktop1200) {
-      font-size: size(14);
-    }
   }
 
   @include hover {
@@ -296,10 +292,6 @@ button,
 
     @include breakpoint(tab992) {
       font-size: size(10);
-    }
-
-    @include breakpoint(desktop1200) {
-      font-size: size(14);
     }
   }
 

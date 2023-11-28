@@ -1,2 +1,216 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.categorysection {
+  padding: size(32) 0 size(48);
+
+  @include breakpoint(tab992) {
+    padding: size(44) 0 size(80);
+  }
+
+  .mycategory {
+    @include flex-column;
+    gap: size(16);
+  }
+
+  .categoriesdetail {
+    @include flex-column;
+    gap: size(24);
+    
+    &-header {
+      @include flex-column;
+      gap: size(16);
+    }
+  }
+
+  .mobilefilters {
+    @include flex-column;
+    gap: size(24);
+
+    .titlebox {
+      @include flex-column;
+      gap: size(8);
+
+      .title {
+        color: $titlecolor;
+        font-weight: 700;
+      }
+
+      .results {
+        color: $textplaceholder;
+        font-size: size(14);
+        font-weight: 500;
+      }
+    }
+
+    .moblfilter {
+      @include flex-column;
+      gap: size(32);
+
+      &-header {
+        @include flex-center-between;
+
+        .leftcontent {
+          @include flex-center-vert;
+          gap: size(8);
+          width: 45%;
+
+          .btn-filter {
+            background: $titlecolor;
+            width: size(38);
+            height: size(34);
+            @include flex-center;
+            @include radius(4);
+            padding: size(8);
+            @include transitionsbackground;
+
+            @include hover {
+              background: $primary;
+            }
+          }
+        }
+
+        .rightcontent {
+          @include flex-center-vert;
+          gap: size(4);
+          width: 55%;
+          justify-content: flex-end;
+
+          .selectlabel {
+            color: $textplaceholder;
+            font-size: size(10);
+            font-weight: 400;
+          }
+
+          .form-select {
+            background-color: $white;
+            color: $secondetitle;
+            @include border(solid, 1, rgba($black, 0.1));
+            @include radius(6);
+            font-size: size(11);
+            font-weight: 400;
+            padding: size(4) size(8);
+            max-width: size(128);
+          }
+        }
+
+        .nav-tabs {
+          gap: size(8);
+          border: none;
+          margin: 0;
+      
+          .nav-link {
+            @include border(solid, 1, rgba($black, 0.10));
+            @include radius(4);
+            width: size(38);
+            height: size(34);
+            @include flex-center;
+            padding: size(8);
+      
+            &:hover:not(.active) {
+              border-color: $lightmoodtext;
+      
+              svg {
+                rect {
+                  fill: $lightmoodtext;
+                }
+              }
+            }
+      
+            &.active {
+              border-color: $lightmoodtext;
+      
+              svg {
+                rect {
+                  fill: $lightmoodtext;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-body {
+        @include flex-column;
+        gap: size(24);
+      }
+    }
+  }
+
+  .desktopfilters {
+    @include border-single(bottom, solid, 1, rgba($black, 0.05));
+    @include flex-center-between;
+    padding-bottom: size(15);
+
+    .titlebox {
+      @include flex-column;
+      gap: size(8);
+
+      .title {
+        color: $titlecolor;
+        font-weight: 700;
+      }
+
+      .results {
+        color: $textplaceholder;
+        font-size: size(14);
+        font-weight: 500;
+      }
+    }
+
+    .sortingview {
+      @include flex-center-vert;
+      gap: size(40);
+
+      .sortby {
+        @include flex-center-vert;
+        gap: size(8);
+        min-width: size(170);
+
+        .selectlabel {
+          color: $textplaceholder;
+          font-size: size(13);
+          min-width: size(48);
+          font-weight: 400;
+        }
+      }
+    }
+
+    .viewtext {
+      color: $textplaceholder;
+      font-size: size(13);
+      min-width: size(48);
+      font-weight: 400;
+    }
+
+    .nav-tabs {
+      gap: size(12);
+      border: none;
+      margin: 0;
+  
+      .nav-link {
+        @include square(20);
+        @include flex-center;
+        padding: size(0);
+        border: 0;
+  
+        &:hover:not(.active) {    
+          svg {
+            rect {
+              fill: $lightmoodtext;
+            }
+          }
+        }
+  
+        &.active {
+          svg {
+            rect {
+              fill: $lightmoodtext;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

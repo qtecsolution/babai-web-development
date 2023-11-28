@@ -482,6 +482,25 @@ hr {
   color: hsl(29, 100%, 50%);
 }
 
+.breadcrumb-item {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.breadcrumb-item a {
+  color: inherit;
+  font: inherit;
+}
+.breadcrumb-item:hover:not(.active) {
+  color: hsl(231, 100%, 6%);
+  font-weight: 600;
+}
+.breadcrumb-item.active {
+  color: hsl(231, 100%, 6%);
+  font-weight: 600;
+}
+
 button,
 [type=button],
 [type=reset],
@@ -681,11 +700,6 @@ button:focus,
     font-size: 0.625rem;
   }
 }
-@media screen and (min-width: 75rem) {
-  .btn-cart .rightinfo {
-    font-size: 0.875rem;
-  }
-}
 .btn-cart:not([disabled]):hover {
   background: hsl(358, 86%, 43%);
 }
@@ -740,11 +754,6 @@ button:focus,
 @media screen and (min-width: 62rem) {
   .btn-buy .rightinfo {
     font-size: 0.625rem;
-  }
-}
-@media screen and (min-width: 75rem) {
-  .btn-buy .rightinfo {
-    font-size: 0.875rem;
   }
 }
 .btn-buy:not([disabled]):hover {
@@ -1342,6 +1351,159 @@ button:focus,
   font-weight: 400;
 }
 
+.producthorizontal {
+  display: flex;
+  gap: 0.75rem;
+  border: solid 0.0625rem hsl(0, 0%, 91%);
+  border-radius: 1.875rem;
+}
+@media screen and (min-width: 48rem) {
+  .producthorizontal {
+    gap: 2rem;
+  }
+}
+.producthorizontal-header {
+  background: hsl(0, 0%, 96%);
+  border: solid 0.5rem hsl(0, 0%, 100%);
+  border-radius: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 10rem;
+}
+@media screen and (min-width: 48rem) {
+  .producthorizontal-header {
+    width: 16.25rem;
+    height: 13.75rem;
+  }
+}
+.producthorizontal-header .discount-badge {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  top: 0.625rem;
+  left: 0.625rem;
+  z-index: 100;
+}
+@media screen and (min-width: 48rem) {
+  .producthorizontal-header .discount-badge {
+    width: 3.75rem;
+    height: 3.75rem;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+.producthorizontal-header .btn-wish {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: hsl(0, 0%, 100%);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3125rem;
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+}
+@media screen and (min-width: 48rem) {
+  .producthorizontal-header .btn-wish {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+.producthorizontal-header .btn-wish:hover:not(.active) svg path {
+  fill: hsl(358, 86%, 43%);
+  stroke: hsl(358, 86%, 43%);
+}
+.producthorizontal-header .btn-wish.active svg path {
+  fill: hsl(358, 86%, 43%);
+  stroke: hsl(358, 86%, 43%);
+}
+.producthorizontal-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-inline: auto;
+}
+.producthorizontal-thumbnail img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 350ms ease-in-out;
+}
+.producthorizontal-thumbnail:not([disabled]):hover img {
+  transform: scale(1.1) rotate(-3deg);
+}
+.producthorizontal-body {
+  width: calc(100% - 10.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.9375rem 0.9375rem 0.9375rem 0rem;
+}
+@media screen and (min-width: 48rem) {
+  .producthorizontal-body {
+    width: calc(100% - 18.25rem);
+    padding: 1.875rem 1.875rem 1.875rem 0rem;
+  }
+}
+.producthorizontal-body .cardinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.producthorizontal-body .titlebox {
+  max-width: 20rem;
+}
+.producthorizontal-body .cardtitle {
+  color: hsl(228, 5%, 38%);
+  font-size: 0.875rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+@media screen and (min-width: 87.5rem) {
+  .producthorizontal-body .cardtitle {
+    font-size: 1rem;
+  }
+}
+.producthorizontal-body .cardtitle:not([disabled]):hover {
+  color: hsl(358, 86%, 43%);
+}
+.producthorizontal-body .prices {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.producthorizontal-body .prices .previousprice {
+  color: hsl(228, 5%, 38%);
+  font-family: "Kalpurush", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.producthorizontal-body .prices .currentprice {
+  color: hsl(0, 0%, 0%);
+  font-family: "Kalpurush", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.producthorizontal-body .cardactions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .header {
   background: hsl(0, 0%, 100%);
   display: flex;
@@ -1535,7 +1697,8 @@ input[type=search]::-webkit-search-results-decoration:focus {
   flex-direction: column;
   gap: 1rem;
 }
-.mobilesearch-body .filterbox {
+
+.filterbox {
   background: hsl(0, 0%, 100%);
   border: solid 0.0625rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
@@ -1543,23 +1706,23 @@ input[type=search]::-webkit-search-results-decoration:focus {
   flex-direction: column;
   overflow: hidden;
 }
-.mobilesearch-body .filterbox-header {
+.filterbox-header {
   background: hsl(0, 38%, 95%);
   border-bottom: solid 0.0625rem hsl(0, 56%, 87%);
   padding: 0.5rem 1.5rem;
 }
-.mobilesearch-body .filterbox-header .filtertitle {
+.filterbox-header .filtertitle {
   color: hsl(230, 51%, 18%);
   font-size: 1rem;
   font-weight: 700;
 }
-.mobilesearch-body .filterbox-body {
+.filterbox-body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem 1.5rem 2.125rem;
 }
-.mobilesearch-body .filterbox-body .form-select {
+.filterbox-body .form-select {
   background-color: hsl(0, 0%, 96%);
   color: hsl(0, 0%, 0%);
   border: solid 0.0625rem rgba(0, 0, 0, 0.1);
@@ -1568,16 +1731,17 @@ input[type=search]::-webkit-search-results-decoration:focus {
   font-weight: 400;
   padding: 0.375rem 0.75rem;
 }
-.mobilesearch-body .filterbox-body .filterprice {
+.filterbox-body .filterprice {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
-.mobilesearch-body .filterbox-body .filterprice-header {
+.filterbox-body .filterprice-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-.mobilesearch-body .filterbox-body .filterprice-header .pricefield {
+.filterbox-body .filterprice-header .pricefield {
   background: hsl(0, 0%, 100%);
   color: hsl(0, 0%, 0%);
   border: solid 0.0625rem rgba(0, 0, 0, 0.05);
@@ -1588,13 +1752,13 @@ input[type=search]::-webkit-search-results-decoration:focus {
   max-width: 5.75rem;
   transition: all 350ms ease-in-out;
 }
-.mobilesearch-body .filterbox-body .filterprice-header .pricefield:focus {
+.filterbox-body .filterprice-header .pricefield:focus {
   border-color: hsl(358, 86%, 43%);
 }
-.mobilesearch-body .filterbox-body .filterprice-header .pricefield::-moz-placeholder {
+.filterbox-body .filterprice-header .pricefield::-moz-placeholder {
   color: hsl(225, 3%, 51%);
 }
-.mobilesearch-body .filterbox-body .filterprice-header .pricefield::placeholder {
+.filterbox-body .filterprice-header .pricefield::placeholder {
   color: hsl(225, 3%, 51%);
 }
 
@@ -2045,6 +2209,65 @@ table tr td {
 }
 .desktoplist-link:not([disabled]):hover {
   background: hsl(13, 33%, 95%);
+}
+
+.pagination {
+  gap: 0.5rem;
+}
+.pagination .page-item {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+.pagination .page-item:hover:not(.active) .page-link {
+  background: hsl(0, 0%, 100%);
+  color: hsl(359, 83%, 53%);
+  border-color: hsl(359, 83%, 53%);
+  font-weight: 600;
+}
+.pagination .page-item:hover:not(.active) .page-link svg circle {
+  fill: hsl(359, 83%, 53%);
+}
+.pagination .page-item.active .page-link {
+  background: hsl(0, 0%, 100%);
+  color: hsl(359, 83%, 53%);
+  border-color: hsl(359, 83%, 53%);
+  font-weight: 600;
+}
+.pagination .page-item.active .page-link svg circle {
+  fill: hsl(359, 83%, 53%);
+}
+.pagination .page-link {
+  width: 1.875rem;
+  height: 1.875rem;
+  background: hsl(225, 29%, 97%);
+  color: hsl(240, 8%, 21%);
+  border: solid 0.015625rem hsl(0, 0%, 76%);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+.pagination .page-link:focus {
+  box-shadow: none;
+  outline: none;
+}
+.pagination .page-item:first-child:not([disabled]):hover .page-link, .pagination .page-item:last-child:not([disabled]):hover .page-link {
+  border: 0;
+}
+.pagination .page-item:first-child:not([disabled]):hover .page-link svg, .pagination .page-item:last-child:not([disabled]):hover .page-link svg {
+  width: 100%;
+  height: 100%;
+}
+.pagination .page-item:first-child:not([disabled]):hover .page-link svg rect, .pagination .page-item:last-child:not([disabled]):hover .page-link svg rect {
+  fill: hsl(225, 29%, 97%);
+  stroke: hsl(358, 86%, 43%);
+}
+.pagination .page-item:first-child:not([disabled]):hover .page-link svg path, .pagination .page-item:last-child:not([disabled]):hover .page-link svg path {
+  fill: hsl(358, 86%, 43%);
 }
 
 .topbar {
@@ -2559,7 +2782,7 @@ table tr td {
 }
 @media screen and (min-width: 75rem) {
   .mainsection .homeblogs {
-    padding: 10rem 0rem 13.75rem;
+    padding: 10rem 0rem 6rem;
   }
 }
 .mainsection .homeblogs-content {
@@ -2583,6 +2806,197 @@ table tr td {
     justify-content: space-between;
     gap: 0rem;
   }
+}
+
+.categorysection {
+  padding: 2rem 0 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .categorysection {
+    padding: 2.75rem 0 5rem;
+  }
+}
+.categorysection .mycategory {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.categorysection .categoriesdetail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.categorysection .categoriesdetail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.categorysection .mobilefilters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.categorysection .mobilefilters .titlebox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.categorysection .mobilefilters .titlebox .title {
+  color: hsl(358, 85%, 53%);
+  font-weight: 700;
+}
+.categorysection .mobilefilters .titlebox .results {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.categorysection .mobilefilters .moblfilter {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.categorysection .mobilefilters .moblfilter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.categorysection .mobilefilters .moblfilter-header .leftcontent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 45%;
+}
+.categorysection .mobilefilters .moblfilter-header .leftcontent .btn-filter {
+  background: hsl(358, 85%, 53%);
+  width: 2.375rem;
+  height: 2.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  transition: background 350ms ease-in-out;
+}
+.categorysection .mobilefilters .moblfilter-header .leftcontent .btn-filter:not([disabled]):hover {
+  background: hsl(358, 86%, 43%);
+}
+.categorysection .mobilefilters .moblfilter-header .rightcontent {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: 55%;
+  justify-content: flex-end;
+}
+.categorysection .mobilefilters .moblfilter-header .rightcontent .selectlabel {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+.categorysection .mobilefilters .moblfilter-header .rightcontent .form-select {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(230, 51%, 18%);
+  border: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
+  max-width: 8rem;
+}
+.categorysection .mobilefilters .moblfilter-header .nav-tabs {
+  gap: 0.5rem;
+  border: none;
+  margin: 0;
+}
+.categorysection .mobilefilters .moblfilter-header .nav-tabs .nav-link {
+  border: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  width: 2.375rem;
+  height: 2.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.categorysection .mobilefilters .moblfilter-header .nav-tabs .nav-link:hover:not(.active) {
+  border-color: hsl(228, 5%, 38%);
+}
+.categorysection .mobilefilters .moblfilter-header .nav-tabs .nav-link:hover:not(.active) svg rect {
+  fill: hsl(228, 5%, 38%);
+}
+.categorysection .mobilefilters .moblfilter-header .nav-tabs .nav-link.active {
+  border-color: hsl(228, 5%, 38%);
+}
+.categorysection .mobilefilters .moblfilter-header .nav-tabs .nav-link.active svg rect {
+  fill: hsl(228, 5%, 38%);
+}
+.categorysection .mobilefilters .moblfilter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.categorysection .desktopfilters {
+  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.9375rem;
+}
+.categorysection .desktopfilters .titlebox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.categorysection .desktopfilters .titlebox .title {
+  color: hsl(358, 85%, 53%);
+  font-weight: 700;
+}
+.categorysection .desktopfilters .titlebox .results {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.categorysection .desktopfilters .sortingview {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.categorysection .desktopfilters .sortingview .sortby {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 10.625rem;
+}
+.categorysection .desktopfilters .sortingview .sortby .selectlabel {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.8125rem;
+  min-width: 3rem;
+  font-weight: 400;
+}
+.categorysection .desktopfilters .viewtext {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.8125rem;
+  min-width: 3rem;
+  font-weight: 400;
+}
+.categorysection .desktopfilters .nav-tabs {
+  gap: 0.75rem;
+  border: none;
+  margin: 0;
+}
+.categorysection .desktopfilters .nav-tabs .nav-link {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem;
+  border: 0;
+}
+.categorysection .desktopfilters .nav-tabs .nav-link:hover:not(.active) svg rect {
+  fill: hsl(228, 5%, 38%);
+}
+.categorysection .desktopfilters .nav-tabs .nav-link.active svg rect {
+  fill: hsl(228, 5%, 38%);
 }
 
 .cart {

@@ -1,3 +1,79 @@
 @use '../../global' as *;
 @use '../../partials' as *;
 
+.pagination {
+  gap: size(8);
+
+  .page-item {
+    @include square(30);
+
+    &:hover:not(.active) {
+      .page-link {
+        @include setBgColor($white, $textprice);
+        border-color: $textprice;
+        font-weight: 600;
+
+        svg {
+          circle {
+            fill: $textprice;
+          }
+        }
+      }
+    }
+
+    &.active {
+      .page-link {
+        @include setBgColor($white, $textprice);
+        border-color: $textprice;
+        font-weight: 600;
+
+        svg {
+          circle {
+            fill: $textprice;
+          }
+        }
+      }
+    }
+  }
+
+  .page-link {
+    @include square(30);
+    @include setBgColor($pagelinkbg, $linktext);
+    @include border(solid, 0.25, $linkborder);
+    @include radius(8);
+    @include flex-center;
+    font-size: size(14);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .page-item {
+    &:first-child,
+    &:last-child {
+      @include hover {
+        .page-link {
+          border: 0;
+  
+          svg {
+            @include wh100;
+  
+            rect {
+              fill: $pagelinkbg;
+              stroke: $primary;
+            }
+      
+            path {
+              fill: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

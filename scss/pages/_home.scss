@@ -310,7 +310,7 @@
     }
     
     @include breakpoint(desktop1200) {
-      padding: size(160) size(0) size(220);
+      padding: size(160) size(0) size(96);
     }
   
     &-content {

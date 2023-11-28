@@ -29,66 +29,68 @@
   &-body {
     @include flex-column;
     gap: size(16);
+  }
+}
 
-    .filterbox {
-      background: $white;
+
+.filterbox {
+  background: $white;
+  @include border(solid, 1, rgba($black, 0.1));
+  @include radius(16);
+  @include flex-column;
+  overflow: hidden;
+
+  &-header {
+    background: $tableheadbg;
+    @include border-single(bottom, solid, 1, $tableheadborder);
+    padding: size(8) size(24);
+
+    .filtertitle {
+      color: $secondetitle;
+      font-size: size(16);
+      font-weight: 700;
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(16);
+    padding: size(24) size(24) size(34);
+
+    .form-select {
+      background-color: $inputbg;
+      color: $black;
       @include border(solid, 1, rgba($black, 0.1));
-      @include radius(16);
+      @include radius(6);
+      font-size: size(14);
+      font-weight: 400;
+      padding: size(6) size(12);
+    }
+
+    .filterprice {
       @include flex-column;
-      overflow: hidden;
+      gap: size(8);
 
       &-header {
-        background: $tableheadbg;
-        @include border-single(bottom, solid, 1, $tableheadborder);
-        padding: size(8) size(24);
+        @include flex-center-vert;
+        gap: size(8);
 
-        .filtertitle {
-          color: $secondetitle;
-          font-size: size(16);
-          font-weight: 700;
-        }
-      }
-
-      &-body {
-        @include flex-column;
-        gap: size(16);
-        padding: size(24) size(24) size(34);
-
-        .form-select {
-          background-color: $inputbg;
-          color: $black;
-          @include border(solid, 1, rgba($black, 0.1));
+        .pricefield {
+          @include setBgColor($white, $black);
+          @include border(solid, 1, rgba($black, 0.05));
           @include radius(6);
           font-size: size(14);
           font-weight: 400;
-          padding: size(6) size(12);
-        }
+          padding: size(8) size(10);
+          max-width: size(92);
+          @include transitionsall;
 
-        .filterprice {
-          @include flex-column;
+          &:focus {
+            border-color: $primary;
+          }
 
-          &-header {
-            @include flex-center-vert;
-            gap: size(8);
-
-            .pricefield {
-              @include setBgColor($white, $black);
-              @include border(solid, 1, rgba($black, 0.05));
-              @include radius(6);
-              font-size: size(14);
-              font-weight: 400;
-              padding: size(8) size(10);
-              max-width: size(92);
-              @include transitionsall;
-
-              &:focus {
-                border-color: $primary;
-              }
-
-              &::placeholder {
-                color: $textplaceholder;
-              }
-            }
+          &::placeholder {
+            color: $textplaceholder;
           }
         }
       }

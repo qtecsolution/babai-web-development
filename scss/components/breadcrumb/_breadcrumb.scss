@@ -1,3 +1,26 @@
 @use '../../global' as *;
 @use '../../partials' as *;
 
+.breadcrumb {
+  &-item {
+    color: $textplaceholder;
+    font-size: size(14);
+    font-weight: 400;
+    text-transform: uppercase;
+
+    a {
+      color: inherit;
+      font: inherit;
+    }
+
+    &:hover:not(.active) {
+      color: $textdark;
+      font-weight: 600;
+    }
+
+    &.active {
+      color: $textdark;
+      font-weight: 600;
+    }
+  }
+}

@@ -438,3 +438,159 @@
     }
   }
 }
+
+.producthorizontal {
+  @include flex;
+  gap: size(12);
+  @include border(solid, 1, $authborder);
+  @include radius(30);
+
+  @include breakpoint(mobile768) {
+    gap: size(32);
+  }
+
+  &-header {
+    background: $inputbg;
+    @include border(solid, 8, $white);
+    @include radius(30);
+    @include flex-center;
+    position: relative;
+    width: size(160);
+
+    @include breakpoint(mobile768) {
+      width: size(260);
+      height: size(220);
+    }
+
+    .discount-badge {
+      position: absolute;
+      @include square(40);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+      top: size(10);
+      left: size(10);
+      z-index: 100;
+
+      @include breakpoint(mobile768) {
+        @include square(60);
+        top: size(16);
+        right: size(16);
+      }
+    }
+
+    .btn-wish {
+      @include square(36);
+      background: $white;
+      @include circle;
+      @include flex-center;
+      padding: size(5);
+      position: absolute;
+      top: size(10);
+      right: size(10);
+
+      @include breakpoint(mobile768) {
+        top: size(16);
+        right: size(16);
+      }
+
+      &:hover:not(.active) {
+        svg {
+          path {
+            fill: $primary;
+            stroke: $primary;
+          }
+        }
+      }
+
+      &.active {
+        svg {
+          path {
+            fill: $primary;
+            stroke: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  &-thumbnail {
+    // width: size(160);
+    // height: size(110);
+    @include flex-center;
+    overflow: hidden;
+    margin-inline: auto;
+
+    img {
+      object-fit: contain;
+      @include transitiontransform;
+    }
+
+    @include hover {
+      img {
+        @include transform(scale(1.1) rotate(-3deg));
+      }
+    }
+  }
+
+  &-body {
+    width: calc(100% - size(172));
+    @include flex-column;
+    gap: size(20);
+    padding: size(15) size(15) size(15) size(0);
+
+    @include breakpoint(mobile768) {
+      width: calc(100% - size(292));
+      padding: size(30) size(30) size(30) size(0);
+    }
+
+    .cardinfo {
+      @include flex-column;
+      gap: size(10);
+    }
+
+    .titlebox {
+      max-width: size(320);
+    }
+
+    .cardtitle {
+      color: $lightmoodtext;
+      font-size: size(14);
+      @include line-clamp;
+
+      @include breakpoint(desktop1400) {
+        font-size: size(16);
+      }
+
+      @include hover {
+        color: $primary;
+      }
+    }
+
+    .prices {
+      @include flex-center-vert;
+      gap: size(8);
+
+      .previousprice {
+        color: $lightmoodtext;
+        font-family: $kalpurush;
+        font-size: size(15);
+        font-weight: 400;
+        text-decoration: line-through;
+      }
+
+      .currentprice {
+        color: $black;
+        font-family: $kalpurush;
+        font-size: size(18);
+        font-weight: 400;
+      }
+    }
+
+    .cardactions {
+      @include flex-center-vert;
+      gap: size(8);
+      flex-wrap: wrap;
+    }
+  }
+}
