@@ -185,6 +185,151 @@ button,
   }
 }
 
+.btn-cart {
+  background: $white;
+  @include flex-center-vert;
+  @include border(solid, 1, $primary);
+  @include radius(8);
+
+  .leftinfo {
+    position: relative;
+    width: size(38);
+    z-index: 1;
+
+    .arrshape {
+      position: relative;
+      width: size(38);
+      z-index: 1;
+    }
+
+    .btnicon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      @include square(24);
+      @include flex-center;
+      overflow: hidden;
+      z-index: 10;
+    }
+  }
+
+  .rightinfo {
+    color: $primary;
+    font-size: size(12);
+    font-weight: 700;
+    width: calc(100% - size(38));
+    padding-inline: size(10);
+
+    @include breakpoint(tab992) {
+      font-size: size(10);
+    }
+
+    @include breakpoint(desktop1200) {
+      font-size: size(14);
+    }
+  }
+
+  @include hover {
+    background: $primary;
+
+    .leftinfo {
+      .arrshape {
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+
+      .btnicon {
+        svg {
+          path {
+            stroke: $primary;
+          }
+        }
+      }
+    }
+
+    .rightinfo {
+      color: $white;
+    }
+  }
+}
+
+.btn-buy {
+  background: $primary;
+  @include flex-center-vert;
+  @include border(solid, 1, $primary);
+  @include radius(8);
+  overflow: hidden;
+
+  .leftinfo {
+    position: relative;
+    width: size(38);
+    z-index: 1;
+
+    .arrshape {
+      position: relative;
+      width: size(38);
+      z-index: 1;
+    }
+
+    .btnicon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      @include square(24);
+      @include flex-center;
+      overflow: hidden;
+      z-index: 10;
+    }
+  }
+
+  .rightinfo {
+    color: $white;
+    font-size: size(12);
+    font-weight: 700;
+    width: calc(100% - size(38));
+    padding-inline: size(10);
+
+    @include breakpoint(tab992) {
+      font-size: size(10);
+    }
+
+    @include breakpoint(desktop1200) {
+      font-size: size(14);
+    }
+  }
+
+  @include hover {
+    background: $white;
+
+    .leftinfo {
+      .arrshape {
+        svg {
+          path {
+            fill: $primary;
+          }
+        }
+      }
+
+      .btnicon {
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+
+    .rightinfo {
+      color: $primary;
+    }
+  }
+}
+
 .customercare {
   @include flex-center-vert;
   gap: size(5);
@@ -285,6 +430,39 @@ button,
 
       path {
         stroke: $primary;
+      }
+    }
+  }
+}
+
+.btn-seemore {
+  @include flex-center-vert;
+  gap: size(8);
+
+  .text {
+    color: $lightmoodtext;
+    font-family: $kohinoorbangla;
+    font-size: size(14);
+    font-weight: 700;
+  }
+
+  .icon {
+    @include square(24);
+    @include flex-center;
+    overflow: hidden;
+    @include transitionsall;
+  }
+
+  @include hover {
+    .text {
+      color: $primary;
+    }
+
+    .icon {      
+      svg {
+        path {
+          stroke: $primary;
+        }
       }
     }
   }

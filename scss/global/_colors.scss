@@ -33,6 +33,10 @@ $textfooter: hsl(0, 0%, 26%); //#424242
 
 $danger: hsl(0, 91%, 54%); //#F51F1F
 $success: hsl(140, 75%, 25%); //#107231
+$warning: hsl(29, 100%, 50%); //#FF7A00
+
+$successbg: hsl(144, 100%, 95%); //#E4FFEF
+$warningbg: hsl(41, 100%, 93%); //#FFF3D9
 
 // BORDER-COLORS
 $authborder: hsl(0, 0%, 91%); //#E8E8E8
@@ -42,3 +46,4 @@ $tableheadborder: hsl(0, 56%, 87%); //#F0CACA
 
 // BOX-SHADOWS
 $authshade: 0 0 0.1898rem 0 rgba($black, 0.05);
+$blogshadow: 0 0 .1666rem 0 rgba($black, 0.05);

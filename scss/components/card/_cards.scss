@@ -70,3 +70,371 @@
     }
   }
 }
+
+.product {
+  background: $white;
+  @include border(solid, 1, $authborder);
+  @include radius(30);
+
+  &-header {
+    background: $inputbg;
+    @include border(solid, 8, $white);
+    @include radius(30);
+    position: relative;
+    @include flex-column;
+    height: size(220);
+
+    .discount-badge {
+      position: absolute;
+      @include square(60);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+      top: size(20);
+      left: size(16);
+      z-index: 100;
+    }
+
+    .btn-wish {
+      @include square(36);
+      background: $white;
+      @include circle;
+      @include flex-center;
+      padding: size(5);
+      margin-top: size(20);
+      margin-right: size(16);
+
+      &:hover:not(.active) {
+        svg {
+          path {
+            fill: $primary;
+            stroke: $primary;
+          }
+        }
+      }
+
+      &.active {
+        svg {
+          path {
+            fill: $primary;
+            stroke: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  &-thumbnail {
+    width: size(160);
+    height: size(110);
+    @include flex-center;
+    overflow: hidden;
+    margin-inline: auto;
+
+    img {
+      @include transitiontransform;
+    }
+
+    @include hover {
+      img {
+        @include transform(scale(1.1) rotate(-3deg));
+      }
+    }
+  }
+  
+  &-body {
+    @include flex-center-column;
+    gap: size(16);
+    padding: size(16) size(16) size(32);
+    text-align: center;
+
+    @include breakpoint(desktop1400) {
+      padding: size(24) size(24) size(48);
+    }
+
+    .product-title {
+      color: $lightmoodtext;
+      font-size: size(14);
+      @include line-clamp;
+
+      @include breakpoint(desktop1400) {
+        font-size: size(16);
+      }
+
+      @include hover {
+        color: $primary;
+      }
+    }
+
+    .prices {
+      @include flex-center;
+      gap: size(8);
+
+      .previousprice {
+        color: $lightmoodtext;
+        font-family: $kalpurush;
+        font-size: size(15);
+        font-weight: 400;
+        text-decoration: line-through;
+      }
+
+      .currentprice {
+        color: $black;
+        font-family: $kalpurush;
+        font-size: size(18);
+        font-weight: 400;
+      }
+    }
+
+    .cardactions {
+      @include flex-center;
+      gap: size(8);
+    }
+  }
+}
+
+.sliderthumb {
+  @include radius(24);
+  @include wh100;
+  @include flex-center;
+  overflow: hidden;
+
+  img {
+    @include wh100;
+    object-fit: cover;
+  }
+}
+
+.cardtestimonial {
+  background: url(../images/bg/mobilebg.png) no-repeat center center/contain;
+  @include flex-center-column;
+  gap: size(8);
+  padding: size(40) size(0);
+
+  @include breakpoint(mobile768) {
+    background: url(../images/bg/articlebg.png) no-repeat center center/contain;
+    gap: size(20);
+    padding: size(64);
+  }
+
+  &-header {
+    @include flex-center-column;
+    gap: size(8);
+    padding-top: size(20);
+
+    @include breakpoint(mobile768) {
+      gap: size(24);
+      padding-top: size(0);
+    }
+
+    .testicon {
+      @include square(20);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+      
+      @include breakpoint(mobile576) {
+        @include square(28);
+      }
+
+      @include breakpoint(tab992) {
+        @include square(46);
+      }
+    }
+
+    .titledetails {
+      @include flex-center-column;
+      gap: size(4);
+      text-align: center;
+
+      @include breakpoint(mobile768) {
+        gap: size(12);
+      }
+
+      .title {
+        color: $textprice;
+        font-size: size(11);
+        font-weight: 600;
+        
+        @include breakpoint(mobile576) {
+          font-size: size(12);
+        }
+        
+        @include breakpoint(mobile768) {
+          font-size: size(18);
+        }
+        
+        @include breakpoint(tab992) {
+          font-size: size(24);
+        }
+      }
+
+      .details {
+        max-width: size(240);
+        margin-inline: auto;
+        
+        @include breakpoint(mobile576) {
+          max-width: size(329);
+        }
+        
+        @include breakpoint(mobile768) {
+          max-width: size(432);
+        }
+        
+        @include breakpoint(tab992) {
+          max-width: size(569);
+        }
+
+        .text {
+          font-size: size(9);
+          font-weight: 400;
+          
+          @include breakpoint(mobile576) {
+            font-size: size(10);
+          }
+
+          @include breakpoint(mobile576) {
+            font-size: size(12);
+          }
+
+          @include breakpoint(mobile768) {
+            font-size: size(14);
+          }
+        
+          @include breakpoint(tab992) {
+            font-size: size(17);
+          }
+        }
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center;
+
+    .user {
+      @include flex-center-vert;
+      gap: size(14);
+      padding-bottom: size(40);
+
+      @include breakpoint(mobile768) {
+        padding-bottom: size(0);
+      }
+
+      &-thumb {
+        @include square(30);
+        @include circle;
+        @include flex-center;
+        overflow: hidden;
+          
+        @include breakpoint(tab992) {
+          @include square(48);
+        }
+      }
+
+      &-details {
+        @include flex-column;
+
+        .name {
+          color: $black;
+          font-size: size(10);
+          font-weight: 500;
+        
+          @include breakpoint(mobile768) {
+            font-size: size(13);
+          }
+          
+          @include breakpoint(tab992) {
+            font-size: size(16);
+          }
+        }
+
+        .designation {
+          color: $textplaceholder;
+          font-size: size(8);
+          font-weight: 400;
+        
+          @include breakpoint(mobile768) {
+            font-size: size(11);
+          }
+          
+          @include breakpoint(tab992) {
+            font-size: size(14);
+          }
+        }
+      }
+    }
+  }
+}
+
+.cardblog {
+  background: $white;
+  @include border(solid, 1, $authborder);
+  @include radius(20);
+  box-shadow: $blogshadow;
+  @include flex-column;
+  gap: size(22);
+  overflow: hidden;
+
+  &-header {
+    @include w100;
+    height: size(146);
+
+    .blog-thumb {
+      @include w100;
+      height: size(146);
+      @include flex-center;
+      overflow: hidden;
+
+      img {
+        @include wh100;
+        @include transitiontransform;
+      }
+  
+      @include hover {
+        img {
+          @include transform(scale(1.1) rotate(-3deg));
+        }
+      }
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(12);
+    padding: 0 size(12) size(22);
+
+    .blogtitle {
+      color: $secondetitle;
+      font-size: size(16);
+      font-weight: 600;
+      @include transitionscolor;
+
+      @include hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &-footer {
+    @include flex-center-between;
+    padding: 0 size(12) size(24);
+
+    .readmore {
+      color: $textprice;
+      font-size: size(12);
+      font-weight: 600;
+      @include transitionscolor;
+
+      @include hover {
+        color: $primary;
+      }
+    }
+
+    .publishdate {
+      color: $textplaceholder;
+      font-size: size(12);
+      font-weight: 400;
+    }
+  }
+}

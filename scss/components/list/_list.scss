@@ -128,3 +128,57 @@
   @include list-vertical;
   gap: size(16);
 }
+
+.desktopnav {
+  background: rgba($white, 0.60);
+  backdrop-filter: blur(size(2));
+  @include radius(24);
+  width: size(270);
+  padding: size(16);
+}
+
+.desktoplist {
+  @include list-vertical;
+  gap: size(8);
+
+  &-link {
+    background: $white;
+    @include radius(12);
+    @include flex-center-between;
+    padding: size(8);
+    @include transitionsall;
+
+    .icontext {
+      @include flex-center-vert;
+      gap: size(8);
+
+      @include breakpoint(desktop1600) {
+        gap: size(12);
+      }
+
+      .icon {
+        @include square(32);
+        @include flex-center;
+        overflow: hidden;
+
+        @include breakpoint(desktop1600) {
+          @include square(48);
+        }
+      }
+
+      .text {
+        color: $black;
+        font-size: size(15);
+        font-weight: 400;
+
+        @include breakpoint(desktop1600) {
+          font-size: size(18);
+        }
+      }
+    }
+
+    @include hover {
+      background: $footerbg;
+    }
+  }
+}

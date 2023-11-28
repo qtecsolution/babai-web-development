@@ -1,3 +1,22 @@
 @use "../../global" as *;
 @use "../../partials" as *;
 
+.badgecategory {
+  @include radius(64);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: size(12);
+  font-weight: 500;
+  padding: size(7) size(12);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.ctg-1 {
+  @include setBgColor($successbg, $success);
+}
+
+.ctg-2 {
+  @include setBgColor($warningbg, $warning);
+}

@@ -1,4 +1,4 @@
-const popularSlider = new Swiper('.popularSlider', {
+const popularSlider = new Swiper(".popularSlider", {
   autoplay: {
     delay: 5000,
     disableOnInteraction: true,
@@ -9,8 +9,8 @@ const popularSlider = new Swiper('.popularSlider', {
   spaceBetween: 60,
   pagination: false,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
   breakpoints: {
     0: {
@@ -38,4 +38,4 @@ const popularSlider = new Swiper('.popularSlider', {
       slidesPerView: 7,
     },
   },
-})
+});
