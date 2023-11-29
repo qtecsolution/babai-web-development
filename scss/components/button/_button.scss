@@ -459,3 +459,143 @@ button,
     }
   }
 }
+
+.btn-order {
+  background: $primary;
+  @include border(solid, 1, $primary);
+  @include radius(8);
+  overflow: hidden;
+  @include flex-center-vert;
+  gap: size(14);
+  @include w100;
+  height: size(46);
+
+  .iconbg {
+    position: relative;
+    width: size(50);
+    height: size(46);
+    @include flex-center;
+    overflow: hidden;
+
+    .arricon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+    }
+  }
+
+  .text {
+    color: $white;
+    font-family: $kohinoorbangla;
+    font-size: size(14);
+    font-weight: 700;
+  }
+
+  @include hover {
+    background: $white;
+
+    .iconbg {
+      svg {
+        path {
+          fill: $primary;
+          stroke: $primary;
+        }
+      }
+
+      .arricon {
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+
+    .text {
+      color: $primary;
+    }
+  }
+}
+
+.btn-delete {
+  @include flex-center-vert;
+  gap: size(6);
+    
+  @include breakpoint(mobile768) {
+    gap: size(8);
+  }
+
+  .icon {
+    @include square(20);
+    @include flex-center;
+    overflow: hidden;
+
+    @include breakpoint(mobile768) {
+      @include square(24);
+    }
+  }
+
+  .text {
+    color: $textplaceholder;
+    font-size: size(12);
+    font-weight: 400;
+
+    @include breakpoint(mobile768) {
+      font-size: size(14);
+    }
+  }
+
+  @include hover {
+    svg {
+      path {
+        fill: $primary;
+      }
+    }
+
+    .text {
+      color: $primary;
+    }
+  }
+}
+
+.btn-edit {
+  @include flex-center-vert;
+  gap: size(6);
+    
+  @include breakpoint(mobile768) {
+    gap: size(8);
+  }
+
+  .icon {
+    @include square(20);
+    @include flex-center;
+    overflow: hidden;
+
+    @include breakpoint(mobile768) {
+      @include square(24);
+    }
+  }
+
+  .text {
+    color: $textplaceholder;
+    font-size: size(12);
+    font-weight: 400;
+
+    @include breakpoint(mobile768) {
+      font-size: size(14);
+    }
+  }
+
+  @include hover {
+    svg {
+      path {
+        stroke: $primary;
+      }
+    }
+
+    .text {
+      color: $primary;
+    }
+  }
+}

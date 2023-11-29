@@ -1,2 +1,170 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.shippingaddress {
+  &-content {
+    @include flex-column;
+    gap: size(32);
+  }
+
+  .shippingleft {
+    @include flex-column;
+    gap: size(32);
+
+    .shippingtop {
+      &-header {
+        background: $tableheadbg;
+        @include border(solid, 1, $tableheadborder);
+        @include double-radius(top, left, 16, top, right, 16);
+        @include flex-center-between;
+        padding: size(8) size(16);
+
+        @include breakpoint(mobile768) {
+          @include double-radius(top, left, 32, top, right, 32);
+          padding: size(8) size(32);
+        }
+
+        .titlebox {
+          .title {
+            color: $secondetitle;
+            font-family: $inter;
+            font-size: size(16);
+            font-weight: 500;
+  
+            @include breakpoint(mobile768) {
+              font-size: size(24);
+            }
+          }
+
+          .subtitle {
+            color: $secondetitle;
+            font-family: $inter;
+            font-size: size(10);
+            font-weight: 400;
+  
+            @include breakpoint(mobile768) {
+              font-size: size(14);
+            }
+          }
+        }
+
+        .btn-add {
+          color: $secondetitle;
+          font-family: $inter;
+          font-size: size(12);
+          font-weight: 700;
+
+          @include breakpoint(mobile768) {
+            font-size: size(16);
+          }
+
+          @include hover {
+            color: $primary;
+          }
+        }
+      }
+
+      &-body {
+        @include double-radius(bottom, left, 16, bottom, right, 16);
+        @include border(solid, 1, rgba($black, 0.10));
+        border-top: 0;
+        padding-inline: size(16);
+
+        @include breakpoint(mobile768) {
+          @include double-radius(bottom, left, 32, bottom, right, 32);
+          padding-inline: size(32);
+        }
+
+        .addressbox {
+          @include border-single(bottom, solid, 1, rgba($black, 0.10));
+          padding: size(20) 0;
+
+          @include breakpoint(mobile768) {
+            padding: size(32) 0;
+          }
+
+          &:last-of-type {
+            border-bottom: 0;
+          }
+        }
+
+        .actions {
+          @include flex-center-vert;
+          gap: size(16);
+          padding-left: size(96);
+          
+          @include breakpoint(mobile768) {
+            gap: size(24);
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    
+    .shippingbottom {
+      @include flex-column;
+      gap: size(12);
+
+      .bottominfo {
+        max-width: size(752);
+
+        .text {
+          color: $textplaceholder;
+          font-size: size(12);
+          font-weight: 400;
+        }
+      }
+
+      .filtercheck {
+        .checklabel {
+          color: $textplaceholder;
+          font-size: size(14);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .ordersummary {
+    &-header {
+      background: $tableheadbg;
+      @include border(solid, 1, $tableheadborder);
+      @include double-radius(top, left, 16, top, right, 16);
+      @include flex-center-between;
+      padding: size(18) size(16);
+
+      @include breakpoint(mobile768) {
+        @include double-radius(top, left, 32, top, right, 32);
+        padding: size(18) size(32);
+      }
+
+      .title {
+        color: $secondetitle;
+        font-family: $inter;
+        font-size: size(16);
+        font-weight: 500;
+
+        @include breakpoint(mobile768) {
+          font-size: size(24);
+        }
+      }
+    }
+  
+    &-body {
+      @include double-radius(bottom, left, 16, bottom, right, 16);
+      @include border(solid, 1, rgba($black, 0.10));
+      border-top: 0;
+      padding-inline: size(16);
+
+      @include breakpoint(mobile768) {
+        @include double-radius(bottom, left, 32, bottom, right, 32);
+        padding-inline: size(32);
+      }
+    }
+  }
+
+  .placeorder {
+    @include border-single(top, solid, 1, rgba($black, 0.10));
+    padding-top: size(32);
+  }
+}

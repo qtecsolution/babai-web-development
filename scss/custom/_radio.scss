@@ -31,3 +31,77 @@
     }
   }
 }
+
+.customradio {
+  .cstmradio {
+    &:checked ~ .customradio-label {
+      &::after {
+        background: $primary;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .customradio-label {
+    cursor: pointer;
+    @include flex-center-vert;
+    gap: size(16);
+    position: relative;
+    padding-left: size(28);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      @include translateY(-50%);
+      @include circle;
+    }
+
+    &::before {
+      background: $white;
+      @include square(20);
+      @include border(solid, 1, $primary);
+    }
+
+    &::after {
+      @include square(10);
+      background: $white;
+      left: size(5);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .title {
+      color: $black;
+      font-size: size(16);
+      font-weight: 700;
+
+      @include breakpoint(mobile768) {
+        font-size: size(18);
+      }
+    }
+
+    .address {
+      @include flex-column;
+
+      .name,
+      .phone,
+      .location {
+        color: $black;
+        font-size: size(12);
+        font-weight: 400;
+
+        @include breakpoint(mobile768) {
+          font-size: size(14);
+        }
+      }
+      
+      .location {
+        color: $textplaceholder;
+      }
+    }
+  }
+}
