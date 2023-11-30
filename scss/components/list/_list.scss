@@ -139,6 +139,11 @@
   max-height: size(410);
   overflow-x: hidden;
 
+  @include breakpoint(desktop1600) {
+    min-height: size(516);
+    max-height: size(520);
+  }
+
   &::-webkit-scrollbar {
     background: transparent;
     width: size(8);

@@ -2301,6 +2301,12 @@ table tr td {
   max-height: 25.625rem;
   overflow-x: hidden;
 }
+@media screen and (min-width: 100rem) {
+  .desktopnav {
+    min-height: 32.25rem;
+    max-height: 32.5rem;
+  }
+}
 .desktopnav::-webkit-scrollbar {
   background: transparent;
   width: 0.5rem;
