@@ -188,7 +188,6 @@
   background: $white;
   @include border(solid, 1, rgba($black, 0.10));
   @include radius(20);
-  max-width: size(340);
   overflow: hidden;
 
   &-link {
