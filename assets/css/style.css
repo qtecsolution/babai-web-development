@@ -2309,10 +2309,11 @@ table tr td {
 }
 .desktopnav::-webkit-scrollbar {
   background: transparent;
-  width: 0.5rem;
+  width: 0rem;
 }
 .desktopnav::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
+  width: 0rem;
 }
 
 .desktoplist {

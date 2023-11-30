@@ -146,11 +146,12 @@
 
   &::-webkit-scrollbar {
     background: transparent;
-    width: size(8);
+    width: size(0);
   }
 
   &::-webkit-scrollbar-thumb {
     @include radius(8);
+    width: size(0);
   }
 }
 
