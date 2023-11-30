@@ -179,11 +179,11 @@
 
       .text {
         color: $black;
-        font-size: size(15);
+        font-size: size(13);
         font-weight: 400;
 
         @include breakpoint(desktop1600) {
-          font-size: size(18);
+          font-size: size(15);
         }
       }
     }

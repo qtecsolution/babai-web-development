@@ -2351,12 +2351,12 @@ table tr td {
 }
 .desktoplist-link .icontext .text {
   color: hsl(0, 0%, 0%);
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   font-weight: 400;
 }
 @media screen and (min-width: 100rem) {
   .desktoplist-link .icontext .text {
-    font-size: 1.125rem;
+    font-size: 0.9375rem;
   }
 }
 .desktoplist-link:not([disabled]):hover {
