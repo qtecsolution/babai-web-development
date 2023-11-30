@@ -3494,14 +3494,130 @@ table tr td {
   border-bottom-right-radius: 1rem;
   border: solid 0.0625rem rgba(0, 0, 0, 0.1);
   border-top: 0;
-  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
 }
 @media screen and (min-width: 48rem) {
   .shippingaddress .ordersummary-body {
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
-    padding-inline: 2rem;
+    padding: 2rem;
   }
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist {
+  display: flex;
+  flex-direction: column;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item {
+  border-bottom: dotted 0.0625rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0 0.75rem;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .title {
+  color: hsl(0, 0%, 0%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .text {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .price {
+  color: hsl(0, 0%, 0%);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .discountapplied {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .discountapplied .title {
+  color: hsl(0, 0%, 0%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .discountapplied .text {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .discountapplied .text .removebtn {
+  cursor: pointer;
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+  margin-left: 0.75rem;
+  transition: color 350ms ease-in-out;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .discountapplied .text .removebtn:not([disabled]):hover {
+  color: hsl(358, 86%, 43%);
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item .discountapplied .price {
+  color: hsl(0, 0%, 0%);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.shippingaddress .ordersummary-body .summary-header .summarylist-item:last-of-type {
+  border-bottom: 0;
+}
+.shippingaddress .ordersummary-body .summary-body {
+  margin-top: 0.5rem;
+}
+.shippingaddress .ordersummary-body .summary-body .discount {
+  background: hsl(0, 0%, 96%);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.375rem 0.25rem 0.375rem 0.75rem;
+}
+.shippingaddress .ordersummary-body .summary-body .discount-input {
+  background: transparent;
+  color: hsl(0, 0%, 0%);
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: calc(100% - 4.5625rem);
+  padding-right: 0.75rem;
+}
+.shippingaddress .ordersummary-body .summary-body .discount-input::-moz-placeholder {
+  color: hsl(225, 3%, 51%);
+}
+.shippingaddress .ordersummary-body .summary-body .discount-input::placeholder {
+  color: hsl(225, 3%, 51%);
+}
+.shippingaddress .ordersummary-body .summary-body .discount .btn-apply {
+  background: hsl(359, 83%, 53%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  transition: background 350ms ease-in-out;
+}
+.shippingaddress .ordersummary-body .summary-body .discount .btn-apply:not([disabled]):hover {
+  background: hsl(358, 86%, 43%);
+  color: hsl(0, 0%, 100%);
+}
+.shippingaddress .ordersummary-body .summary-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shippingaddress .ordersummary-body .summary-footer .title {
+  color: hsl(0, 0%, 0%);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.shippingaddress .ordersummary-body .summary-footer .totalprice {
+  color: hsl(0, 0%, 0%);
+  font-size: 1rem;
+  font-weight: 500;
 }
 .shippingaddress .placeorder {
   border-top: solid 0.0625rem rgba(0, 0, 0, 0.1);

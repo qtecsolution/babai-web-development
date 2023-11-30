@@ -154,11 +154,135 @@
       @include double-radius(bottom, left, 16, bottom, right, 16);
       @include border(solid, 1, rgba($black, 0.10));
       border-top: 0;
-      padding-inline: size(16);
+      @include flex-column;
+      gap: size(24);
+      padding: size(32) size(16);
 
       @include breakpoint(mobile768) {
         @include double-radius(bottom, left, 32, bottom, right, 32);
-        padding-inline: size(32);
+        padding: size(32);
+      }
+
+      .summary-header {
+        .summarylist {
+          @include flex-column;
+
+          &-item {
+            @include border-single(bottom, dotted, 1, rgba($black, 0.10));
+            @include flex-center-between;
+            padding: size(8) 0 size(12);
+
+            .title {
+              color: $black;
+              font-size: size(14);
+              font-weight: 500;
+            }
+
+            .text {
+              color: $textplaceholder;
+              font-size: size(12);
+              font-weight: 500;
+            }
+
+            .price {
+              color: $black;
+              font-size: size(14);
+              font-weight: 400;
+            }
+
+            .discountapplied {
+              @include flex-center-between;
+              @include w100;
+
+              .title {
+                color: $black;
+                font-size: size(14);
+                font-weight: 500;
+              }
+  
+              .text {
+                color: $textplaceholder;
+                font-size: size(12);
+                font-weight: 500;
+
+                .removebtn {
+                  cursor: pointer;
+                  color: $textprice;
+                  font: inherit;
+                  margin-left: size(12);
+                  @include transitionscolor;
+
+                  @include hover {
+                    color: $primary;
+                  }
+                }
+              }
+  
+              .price {
+                color: $black;
+                font-size: size(14);
+                font-weight: 400;
+              }
+            }
+
+            &:last-of-type {
+              border-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .summary-body {
+        margin-top: size(8);
+
+        .discount {
+          background: $inputbg;
+          @include radius(8);
+          @include flex-center-vert;
+          @include w100;
+          padding: size(6) size(4) size(6) size(12);
+
+          &-input {
+            @include setBgColor(transparent, $black);
+            font-size: size(12);
+            font-weight: 500;
+            width: calc(100% - size(73));
+            padding-right: size(12);
+
+            &::placeholder {
+              color: $textplaceholder;
+            }
+          }
+
+          .btn-apply {
+            @include setBgColor($textprice, $white);
+            @include radius(4);
+            font-size: size(12);
+            font-weight: 500;
+            padding: size(10) size(20);
+            @include transitionsbackground;
+            
+            @include hover {
+              @include setBgColor($primary, $white);
+            }
+          }
+        }
+      }
+
+      .summary-footer {
+        @include flex-center-between;
+
+        .title {
+          color: $black;
+          font-size: size(16);
+          font-weight: 700;
+        }
+        
+        .totalprice {
+          color: $black;
+          font-size: size(16);
+          font-weight: 500;
+        }
       }
     }
   }
