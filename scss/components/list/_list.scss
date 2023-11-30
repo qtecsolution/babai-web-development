@@ -182,3 +182,42 @@
     }
   }
 }
+
+.accountlist {
+  @include list-vertical;
+  background: $white;
+  @include border(solid, 1, rgba($black, 0.10));
+  @include radius(20);
+  max-width: size(340);
+  overflow: hidden;
+
+  &-link {
+    @include setBgColor($white, $textplaceholder);
+    @include border-single(bottom, solid, 1, rgba($black, 0.10));
+    @include flex-center-vert;
+    font-size: size(16);
+    font-weight: 500;
+    padding: size(16) size(24);
+    @include transitionsall;
+
+    @include breakpoint(desktop1400) {
+      font-size: size(18);
+    }
+
+    &:hover:not(.active) {
+      @include setBgColor($tableheadbg, $textprice);
+    }
+
+    &.active {
+      @include setBgColor($tableheadbg, $textprice);
+    }
+  }
+
+  &-item {
+    &:last-of-type {
+      .accountlist-link {
+        border-bottom: 0;
+      }
+    }
+  }
+}

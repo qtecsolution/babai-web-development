@@ -1016,6 +1016,21 @@ button:focus,
   color: hsl(358, 86%, 43%);
 }
 
+.btn-add {
+  color: hsl(230, 51%, 18%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 48rem) {
+  .btn-add {
+    font-size: 1rem;
+  }
+}
+.btn-add:not([disabled]):hover {
+  color: hsl(358, 86%, 43%);
+}
+
 .cardcart {
   display: flex;
   align-items: center;
@@ -2339,6 +2354,46 @@ table tr td {
   background: hsl(13, 33%, 95%);
 }
 
+.accountlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background: hsl(0, 0%, 100%);
+  border: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 1.25rem;
+  max-width: 21.25rem;
+  overflow: hidden;
+}
+.accountlist-link {
+  background: hsl(0, 0%, 100%);
+  color: hsl(225, 3%, 51%);
+  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 87.5rem) {
+  .accountlist-link {
+    font-size: 1.125rem;
+  }
+}
+.accountlist-link:hover:not(.active) {
+  background: hsl(0, 38%, 95%);
+  color: hsl(359, 83%, 53%);
+}
+.accountlist-link.active {
+  background: hsl(0, 38%, 95%);
+  color: hsl(359, 83%, 53%);
+}
+.accountlist-item:last-of-type .accountlist-link {
+  border-bottom: 0;
+}
+
 .pagination {
   gap: 0.5rem;
 }
@@ -3391,20 +3446,6 @@ table tr td {
     font-size: 0.875rem;
   }
 }
-.shippingaddress .shippingleft .shippingtop-header .btn-add {
-  color: hsl(230, 51%, 18%);
-  font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-@media screen and (min-width: 48rem) {
-  .shippingaddress .shippingleft .shippingtop-header .btn-add {
-    font-size: 1rem;
-  }
-}
-.shippingaddress .shippingleft .shippingtop-header .btn-add:not([disabled]):hover {
-  color: hsl(358, 86%, 43%);
-}
 .shippingaddress .shippingleft .shippingtop-body {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -3417,30 +3458,6 @@ table tr td {
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     padding-inline: 2rem;
-  }
-}
-.shippingaddress .shippingleft .shippingtop-body .addressbox {
-  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.1);
-  padding: 1.25rem 0;
-}
-@media screen and (min-width: 48rem) {
-  .shippingaddress .shippingleft .shippingtop-body .addressbox {
-    padding: 2rem 0;
-  }
-}
-.shippingaddress .shippingleft .shippingtop-body .addressbox:last-of-type {
-  border-bottom: 0;
-}
-.shippingaddress .shippingleft .shippingtop-body .actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-left: 6rem;
-}
-@media screen and (min-width: 48rem) {
-  .shippingaddress .shippingleft .shippingtop-body .actions {
-    gap: 1.5rem;
-    padding-left: 0;
   }
 }
 .shippingaddress .shippingleft .shippingbottom {
@@ -3622,6 +3639,105 @@ table tr td {
 .shippingaddress .placeorder {
   border-top: solid 0.0625rem rgba(0, 0, 0, 0.1);
   padding-top: 2rem;
+}
+
+.addressbox {
+  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 0;
+}
+@media screen and (min-width: 48rem) {
+  .addressbox {
+    padding: 2rem 0;
+  }
+}
+.addressbox:last-of-type {
+  border-bottom: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 6rem;
+}
+@media screen and (min-width: 48rem) {
+  .actions {
+    gap: 1.5rem;
+    padding-left: 0;
+  }
+}
+
+.myaccount-header {
+  background: hsl(0, 38%, 95%);
+  border: solid 0.0625rem hsl(0, 56%, 87%);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .myaccount-header {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding: 1.5rem 2rem;
+  }
+}
+.myaccount-header .title {
+  color: hsl(230, 51%, 18%);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.myaccount-body {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  border-top: 0;
+  padding-inline: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .myaccount-body {
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding-inline: 2rem;
+  }
+}
+.myaccount .accordion {
+  margin-bottom: 2rem;
+}
+.myaccount .accordion-item {
+  border: none;
+}
+.myaccount .accordion-item:first-of-type, .myaccount .accordion-item:last-of-type {
+  border-radius: 0rem;
+}
+.myaccount .accordion-item:first-of-type .accordion-button, .myaccount .accordion-item:last-of-type .accordion-button {
+  border-radius: 0.375rem;
+}
+.myaccount .accordion-button {
+  background: hsl(0, 0%, 96%);
+  color: hsl(230, 51%, 18%);
+  border: solid 0.0625rem hsl(0, 0%, 90%);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 1.25rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 87.5rem) {
+  .myaccount .accordion-button {
+    font-size: 1.125rem;
+  }
+}
+.myaccount .accordion-button:not(.collapsed) {
+  background: hsl(0, 0%, 96%);
+  color: hsl(230, 51%, 18%);
+  border-radius: 0.375rem;
+}
+.myaccount .accordion-body {
+  padding: 1.25rem 0rem 0rem;
 }
 
 .authsection {

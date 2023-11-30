@@ -1,2 +1,76 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.myaccount {
+  &-header {
+    background: $tableheadbg;
+    @include border(solid, 1, $tableheadborder);
+    @include double-radius(top, left, 16, top, right, 16);
+    @include flex-center-between;
+    padding: size(20);
+
+    @include breakpoint(mobile768) {
+      @include double-radius(top, left, 32, top, right, 32);
+      padding: size(24) size(32);
+    }
+    
+    .title {
+      color: $secondetitle;
+      font-family: $inter;
+      font-size: size(16);
+      font-weight: 700;
+    }
+  }
+
+  &-body {
+    @include double-radius(bottom, left, 16, bottom, right, 16);
+    @include border(solid, 1, rgba($black, 0.10));
+    border-top: 0;
+    padding-inline: size(16);
+
+    @include breakpoint(mobile768) {
+      @include double-radius(bottom, left, 32, bottom, right, 32);
+      padding-inline: size(32);
+    }
+  }
+
+  .accordion {
+    margin-bottom: size(32);
+
+    &-item {
+      border: none;
+
+      &:first-of-type,
+      &:last-of-type {
+        @include radius(0);
+
+        .accordion-button {
+          @include radius(6);
+        }
+      }
+    }
+
+    &-button {
+      @include setBgColor($inputbg, $secondetitle);
+      @include border(solid, 1, $btnbg);
+      @include radius(6);
+      font-size: size(16);
+      font-weight: 500;
+      padding: size(16) size(20);
+      overflow: hidden;
+
+      @include breakpoint(desktop1400) {
+        font-size: size(18);
+      }
+      
+      &:not(.collapsed) {
+        @include setBgColor($inputbg, $secondetitle);
+        @include radius(6);
+      }
+    }
+
+    &-body {
+      padding: size(20) size(0) size(0);
+    }
+  }
+}

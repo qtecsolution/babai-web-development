@@ -47,21 +47,6 @@
             }
           }
         }
-
-        .btn-add {
-          color: $secondetitle;
-          font-family: $inter;
-          font-size: size(12);
-          font-weight: 700;
-
-          @include breakpoint(mobile768) {
-            font-size: size(16);
-          }
-
-          @include hover {
-            color: $primary;
-          }
-        }
       }
 
       &-body {
@@ -73,30 +58,6 @@
         @include breakpoint(mobile768) {
           @include double-radius(bottom, left, 32, bottom, right, 32);
           padding-inline: size(32);
-        }
-
-        .addressbox {
-          @include border-single(bottom, solid, 1, rgba($black, 0.10));
-          padding: size(20) 0;
-
-          @include breakpoint(mobile768) {
-            padding: size(32) 0;
-          }
-
-          &:last-of-type {
-            border-bottom: 0;
-          }
-        }
-
-        .actions {
-          @include flex-center-vert;
-          gap: size(16);
-          padding-left: size(96);
-          
-          @include breakpoint(mobile768) {
-            gap: size(24);
-            padding-left: 0;
-          }
         }
       }
     }
@@ -290,5 +251,29 @@
   .placeorder {
     @include border-single(top, solid, 1, rgba($black, 0.10));
     padding-top: size(32);
+  }
+}
+
+.addressbox {
+  @include border-single(bottom, solid, 1, rgba($black, 0.10));
+  padding: size(20) 0;
+
+  @include breakpoint(mobile768) {
+    padding: size(32) 0;
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.actions {
+  @include flex-center-vert;
+  gap: size(16);
+  padding-left: size(96);
+  
+  @include breakpoint(mobile768) {
+    gap: size(24);
+    padding-left: 0;
   }
 }

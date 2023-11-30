@@ -599,3 +599,18 @@ button,
     }
   }
 }
+
+.btn-add {
+  color: $secondetitle;
+  font-family: $inter;
+  font-size: size(12);
+  font-weight: 700;
+
+  @include breakpoint(mobile768) {
+    font-size: size(16);
+  }
+
+  @include hover {
+    color: $primary;
+  }
+}
