@@ -135,7 +135,8 @@
   @include radius(24);
   width: size(270);
   padding: size(16);
-  max-height: size(408);
+  min-height: size(408);
+  max-height: size(410);
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
