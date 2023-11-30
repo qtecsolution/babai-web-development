@@ -135,6 +135,17 @@
   @include radius(24);
   width: size(270);
   padding: size(16);
+  max-height: size(408);
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: size(8);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include radius(8);
+  }
 }
 
 .desktoplist {

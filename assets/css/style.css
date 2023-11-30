@@ -2297,6 +2297,15 @@ table tr td {
   border-radius: 1.5rem;
   width: 16.875rem;
   padding: 1rem;
+  max-height: 25.5rem;
+  overflow-x: hidden;
+}
+.desktopnav::-webkit-scrollbar {
+  background: transparent;
+  width: 0.5rem;
+}
+.desktopnav::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
 }
 
 .desktoplist {
