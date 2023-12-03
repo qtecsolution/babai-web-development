@@ -1132,8 +1132,24 @@
             </div>
 
             <div class="inputbox">
-              <label for="gender" class="inputlabel">Gender</label>
-              <input type="text" id="gender" class="inputfield" placeholder="Male" autocomplete="off" />
+              <label class="inputlabel">Gender</label>
+              
+              <div class="genders">
+                <div class="gender">
+                  <input type="radio" name="gender" id="male" class="gender-field" autocomplete="off" hidden checked />
+                  <label for="male" class="gender-label">Male</label>
+                </div>
+
+                <div class="gender">
+                  <input type="radio" name="gender" id="female" class="gender-field" autocomplete="off" hidden />
+                  <label for="female" class="gender-label">Female</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="inputbox">
+              <label for="mobile" class="inputlabel">Mobile Number</label>
+              <input type="tel" id="mobile" class="inputfield" placeholder="+8801710123456" autocomplete="off" />
             </div>
 
             <div class="inputbox">

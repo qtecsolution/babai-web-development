@@ -1,2 +1,96 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.settings {
+  @include flex-column;
+  gap: size(32);
+  padding: size(24) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(48) size(0);
+  }
+
+  &-info {
+    @include border-single(bottom, solid, 1, rgba($black, 0.10));
+    padding: 0 size(16) size(24);
+  
+    @include breakpoint(tab992) {
+      padding: 0 size(32) size(32);
+    }
+
+    .babyprofileform {
+      max-width: size(374);
+
+      .formtext {
+        color: $textplaceholder;
+        font-size: size(12);
+        font-weight: 400;
+      }
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
+
+      .babyprofileform {
+        max-width: 100%;
+      }
+
+      .passwordbox {
+        max-width: 100%;
+
+        @include breakpoint(mobile768) {
+          max-width: size(374);
+        }
+      }
+    }
+
+    .passwordactions {
+      @include flex-column;
+      gap: size(24);
+
+      @include breakpoint(mobile768) {
+        flex-direction: row;
+        gap: size(48);
+      }
+
+      .leftactions {
+        @include flex-center-vert;
+        gap: size(24);
+
+        @include breakpoint(mobile768) {
+          gap: size(48);
+        }
+      }
+
+      button {
+        font-size: size(16);
+        font-weight: 400;
+        @include flex;
+      }
+
+      .btn-password {
+        color: $lightmoodtext;
+
+        @include hover {
+          color: $secondetitle;
+        }
+      }
+
+      .btn-cngpassword {
+        color: $success;
+
+        @include hover {
+          color: lighten($success, 10%);
+        }
+      }
+
+      .btn-rmpassword {
+        color: $textprice;
+
+        @include hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}

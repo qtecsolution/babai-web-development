@@ -632,3 +632,35 @@ button,
     border-color: $lightmoodtext;
   }
 }
+
+.btn-editprofile {
+  @include flex-center-vert;
+  gap: size(8);
+
+  .icon {
+    @include square(24);
+    @include flex-center;
+    overflow: hidden;
+    margin-top: size(-4);
+  }
+
+  .text {
+    color: $textprice;
+    font-size: size(14);
+    font-weight: 400;
+  }
+
+  @include hover {
+    .icon {
+      svg {
+        path {
+          stroke: $primary;
+        }
+      }
+    }
+
+    .text {
+      color: $primary;
+    }
+  }
+}
