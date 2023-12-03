@@ -2297,9 +2297,14 @@ table tr td {
   border-radius: 1.5rem;
   width: 16.875rem;
   padding: 1rem;
-  min-height: 25.5rem;
-  max-height: 25.625rem;
+  max-height: 18.5rem;
   overflow-x: hidden;
+}
+@media screen and (min-width: 75rem) {
+  .desktopnav {
+    min-height: 25.5rem;
+    max-height: 25.625rem;
+  }
 }
 @media screen and (min-width: 100rem) {
   .desktopnav {
@@ -3980,4 +3985,8 @@ table tr td {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.herocontainer {
+  padding-inline: 4.625rem;
 }

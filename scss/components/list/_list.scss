@@ -135,9 +135,13 @@
   @include radius(24);
   width: size(270);
   padding: size(16);
-  min-height: size(408);
-  max-height: size(410);
+  max-height: size(296);
   overflow-x: hidden;
+
+  @include breakpoint(desktop1200) {
+    min-height: size(408);
+    max-height: size(410);
+  }
 
   @include breakpoint(desktop1600) {
     min-height: size(516);
