@@ -614,3 +614,21 @@ button,
     color: $primary;
   }
 }
+
+.btn-upload {
+  @include setBgColor($white, $lightmoodtext);
+  @include border(solid, 1, $uploadborder);
+  @include radius(55);
+  cursor: pointer;
+  @include flex-center;
+  font-size: size(12);
+  font-weight: 400;
+  padding: size(10) size(14);
+  text-align: center;
+  @include transitionsall;
+
+  @include hover {
+    @include setBgColor($lightmoodtext, $white);
+    border-color: $lightmoodtext;
+  }
+}

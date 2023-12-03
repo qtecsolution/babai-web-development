@@ -4,6 +4,7 @@
 .modal {
   &-content {
     @include radius(20);
+    overflow: hidden;
   }
 
   &-header {
@@ -40,5 +41,122 @@
         }
       }
     }
+  }
+
+  &-body {
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: size(8);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $btnbg;
+      @include radius(8);
+    }
+  }
+}
+
+.addbabyprofile {
+
+  .modal-content {
+    @include radius(32);
+  }
+  
+  .modal-header {
+    background: $tableheadbg;
+    padding: size(16);
+
+    @include breakpoint(mobile768) {
+      padding: size(20) size(48);
+    }
+
+    .modal-title {
+      color: $textdark;
+      font-size: size(12);
+      font-weight: 700;
+
+      @include breakpoint(tab992) {
+        font-size: size(16);
+      }
+    }
+  }
+
+  .modal-body {
+    padding: size(16) size(16) size(48);
+
+    @include breakpoint(mobile768) {
+      padding: size(20) size(48) size(48);
+    }
+  }
+}
+
+.babyprofileform {
+  @include flex-column;
+  gap: size(16);
+
+  @include breakpoint(mobile768) {
+    gap: size(32);
+  }
+
+  .inputbox {
+    @include flex-column;
+    gap: size(8);
+
+    @include breakpoint(mobile768) {
+      gap: size(12);
+    }
+
+    .inputlabel {
+      color: $lightmoodtext;
+      font-size: size(12);
+      font-weight: 400;
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+    }
+
+    .inputfield {
+      @include setBgColor($inputbg, $black);
+      @include border(solid, 1, $btnbg);
+      @include radius(8);
+      font-size: size(12);
+      font-weight: 400;
+      @include w100;
+      height: size(36);
+      padding: size(8) size(16);
+
+      @include breakpoint(mobile768) {
+        height: size(48);
+      }
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+
+      &::placeholder {
+        color: $textplaceholder;
+      }
+    }
+  }
+
+  .babysprofile {
+    @include flex-center-vert;
+    gap: size(24);
+
+    .profilephoto {
+      @include square(60);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+
+      @include breakpoint(mobile768) {
+        @include square(80);
+      }
+    }
+  }
+
+  .submitbox {
+    margin-top: size(32);
   }
 }
