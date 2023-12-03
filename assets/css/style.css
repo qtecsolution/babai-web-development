@@ -482,6 +482,105 @@ hr {
   color: hsl(29, 100%, 50%);
 }
 
+.deliverybadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.3125rem 0.625rem;
+  border: solid 0.0625rem transparent;
+  border-radius: 2.75rem;
+  max-width: 7.5rem;
+}
+.deliverybadge .icon {
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 100%;
+}
+.deliverybadge .text {
+  color: inherit;
+  font-size: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 48rem) {
+  .deliverybadge .text {
+    font-size: 0.625rem;
+  }
+}
+
+.delivered {
+  background: rgba(38, 191, 106, 0.1);
+  color: hsl(147, 67%, 45%);
+  border-color: hsl(147, 67%, 45%);
+}
+.delivered .icon {
+  background: hsl(147, 67%, 45%);
+}
+
+.inprogress {
+  background: rgba(249, 133, 26, 0.1);
+  color: hsl(29, 92%, 46%);
+  border-color: hsl(29, 92%, 46%);
+}
+.inprogress .icon {
+  background: hsl(29, 92%, 46%);
+}
+
+.shipped {
+  background: rgba(255, 82, 144, 0.1);
+  color: hsl(338, 100%, 66%);
+  border-color: hsl(338, 100%, 66%);
+}
+.shipped .icon {
+  background: hsl(338, 100%, 66%);
+}
+
+.cancelled {
+  background: rgba(98, 94, 111, 0.1);
+  color: hsl(254, 8%, 40%);
+  border-color: hsl(254, 8%, 40%);
+}
+.cancelled .icon {
+  background: hsl(254, 8%, 40%);
+}
+
+.ordercompleted {
+  background: rgba(49, 188, 198, 0.1);
+  color: hsl(184, 60%, 48%);
+  border-color: hsl(184, 60%, 48%);
+}
+.ordercompleted .icon {
+  background: hsl(184, 60%, 48%);
+}
+
+.holdon {
+  background: rgba(55, 134, 252, 0.1);
+  color: hsl(209, 32%, 62%);
+  border-color: hsl(209, 32%, 62%);
+}
+.holdon .icon {
+  background: hsl(209, 32%, 62%);
+}
+
+.pending {
+  background: rgba(55, 134, 252, 0.1);
+  color: hsl(216, 97%, 60%);
+  border-color: hsl(216, 97%, 60%);
+}
+.pending .icon {
+  background: hsl(216, 97%, 60%);
+}
+
+.orderplaced {
+  background: rgba(159, 122, 234, 0.1);
+  color: hsl(260, 73%, 70%);
+  border-color: hsl(260, 73%, 70%);
+}
+.orderplaced .icon {
+  background: hsl(260, 73%, 70%);
+}
+
 .breadcrumb-item {
   color: hsl(225, 3%, 51%);
   font-size: 0.875rem;
@@ -3968,6 +4067,261 @@ table tr td {
 }
 .myaccount .accordion-body {
   padding: 1.25rem 0rem 0rem;
+}
+
+.historytable-row {
+  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.historytable-row:last-of-type {
+  border-bottom: 0;
+}
+.historytable-row .dividers {
+  display: flex;
+  align-items: center;
+}
+.historytable-row .dividers .dividericon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.historytable-row .dividers .divider {
+  width: calc(100% - 2.25rem);
+  height: 0.0625rem;
+  border: dotted 0.0625rem rgba(0, 0, 0, 0.1);
+}
+.historytable-row .orderinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 3.125rem;
+}
+.historytable-row .orderinfo .ordernumber {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.historytable-row .orderinfo .ordernumber .ordernum {
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+  font-weight: 700;
+}
+.historytable-row .orderinfo .date {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.historytable-row .totalprices .totalprice {
+  color: hsl(231, 100%, 6%);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.historytable-row .totalprices .totalprice .price {
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+}
+.historytable-row .totalprices .totalprice .items {
+  color: hsl(0, 0%, 0%);
+  font-size: inherit;
+  font-weight: 400;
+}
+.historytable-row .deliveryistory {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0.3125rem;
+}
+.historytable-row .deliveryistory .date {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+.historytable-row .deliveryaddress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 3.125rem;
+}
+.historytable-row .deliveryaddress .title {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.historytable-row .deliveryaddress .address {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.historytable-row .productlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.historytable-row .productlist-item {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.75rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+.historytable-row .productlist-item span {
+  color: inherit;
+  font: inherit;
+}
+.historytable-row .feedbackinfo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 100%;
+  text-align: right;
+}
+.historytable-row .btn-feedback {
+  color: hsl(140, 75%, 25%);
+  font-size: 0.75rem;
+  font-weight: 400;
+  transition: color 350ms ease-in-out;
+}
+.historytable-row .btn-feedback:not([disabled]):hover {
+  color: hsl(147, 67%, 45%);
+}
+
+.mobilehistorytable-row {
+  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 0.875rem;
+}
+.mobilehistorytable-row:last-of-type {
+  border-bottom: 0;
+}
+.mobilehistorytable-row .dividers {
+  display: flex;
+  align-items: center;
+}
+.mobilehistorytable-row .dividers .dividericon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobilehistorytable-row .dividers .divider {
+  width: calc(100% - 1.5rem);
+  height: 0.0625rem;
+  border: dotted 0.0625rem rgba(0, 0, 0, 0.1);
+}
+.mobilehistorytable-row .orderinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 1.5rem;
+}
+.mobilehistorytable-row .orderinfo .ordernumber {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  .mobilehistorytable-row .orderinfo .ordernumber {
+    font-size: 0.75rem;
+  }
+}
+.mobilehistorytable-row .orderinfo .ordernumber .ordernum {
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+  font-weight: 700;
+}
+.mobilehistorytable-row .orderinfo .date {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+.mobilehistorytable-row .totalprices .totalprice {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 48rem) {
+  .mobilehistorytable-row .totalprices .totalprice {
+    font-size: 0.75rem;
+  }
+}
+.mobilehistorytable-row .totalprices .totalprice .price {
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+}
+.mobilehistorytable-row .totalprices .totalprice .items {
+  color: hsl(0, 0%, 0%);
+  font-size: inherit;
+  font-weight: 400;
+}
+.mobilehistorytable-row .deliveryistory {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  padding-left: 1.5rem;
+}
+.mobilehistorytable-row .deliveryistory .date {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+.mobilehistorytable-row .deliveryaddress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 1.5rem;
+}
+.mobilehistorytable-row .deliveryaddress .title {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+.mobilehistorytable-row .deliveryaddress .address {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+.mobilehistorytable-row .productlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobilehistorytable-row .productlist-item {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.625rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+.mobilehistorytable-row .productlist-item span {
+  color: inherit;
+  font: inherit;
+}
+.mobilehistorytable-row .btn-feedback {
+  color: hsl(140, 75%, 25%);
+  font-size: 0.75rem;
+  font-weight: 400;
+  transition: color 350ms ease-in-out;
+}
+.mobilehistorytable-row .btn-feedback:not([disabled]):hover {
+  color: hsl(147, 67%, 45%);
+}
+.mobilehistorytable-row .bottomcontent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .settings {

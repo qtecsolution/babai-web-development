@@ -20,3 +20,100 @@
 .ctg-2 {
   @include setBgColor($warningbg, $warning);
 }
+
+.deliverybadge {
+  @include flex-center;
+  gap: size(4);
+  padding: size(5) size(10);
+  @include border(solid, 1, transparent);
+  @include radius(44);
+  max-width: size(120);
+
+  .icon {
+    @include square(7);
+    @include circle;
+  }
+
+  .text {
+    color: inherit;
+    font-size: size(8);
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include breakpoint(mobile768) {
+      font-size: size(10);
+    }
+  }
+}
+
+.delivered {
+  @include setBgColor($deliveredbg, $deliveredtext);
+  border-color: $deliveredtext;
+
+  .icon {
+    background: $deliveredtext;
+  }
+}
+
+.inprogress {
+  @include setBgColor($progressbg, $progresstext);
+  border-color: $progresstext;
+
+  .icon {
+    background: $progresstext;
+  }
+}
+
+.shipped {
+  @include setBgColor($shippedbg, $shippedtext);
+  border-color: $shippedtext;
+
+  .icon {
+    background: $shippedtext;
+  }
+}
+
+.cancelled {
+  @include setBgColor($cancelledbg, $cancelledtext);
+  border-color: $cancelledtext;
+
+  .icon {
+    background: $cancelledtext;
+  }
+}
+
+.ordercompleted {
+  @include setBgColor($ordercompletedbg, $ordercompletedtext);
+  border-color: $ordercompletedtext;
+
+  .icon {
+    background: $ordercompletedtext;
+  }
+}
+
+.holdon {
+  @include setBgColor($holdbg, $holdtext);
+  border-color: $holdtext;
+
+  .icon {
+    background: $holdtext;
+  }
+}
+
+.pending {
+  @include setBgColor($pendingbg, $pendingtext);
+  border-color: $pendingtext;
+
+  .icon {
+    background: $pendingtext;
+  }
+}
+
+.orderplaced {
+  @include setBgColor($orderplacedbg, $orderplacedtext);
+  border-color: $orderplacedtext;
+
+  .icon {
+    background: $orderplacedtext;
+  }
+}

@@ -35,6 +35,24 @@ $textfooter: hsl(0, 0%, 26%); //#424242
 $titlecolor: hsl(358, 85%, 53%); //#ED2228
 $linktext: hsl(240, 8%, 21%); //#32323B
 
+// BADGE-COLORS
+$deliveredtext: hsl(147, 67%, 45%); //#26BF6A
+$deliveredbg: rgba(38, 191, 106, 0.10);
+$progresstext: hsl(29, 92%, 46%); //#E2720A
+$progressbg: rgba(249, 133, 26, 0.10);
+$holdtext: hsl(209, 32%, 62%); //#80A0BD
+$holdbg: rgba(55, 134, 252, 0.10);
+$pendingtext: hsl(216, 97%, 60%); //#3786FC
+$pendingbg: rgba(55, 134, 252, 0.10);
+$orderplacedtext: hsl(260, 73%, 70%); //#9F7AEA
+$orderplacedbg: rgba(159, 122, 234, 0.10);
+$cancelledtext: hsl(254, 8%, 40%); //#625E6F
+$cancelledbg: rgba(98, 94, 111, 0.10);
+$shippedtext: hsl(338, 100%, 66%); //#FF5290
+$shippedbg: rgba(255, 82, 144, 0.10);
+$ordercompletedtext: hsl(184, 60%, 48%); //#31BCC6
+$ordercompletedbg: rgba(49, 188, 198, 0.10);
+
 
 $danger: hsl(0, 91%, 54%); //#F51F1F
 $success: hsl(140, 75%, 25%); //#107231

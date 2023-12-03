@@ -74,3 +74,281 @@
     }
   }
 }
+
+.historytable {
+  &-row {
+    @include border-single(bottom, solid, 1, rgba($black, 0.10));
+    @include flex-column;
+    padding: size(32);
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    .dividers {
+      @include flex-center-vert;
+
+      .dividericon {
+        @include square(36);
+        @include circle;
+        @include flex-center;
+      }
+
+      .divider {
+        width: calc(100% - size(36));
+        height: size(1);
+        @include border(dotted, 1, rgba($black, 0.10));
+      }
+    }
+
+    .orderinfo {
+      @include flex-column;
+      gap: size(4);
+      padding-left: size(50);
+
+      .ordernumber {
+        color: $textdark;
+        font-size: size(14);
+        font-weight: 600;
+
+        .ordernum {
+          color: $textprice;
+          font: inherit;
+          font-weight: 700;
+        }
+      }
+
+      .date {
+        color: $textplaceholder;
+        font-size: size(12);
+        font-weight: 400;
+      }
+    }
+
+    .totalprices {
+      .totalprice {
+        color: $textdark;
+        font-size: size(16);
+        font-weight: 700;
+
+        .price {
+          color: $textprice;
+          font: inherit;
+        }
+
+        .items {
+          color: $black;
+          font-size: inherit;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .deliveryistory {
+      @include flex-column;
+      align-items: flex-end;
+      text-align: right;
+      gap: size(5);
+
+      .date {
+        color: $textplaceholder;
+        font-size: size(10);
+        font-weight: 400;
+      }
+    }
+
+    .deliveryaddress {
+      @include flex-column;
+      gap: size(4);
+      padding-left: size(50);
+
+      .title {
+        color: $textdark;
+        font-size: size(12);
+        font-weight: 600;
+      }
+      
+      .address {
+        color: $textplaceholder;
+        font-size: size(12);
+        font-weight: 400;
+      }
+    }
+
+    .productlist {
+      @include list-vertical;
+
+      &-item {
+        color: $textplaceholder;
+        font-size: size(12);
+        font-weight: 400;
+        @include flex-center-vert;
+
+        span {
+          color: inherit;
+          font: inherit;
+        }
+      }
+    }
+
+    .feedbackinfo {
+      @include flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      @include h100;
+      text-align: right;
+    }
+
+    .btn-feedback {
+      color: $success;
+      font-size: size(12);
+      font-weight: 400;
+      @include transitionscolor;
+
+      @include hover {
+        color: $deliveredtext;
+      }
+    }
+  }
+}
+
+.mobilehistorytable {
+  &-row {
+    @include border-single(bottom, solid, 1, rgba($black, 0.10));
+    @include flex-column;
+    padding: size(14);
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    .dividers {
+      @include flex-center-vert;
+
+      .dividericon {
+        @include square(24);
+        @include circle;
+        @include flex-center;
+      }
+
+      .divider {
+        width: calc(100% - size(24));
+        height: size(1);
+        @include border(dotted, 1, rgba($black, 0.10));
+      }
+    }
+
+    .orderinfo {
+      @include flex-column;
+      gap: size(4);
+      padding-left: size(24);
+
+      .ordernumber {
+        color: $textdark;
+        font-size: size(11);
+        font-weight: 600;
+
+        @include breakpoint(mobile768) {
+          font-size: size(12);
+        }
+
+        .ordernum {
+          color: $textprice;
+          font: inherit;
+          font-weight: 700;
+        }
+      }
+
+      .date {
+        color: $textplaceholder;
+        font-size: size(10);
+        font-weight: 400;
+      }
+    }
+
+    .totalprices {
+      .totalprice {
+        color: $textdark;
+        font-size: size(11);
+        font-weight: 700;
+
+        @include breakpoint(mobile768) {
+          font-size: size(12);
+        }
+
+        .price {
+          color: $textprice;
+          font: inherit;
+        }
+
+        .items {
+          color: $black;
+          font-size: inherit;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .deliveryistory {
+      @include flex-column;
+      gap: size(5);
+      padding-left: size(24);
+
+      .date {
+        color: $textplaceholder;
+        font-size: size(10);
+        font-weight: 400;
+      }
+    }
+
+    .deliveryaddress {
+      @include flex-column;
+      gap: size(4);
+      padding-left: size(24);
+
+      .title {
+        color: $textdark;
+        font-size: size(10);
+        font-weight: 600;
+      }
+      
+      .address {
+        color: $textplaceholder;
+        font-size: size(10);
+        font-weight: 400;
+      }
+    }
+
+    .productlist {
+      @include list-vertical;
+
+      &-item {
+        color: $textplaceholder;
+        font-size: size(10);
+        font-weight: 400;
+        @include flex-center-vert;
+
+        span {
+          color: inherit;
+          font: inherit;
+        }
+      }
+    }
+
+    .btn-feedback {
+      color: $success;
+      font-size: size(12);
+      font-weight: 400;
+      @include transitionscolor;
+
+      @include hover {
+        color: $deliveredtext;
+      }
+    }
+
+    .bottomcontent {
+      @include flex-column;
+      gap: size(16);
+    }
+  }
+}
