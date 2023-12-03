@@ -1,0 +1,49 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.profilelist {
+  &-item {
+    @include border-single(bottom, solid, 1, rgba($black, 0.10));
+    padding: size(16) size(20);
+
+    @include breakpoint(mobile768) {
+      padding: size(18) size(32) size(20);
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+
+  .babyprofile {
+    @include flex;
+    gap: size(24);
+
+    &-thumbnail {
+      @include square(64);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+    }
+
+    &-details {
+      p {
+        color: $black;
+        font-size: size(12);
+        font-weight: 400;
+
+        @include breakpoint(mobile768) {
+          font-size: size(14);
+        }
+      }
+    }
+  }
+  
+  .actions {
+    padding-left: size(84);
+
+    @include breakpoint(mobile768) {
+      padding-left: size(0);
+    }
+  }
+}

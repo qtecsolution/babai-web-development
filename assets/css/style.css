@@ -3895,6 +3895,50 @@ table tr td {
   font-weight: 400;
 }
 
+.profilelist-item {
+  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .profilelist-item {
+    padding: 1.125rem 2rem 1.25rem;
+  }
+}
+.profilelist-item:last-of-type {
+  border-bottom: 0;
+}
+.profilelist .babyprofile {
+  display: flex;
+  gap: 1.5rem;
+}
+.profilelist .babyprofile-thumbnail {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.profilelist .babyprofile-details p {
+  color: hsl(0, 0%, 0%);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 48rem) {
+  .profilelist .babyprofile-details p {
+    font-size: 0.875rem;
+  }
+}
+.profilelist .actions {
+  padding-left: 5.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .profilelist .actions {
+    padding-left: 0rem;
+  }
+}
+
 .errormain {
   display: flex;
   align-items: center;
