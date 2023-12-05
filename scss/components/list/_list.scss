@@ -122,6 +122,67 @@
       }
     }
   }
+
+  .accordion {
+    &-item {
+      border: none;
+      @include radius(0);
+
+      &:first-of-type,
+      &:last-of-type {
+        .accordion-button {
+          @include radius(0);
+        }
+      }
+    }
+
+    &-header {
+      @include flex-center-vert;
+      @include border-single(bottom, solid, 1, $authborder);
+      padding: size(12) size(16) size(12) size(24);
+
+      .categorylink {
+        color: $lightmoodtext;
+        font-size: size(14);
+        font-weight: 400;
+      }  
+    }
+
+    &-button {
+      border: none;
+      @include radius(0);
+      box-shadow: none;
+      outline: none;
+
+      &:not(.collapsed) {
+        border: none;
+        @include radius(0);
+        background: transparent;
+        color: $black;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+.mobsubsublist {
+  @include list-vertical;
+
+  &-link {
+    @include border-single(bottom, solid, 1, $authborder);
+    color: $lightmoodtext;
+    font-size: size(14);
+    font-weight: 400;
+    @include flex-center-between;
+    padding: size(12) size(16) size(12) size(24);
+    @include transitionsall;
+
+    @include hover {
+      border-color: $primary;
+      color: $primary;
+    }
+  }
 }
 
 .filterlist {

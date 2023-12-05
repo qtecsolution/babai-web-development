@@ -2820,6 +2820,61 @@ table tr td {
 .mobcategorylist-link:not([disabled]):hover .linkinfo .usericon svg path {
   stroke: hsl(358, 86%, 43%);
 }
+.mobcategorylist .accordion-item {
+  border: none;
+  border-radius: 0rem;
+}
+.mobcategorylist .accordion-item:first-of-type .accordion-button, .mobcategorylist .accordion-item:last-of-type .accordion-button {
+  border-radius: 0rem;
+}
+.mobcategorylist .accordion-header {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 0.0625rem hsl(0, 0%, 91%);
+  padding: 0.75rem 1rem 0.75rem 1.5rem;
+}
+.mobcategorylist .accordion-header .categorylink {
+  color: hsl(228, 5%, 38%);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.mobcategorylist .accordion-button {
+  border: none;
+  border-radius: 0rem;
+  box-shadow: none;
+  outline: none;
+}
+.mobcategorylist .accordion-button:not(.collapsed) {
+  border: none;
+  border-radius: 0rem;
+  background: transparent;
+  color: hsl(0, 0%, 0%);
+  box-shadow: none;
+  outline: none;
+}
+
+.mobsubsublist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobsubsublist-link {
+  border-bottom: solid 0.0625rem hsl(0, 0%, 91%);
+  color: hsl(228, 5%, 38%);
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem 0.75rem 1.5rem;
+  transition: all 350ms ease-in-out;
+}
+.mobsubsublist-link:not([disabled]):hover {
+  border-color: hsl(358, 86%, 43%);
+  color: hsl(358, 86%, 43%);
+}
 
 .filterlist {
   margin: 0;
