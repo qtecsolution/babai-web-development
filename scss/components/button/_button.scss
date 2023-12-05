@@ -664,3 +664,34 @@ button,
     }
   }
 }
+
+.btn-print {
+  background: $white;
+  @include radius(13);
+  width: size(50);
+  height: size(46);
+  @include flex-center;
+  padding: size(11) size(13);
+}
+
+.btn-text {
+  font-size: size(12);
+  font-weight: 400;
+  @include transitionscolor;
+
+  &.viewprofile {
+    color: $secondetitle;
+
+    @include hover {
+      color: $primary;
+    }
+  }
+
+  &.openmap {
+    color: $success;
+
+    @include hover {
+      color: $deliveredtext;
+    }
+  }
+}

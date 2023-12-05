@@ -134,9 +134,9 @@
   backdrop-filter: blur(size(2));
   @include radius(24);
   width: size(270);
-  padding: size(16);
   max-height: size(296);
-  overflow-x: hidden;
+  padding: size(16);
+  position: relative;
 
   @include breakpoint(desktop1200) {
     min-height: size(408);
@@ -203,6 +203,16 @@
       background: $footerbg;
     }
   }
+
+  &-item {
+    position: relative;
+
+    @include hover {
+      .menubox {
+        display: block;
+      }
+    }
+  }
 }
 
 .accountlist {
@@ -239,6 +249,104 @@
       .accountlist-link {
         border-bottom: 0;
       }
+    }
+  }
+}
+
+.menubox {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  @include w100;
+  display: none;
+  z-index: 100;
+
+  .submenubox {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    @include w100;
+    display: none;
+    z-index: 100;
+  }
+}
+
+.submenu,
+.subsubmenu {
+  background: $white;
+  z-index: 100;
+  background: rgba($white, 0.60);
+  backdrop-filter: blur(size(2));
+  @include radius(24);
+  padding: size(16);
+  width: size(270);
+}
+
+.subctglist {
+  max-height: size(296);
+  padding: size(48);
+
+  @include list-vertical;
+  gap: size(8);
+
+  &-link {
+    background: $white;
+    @include radius(12);
+    @include flex-center-between;
+    padding: size(8) size(16);
+    @include transitionsall;
+    height: size(48);
+
+    .text {
+      color: $black;
+      font-size: size(13);
+      font-weight: 400;
+
+      @include breakpoint(desktop1600) {
+        font-size: size(15);
+      }
+    }
+
+    @include hover {
+      background: $footerbg;
+    }
+  }
+  
+  &-item {
+    position: relative;
+
+    @include hover {
+      .submenubox {
+        display: block;
+      }
+    }
+  }
+}
+
+.subsubctglist {
+  max-height: size(296);
+  padding: size(48);
+
+  @include list-vertical;
+  gap: size(8);
+
+  &-link {
+    background: $white;
+    @include radius(12);
+    @include flex-center-between;
+    padding: size(8) size(16);
+    color: $black;
+    font-size: size(13);
+    font-weight: 400;
+    height: size(48);
+    @include transitionsall;
+
+    @include breakpoint(desktop1600) {
+      font-size: size(15);
+    }
+
+    @include hover {
+      background: $footerbg;
     }
   }
 }

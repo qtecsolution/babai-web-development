@@ -1,2 +1,265 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.orderdetailshead {
+  @include flex-center-between;
+  @include w100;
+
+  .left {
+    @include flex-column;
+
+    .ordernumber {
+      color: $textdark;
+      font-size: size(12);
+      font-weight: 600;
+
+      @include breakpoint(mobile768) {
+        font-size: size(14);
+      }
+
+      @include breakpoint(tab992) {
+        font-size: size(16);
+      }
+
+      span {
+        color: $textprice;
+        font: inherit;
+      }
+    }
+
+    .dateinfo {
+      @include flex-center-vert;
+      gap: size(6);
+
+      .icon {
+        @include square(16);
+        @include flex-center;
+        overflow: hidden;
+
+        @include breakpoint(tab992) {
+          @include square(20);
+        }
+      }
+    }
+
+    .date {
+      color: $textplaceholder;
+      font-size: size(10);
+      font-weight: 400;
+
+      @include breakpoint(mobile768) {
+        font-size: size(12);
+      }
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+    }
+  }
+
+  .right {
+    @include flex-center-vert;
+
+    @include breakpoint(tab992) {
+      gap: size(20);
+    }
+
+    .totalprices {
+      .totalprice {
+        color: $textdark;
+        font-size: size(10);
+        font-weight: 700;
+
+        @include breakpoint(mobile768) {
+          font-size: size(12);
+        }
+
+        @include breakpoint(tab992) {
+          font-size: size(14);
+        }
+        
+        @include breakpoint(desktop1200) {
+          font-size: size(16);
+        }
+
+        .price {
+          color: $textprice;
+          font: inherit;
+        }
+
+        .items {
+          color: $black;
+          font-size: inherit;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.customerdelivery {
+  @include border-single(bottom, solid, 1, rgba($black, 0.1));
+  padding: size(24) size(20);
+
+  @include breakpoint(tab992) {
+    padding: size(40) size(32);
+  }
+}
+
+.cusdelinfo {
+  @include flex;
+  gap: size(8);
+
+  .icon {
+    @include square(34);
+    @include circle;
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  .info {
+    @include flex-column;
+    gap: size(12);
+    width: calc(100% - size(42));
+
+    .titleuserinfo {
+      @include flex-column;
+      gap: size(6);
+
+      .title {
+        color: $black;
+        font-size: size(14);
+        font-weight: 600;
+      }
+
+      .userinfo {
+        @include flex-column;
+        gap: size(8);
+
+        p {
+          color: $textplaceholder;
+          font-size: size(12);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.orderstatus {
+  @include flex-column;
+  gap: size(32);
+  padding: size(24) size(32) size(36);
+
+  &-header {
+    @include flex-center-between;
+
+    .title {
+      color: $textdark;
+      font-size: size(14);
+      font-weight: 500;
+    }
+
+    .rightinfo {
+      @include flex-column;
+      gap: size(4);
+
+      .deliverybadge {
+        .text {
+          font-size: size(12);
+        }
+      }
+
+      .date {
+        color: $textplaceholder;
+        font-size: size(10);
+        font-weight: 400;
+  
+        @include breakpoint(mobile768) {
+          font-size: size(12);
+        }
+      }
+    }
+  }
+}
+
+.statusinfo {
+  @include border(solid, 1, $feedbackinptubg);
+  @include radius(8);
+  @include flex-column;
+  gap: size(16);
+  padding: size(10);
+  
+  @include breakpoint(mobile768) {
+    padding: size(16);
+  }
+
+  &-header {
+    span {
+      font-size: size(12);
+      font-weight: 400;
+    }
+
+    .date {
+      color: $textplaceholder;
+    }
+
+    .text {
+      color: $textdark;
+    }
+  }
+
+  &-body {
+    @include flex-center;
+  }
+}
+
+.historytable {
+  &-header {
+    @include flex-end;
+    gap: size(20);
+    @include border-single(bottom, solid, 1, rgba($black, 0.1));
+    padding: 0 size(24) size(16);
+
+    .support {
+      @include flex-center-vert;
+      gap: size(8);
+
+      .title {
+        color: $black;
+        font-family: $kohinoorbangla;
+        font-size: size(11);
+        font-weight: 500;
+      }
+
+      .supportlink {
+        @include flex-center-vert;
+        gap: size(4);
+
+        .icon {
+          @include square(14);
+          @include flex-center;
+          overflow: hidden;
+        }
+
+        .text {
+          color: $lightmoodtext;
+          font-family: $kohinoorbangla;
+          font-size: size(11);
+          font-weight: 500;
+        }
+
+        @include hover {
+          .text {
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .btn-feedback {
+      font-size: size(11);
+      margin-top: size(-4);
+    }
+  }
+}

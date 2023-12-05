@@ -1177,6 +1177,35 @@ button:focus,
   color: hsl(358, 86%, 43%);
 }
 
+.btn-print {
+  background: hsl(0, 0%, 100%);
+  border-radius: 0.8125rem;
+  width: 3.125rem;
+  height: 2.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6875rem 0.8125rem;
+}
+
+.btn-text {
+  font-size: 0.75rem;
+  font-weight: 400;
+  transition: color 350ms ease-in-out;
+}
+.btn-text.viewprofile {
+  color: hsl(230, 51%, 18%);
+}
+.btn-text.viewprofile:not([disabled]):hover {
+  color: hsl(358, 86%, 43%);
+}
+.btn-text.openmap {
+  color: hsl(140, 75%, 25%);
+}
+.btn-text.openmap:not([disabled]):hover {
+  color: hsl(147, 67%, 45%);
+}
+
 .cardcart {
   display: flex;
   align-items: center;
@@ -2807,9 +2836,9 @@ table tr td {
           backdrop-filter: blur(0.125rem);
   border-radius: 1.5rem;
   width: 16.875rem;
-  padding: 1rem;
   max-height: 18.5rem;
-  overflow-x: hidden;
+  padding: 1rem;
+  position: relative;
 }
 @media screen and (min-width: 75rem) {
   .desktopnav {
@@ -2886,6 +2915,12 @@ table tr td {
 .desktoplist-link:not([disabled]):hover {
   background: hsl(13, 33%, 95%);
 }
+.desktoplist-item {
+  position: relative;
+}
+.desktoplist-item:not([disabled]):hover .menubox {
+  display: block;
+}
 
 .accountlist {
   margin: 0;
@@ -2924,6 +2959,107 @@ table tr td {
 }
 .accountlist-item:last-of-type .accountlist-link {
   border-bottom: 0;
+}
+
+.menubox {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  display: none;
+  z-index: 100;
+}
+.menubox .submenubox {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  display: none;
+  z-index: 100;
+}
+
+.submenu,
+.subsubmenu {
+  background: hsl(0, 0%, 100%);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(0.125rem);
+          backdrop-filter: blur(0.125rem);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  width: 16.875rem;
+}
+
+.subctglist {
+  max-height: 18.5rem;
+  padding: 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.subctglist-link {
+  background: hsl(0, 0%, 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  transition: all 350ms ease-in-out;
+  height: 3rem;
+}
+.subctglist-link .text {
+  color: hsl(0, 0%, 0%);
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 100rem) {
+  .subctglist-link .text {
+    font-size: 0.9375rem;
+  }
+}
+.subctglist-link:not([disabled]):hover {
+  background: hsl(13, 33%, 95%);
+}
+.subctglist-item {
+  position: relative;
+}
+.subctglist-item:not([disabled]):hover .submenubox {
+  display: block;
+}
+
+.subsubctglist {
+  max-height: 18.5rem;
+  padding: 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.subsubctglist-link {
+  background: hsl(0, 0%, 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: hsl(0, 0%, 0%);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  height: 3rem;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 100rem) {
+  .subsubctglist-link {
+    font-size: 0.9375rem;
+  }
+}
+.subsubctglist-link:not([disabled]):hover {
+  background: hsl(13, 33%, 95%);
 }
 
 .pagination {
@@ -3279,6 +3415,10 @@ table tr td {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.carousel-inner {
+  overflow: visible;
 }
 
 .homelinks {
@@ -4525,6 +4665,267 @@ table tr td {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.orderdetailshead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.orderdetailshead .left {
+  display: flex;
+  flex-direction: column;
+}
+.orderdetailshead .left .ordernumber {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  .orderdetailshead .left .ordernumber {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .orderdetailshead .left .ordernumber {
+    font-size: 1rem;
+  }
+}
+.orderdetailshead .left .ordernumber span {
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+}
+.orderdetailshead .left .dateinfo {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.orderdetailshead .left .dateinfo .icon {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media screen and (min-width: 62rem) {
+  .orderdetailshead .left .dateinfo .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+.orderdetailshead .left .date {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 48rem) {
+  .orderdetailshead .left .date {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .orderdetailshead .left .date {
+    font-size: 0.875rem;
+  }
+}
+.orderdetailshead .right {
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 62rem) {
+  .orderdetailshead .right {
+    gap: 1.25rem;
+  }
+}
+.orderdetailshead .right .totalprices .totalprice {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 48rem) {
+  .orderdetailshead .right .totalprices .totalprice {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .orderdetailshead .right .totalprices .totalprice {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .orderdetailshead .right .totalprices .totalprice {
+    font-size: 1rem;
+  }
+}
+.orderdetailshead .right .totalprices .totalprice .price {
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+}
+.orderdetailshead .right .totalprices .totalprice .items {
+  color: hsl(0, 0%, 0%);
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.customerdelivery {
+  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1.25rem;
+}
+@media screen and (min-width: 62rem) {
+  .customerdelivery {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.cusdelinfo {
+  display: flex;
+  gap: 0.5rem;
+}
+.cusdelinfo .icon {
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.cusdelinfo .info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: calc(100% - 2.625rem);
+}
+.cusdelinfo .info .titleuserinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.cusdelinfo .info .titleuserinfo .title {
+  color: hsl(0, 0%, 0%);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.cusdelinfo .info .titleuserinfo .userinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cusdelinfo .info .titleuserinfo .userinfo p {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.orderstatus {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem 2rem 2.25rem;
+}
+.orderstatus-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.orderstatus-header .title {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.orderstatus-header .rightinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.orderstatus-header .rightinfo .deliverybadge .text {
+  font-size: 0.75rem;
+}
+.orderstatus-header .rightinfo .date {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 48rem) {
+  .orderstatus-header .rightinfo .date {
+    font-size: 0.75rem;
+  }
+}
+
+.statusinfo {
+  border: solid 0.0625rem hsl(0, 0%, 85%);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.625rem;
+}
+@media screen and (min-width: 48rem) {
+  .statusinfo {
+    padding: 1rem;
+  }
+}
+.statusinfo-header span {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.statusinfo-header .date {
+  color: hsl(225, 3%, 51%);
+}
+.statusinfo-header .text {
+  color: hsl(231, 100%, 6%);
+}
+.statusinfo-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.historytable-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  border-bottom: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  padding: 0 1.5rem 1rem;
+}
+.historytable-header .support {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.historytable-header .support .title {
+  color: hsl(0, 0%, 0%);
+  font-family: "Kohinoor Bangla";
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+.historytable-header .support .supportlink {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.historytable-header .support .supportlink .icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.historytable-header .support .supportlink .text {
+  color: hsl(228, 5%, 38%);
+  font-family: "Kohinoor Bangla";
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+.historytable-header .support .supportlink:not([disabled]):hover .text {
+  color: hsl(0, 0%, 0%);
+}
+.historytable-header .btn-feedback {
+  font-size: 0.6875rem;
+  margin-top: -0.25rem;
 }
 
 .settings {

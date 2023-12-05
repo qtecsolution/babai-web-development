@@ -16,6 +16,12 @@
   }
 }
 
+.carousel {
+  &-inner {
+    overflow: visible;
+  }
+}
+
 .homelinks {
   padding: size(32) size(0);
 
