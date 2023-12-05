@@ -503,7 +503,7 @@ hr {
   font-weight: 500;
   text-transform: uppercase;
 }
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 87.5rem) {
   .deliverybadge .text {
     font-size: 0.625rem;
   }
@@ -2240,6 +2240,160 @@ input[type=search]::-webkit-search-results-decoration:focus {
   margin-top: 2rem;
 }
 
+.feedbackmodal .modal-header {
+  background: hsl(0, 38%, 95%);
+  padding: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .feedbackmodal .modal-header {
+    padding: 1.25rem;
+  }
+}
+.feedbackmodal .modal-header .modal-title {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 62rem) {
+  .feedbackmodal .modal-header .modal-title {
+    font-size: 1rem;
+  }
+}
+.feedbackmodal .modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 1rem 1.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .feedbackmodal .modal-body {
+    gap: 1.125rem;
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .feedbackmodal .modal-body {
+    gap: 1.5rem;
+  }
+}
+.feedbackmodal .modal-body .feedbackinfo {
+  border: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+}
+@media screen and (min-width: 48rem) {
+  .feedbackmodal .modal-body .feedbackinfo {
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+}
+.feedbackmodal .modal-body .feedbackinfo .leftinfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+@media screen and (min-width: 48rem) {
+  .feedbackmodal .modal-body .feedbackinfo .leftinfo {
+    gap: 1.125rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .feedbackmodal .modal-body .feedbackinfo .leftinfo {
+    gap: 1.5rem;
+  }
+}
+.feedbackmodal .modal-body .feedbackinfo .leftinfo .icon {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media screen and (min-width: 48rem) {
+  .feedbackmodal .modal-body .feedbackinfo .leftinfo .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .feedbackmodal .modal-body .feedbackinfo .leftinfo .icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+.feedbackmodal .modal-body .feedbackinfo .leftinfo .info {
+  display: flex;
+  flex-direction: column;
+}
+.feedbackmodal .modal-body .feedbackinfo .leftinfo .info .ordernumber {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  .feedbackmodal .modal-body .feedbackinfo .leftinfo .info .ordernumber {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .feedbackmodal .modal-body .feedbackinfo .leftinfo .info .ordernumber {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .feedbackmodal .modal-body .feedbackinfo .leftinfo .info .ordernumber {
+    font-size: 1rem;
+  }
+}
+.feedbackmodal .modal-body .feedbackinfo .leftinfo .info .ordernumber span {
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+}
+.feedbackmodal .modal-body .feedbackinfo .leftinfo .info .date {
+  color: hsl(225, 3%, 51%);
+  font-size: 0.6875rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 62rem) {
+  .feedbackmodal .modal-body .feedbackinfo .leftinfo .info .date {
+    font-size: 0.8125rem;
+  }
+}
+.feedbackmodal .modal-body .feedbackinfo .rightinfo .totalprices .totalprice {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 48rem) {
+  .feedbackmodal .modal-body .feedbackinfo .rightinfo .totalprices .totalprice {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .feedbackmodal .modal-body .feedbackinfo .rightinfo .totalprices .totalprice {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .feedbackmodal .modal-body .feedbackinfo .rightinfo .totalprices .totalprice {
+    font-size: 1rem;
+  }
+}
+.feedbackmodal .modal-body .feedbackinfo .rightinfo .totalprices .totalprice .price {
+  color: hsl(359, 83%, 53%);
+  font: inherit;
+}
+.feedbackmodal .modal-body .feedbackinfo .rightinfo .totalprices .totalprice .items {
+  color: hsl(0, 0%, 0%);
+  font-size: inherit;
+  font-weight: 400;
+}
+
 .tooltip-inner {
   font-size: 0.75rem;
 }
@@ -2463,6 +2617,55 @@ table tr td {
   justify-content: center;
   overflow: hidden;
   padding: 0.75rem;
+}
+
+.feedbackform {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.feedbackform .feedbackbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.feedbackform .feedbackbox .feedbacklabel {
+  font-size: 0.75rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 500;
+}
+@media screen and (min-width: 75rem) {
+  .feedbackform .feedbackbox .feedbacklabel {
+    font-size: 1rem;
+  }
+}
+.feedbackform .feedbackbox .feedbackinput {
+  background: rgba(217, 217, 217, 0.1);
+  color: hsl(0, 0%, 0%);
+  border: solid 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: hsl(0, 0%, 0%);
+  font-weight: 400;
+  padding: 1rem;
+}
+@media screen and (min-width: 75rem) {
+  .feedbackform .feedbackbox .feedbackinput {
+    font-size: 1rem;
+  }
+}
+.feedbackform .submitfeedbackbox {
+  display: flex;
+  justify-content: flex-end;
+}
+.feedbackform .submitfeedbackbox .btn-submit {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 75rem) {
+  .feedbackform .submitfeedbackbox .btn-submit {
+    font-size: 1rem;
+  }
 }
 
 .iconlist {

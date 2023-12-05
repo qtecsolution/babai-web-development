@@ -30,3 +30,50 @@
     padding: size(12);
   }
 }
+
+.feedbackform {
+  @include flex-column;
+  gap: size(16);
+
+  .feedbackbox {
+    @include flex-column;
+    gap: size(8);
+
+    .feedbacklabel {
+      font-size: size(12);
+      color: $black;
+      font-weight: 500;
+
+      @include breakpoint(desktop1200) {
+        font-size: size(16);
+      }
+    }
+
+    .feedbackinput {
+      @include setBgColor(rgba($feedbackinptubg, 0.10), $black);
+      @include border(solid, 1, rgba($black, 0.10));
+      @include radius(8);
+      font-size: size(14);
+      color: $black;
+      font-weight: 400;
+      padding: size(16);
+
+      @include breakpoint(desktop1200) {
+        font-size: size(16);
+      }
+    }
+  }
+
+  .submitfeedbackbox {
+    @include flex-end;
+
+    .btn-submit {
+      font-size: size(12);
+      font-weight: 600;
+
+      @include breakpoint(desktop1200) {
+        font-size: size(16);
+      }
+    }
+  }
+}

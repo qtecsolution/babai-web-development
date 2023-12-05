@@ -209,3 +209,150 @@
     margin-top: size(32);
   }
 }
+
+.feedbackmodal { 
+  .modal-header {
+    background: $tableheadbg;
+    padding: size(16);
+
+    @include breakpoint(mobile768) {
+      padding: size(20);
+    }
+
+    .modal-title {
+      color: $textdark;
+      font-size: size(12);
+      font-weight: 700;
+
+      @include breakpoint(tab992) {
+        font-size: size(16);
+      }
+    }
+  }
+
+  .modal-body {
+    @include flex-column;
+    gap: size(12);
+    padding: size(16) size(16) size(24);
+
+    @include breakpoint(mobile768) {
+      gap: size(18);
+      padding: size(20) size(20) size(24);
+    }
+
+    @include breakpoint(tab992) {
+      gap: size(24);
+    }
+
+    .feedbackinfo {
+      @include border(solid, 1, rgba($black, 0.1));
+      @include radius(6);
+      @include flex-center-between;
+      padding: size(12);
+      
+      @include breakpoint(mobile768) {
+        @include radius(12);
+        padding: size(24);
+      }
+
+      .leftinfo {
+        @include flex-center-vert;
+        gap: size(12);
+
+        @include breakpoint(mobile768) {
+          gap: size(18);
+        }
+
+        @include breakpoint(tab992) {
+          gap: size(24);
+        }
+
+        .icon {
+          @include square(16);
+          @include circle;
+          @include flex-center;
+          overflow: hidden;
+
+          @include breakpoint(mobile768) {
+            @include square(24);
+          }
+
+          @include breakpoint(tab992) {
+            @include square(36);
+          }
+        }
+
+        .info {
+          @include flex-column;
+
+          .ordernumber {
+            color: $textdark;
+            font-size: size(10);
+            font-weight: 600;
+
+            @include breakpoint(mobile768) {
+              font-size: size(12);
+            }
+
+            @include breakpoint(tab992) {
+              font-size: size(14);
+            }
+            
+            @include breakpoint(desktop1200) {
+              font-size: size(16);
+            }
+
+            span {
+              color: $textprice;
+              font: inherit;
+            }
+          }
+
+          .date {
+            color: $textplaceholder;
+            font-size: size(11);
+            font-weight: 400;
+
+            @include breakpoint(tab992) {
+              font-size: size(13);
+            }
+          }
+        }
+      }
+
+      .rightinfo {
+        .totalprices {
+          .totalprice {
+            color: $textdark;
+            font-size: size(10);
+            font-weight: 700;
+
+            @include breakpoint(mobile768) {
+              font-size: size(12);
+            }
+
+            @include breakpoint(tab992) {
+              font-size: size(14);
+            }
+            
+            @include breakpoint(desktop1200) {
+              font-size: size(16);
+            }
+    
+            .price {
+              color: $textprice;
+              font: inherit;
+            }
+    
+            .items {
+              color: $black;
+              font-size: inherit;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
