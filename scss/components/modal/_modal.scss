@@ -137,6 +137,24 @@
         color: $textplaceholder;
       }
     }
+
+    .addressfield {
+      @include setBgColor($inputbg, $black);
+      @include border(solid, 1, $btnbg);
+      @include radius(8);
+      font-size: size(12);
+      font-weight: 400;
+      @include w100;
+      padding: size(8) size(16);
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+
+      &::placeholder {
+        color: $textplaceholder;
+      }
+    }
   }
 
   .babysprofile {
@@ -354,5 +372,51 @@
       }
     }
   }
+}
 
+.deleteconfirm {
+  @include flex-center-column;
+  gap: size(24);
+  text-align: center;
+  padding: size(24);
+
+  &-header {
+    .deletetitle {
+      color: $bg-color-dark;
+      font-family: $kohinoorbangla;
+      font-size: size(16);
+      font-weight: 600;
+    }
+  }
+
+  &-body {
+    @include flex-end;
+    gap: size(16);
+
+    button {
+      font-family: $kohinoorbangla;
+      font-size: size(14);
+      font-weight: 600;
+      @include radius(8);
+      padding: size(0);
+      height: size(36);
+      padding-inline: size(32);
+    }
+
+    .btn-yes {
+      @include setBgColor($deliveredtext, $white);
+      
+      @include hover {
+        @include setBgColor($success, $white);
+      }
+    }
+
+    .btn-close {
+      @include setBgColor($textprice, $white);
+      
+      @include hover {
+        @include setBgColor($primary, $white);
+      }
+    }
+  }
 }
