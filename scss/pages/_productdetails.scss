@@ -1,3 +1,109 @@
 @use "../global" as *;
 @use "../partials" as *;
 
+.productdetail {
+  &-content {
+    @include flex-column;
+    gap: size(24);
+  }
+
+  .breadcrumb {
+    &-item {
+      color: $textplaceholder;
+      font-size: size(9);
+      font-weight: 400;
+      text-transform: uppercase;
+
+      @include breakpoint(mobile768) {
+        font-size: size(12);
+      }
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+  
+      a {
+        color: inherit;
+        font: inherit;
+      }
+  
+      &:hover:not(.active) {
+        color: $textdark;
+        font-weight: 600;
+      }
+  
+      &.active {
+        color: $textdark;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .productslider {
+    overflow: hidden;
+
+    .topsliderthumb {
+      cursor: pointer;
+      @include wh100;
+      @include radius(25);
+      overflow: hidden;
+      position: relative;
+
+      img {
+        @include wh100;
+      }
+  
+      .productbadge {
+        @include circle;
+        @include flex-center;
+        position: absolute;
+        @include square(60);
+        top: size(10);
+        left: size(10);
+        z-index: 100;
+  
+        @include breakpoint(mobile768) {
+          @include square(104);
+          top: size(20);
+          left: size(20);
+        }
+      }
+    }
+
+    .smallthumb {
+      cursor: pointer;
+      @include radius(8);
+      @include w100;
+      height: size(48);
+      @include flex-center;
+      overflow: hidden;
+
+      @include breakpoint(mobile768) {
+        height: size(64);
+      }
+
+      @include breakpoint(tab992) {
+        height: size(94);
+      }
+
+      img {
+        @include wh100;
+      }
+    }
+
+    .gallery-thumbs {
+      .swiper-slide {
+        opacity: 0.2;
+        @include transitionsall;
+
+        &:hover:not(.swiper-slide-active) {
+          opacity: 1;
+        }
+      }
+
+      .swiper-slide-active {
+        opacity: 1;
+      }
+    }
+  }
+}
