@@ -8,13 +8,31 @@
   &-link {
     @include square(24);
     @include flex-center;
-    overflow: hidden;
 
     @include hover {
       svg {
         path {
           stroke: $primary;
         }
+      }
+    }
+  }
+
+  .cartitem {
+    .iconlist-link {
+      position: relative;
+  
+      .cartcounter {
+        @include flex-center;
+        @include square(18);
+        @include circle;
+        position: absolute;
+        top: size(-5);
+        right: size(-8);
+        @include setBgColor($primary, $white);
+        font-size: size(9);
+        font-weight: 600;
+        text-align: center;
       }
     }
   }

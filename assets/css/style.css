@@ -2711,10 +2711,28 @@ table tr td {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 .iconlist-link:not([disabled]):hover svg path {
   stroke: hsl(358, 86%, 43%);
+}
+.iconlist .cartitem .iconlist-link {
+  position: relative;
+}
+.iconlist .cartitem .iconlist-link .cartcounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 100%;
+  position: absolute;
+  top: -0.3125rem;
+  right: -0.5rem;
+  background: hsl(358, 86%, 43%);
+  color: hsl(0, 0%, 100%);
+  font-size: 0.5625rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .sociallist {
