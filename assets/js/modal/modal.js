@@ -1,23 +1,46 @@
-const loginModal = document.querySelector('#loginModal');
-const sendOTPModal = document.querySelector('#sendOTPModal');
-const registerModal = document.querySelector('#registerModal');
+const loginModal = document.querySelector("#loginModal");
+const registerModal = document.querySelector("#registerModal");
+const forgotModal = document.querySelector("#forgotModal");
+const otpVerifyModal = document.querySelector("#otpVerifyModal");
 
 const login = new bootstrap.Modal(loginModal);
-const sendOTP = new bootstrap.Modal(sendOTPModal);
 const register = new bootstrap.Modal(registerModal);
+const forgot = new bootstrap.Modal(forgotModal);
+const sendOTP = new bootstrap.Modal(otpVerifyModal);
 
-const loginButton = document.querySelector('#btn-login');
-const otpButton = document.querySelector('#btn-otp');
+const regButton = document.querySelector("#btn-signup");
+const loginButton = document.querySelector("#btn-signin");
+const forgotButton = document.querySelector("#btn-forgot");
+const otpVerify = document.querySelector("#btn-verify");
+const continueButton = document.querySelector("#btn-continue");
 
-loginButton.addEventListener('click', showOTPModal);
-otpButton.addEventListener('click', showRegisterModal);
-
-function showOTPModal() {
-    login.hide();
-    sendOTP.show();
-}
+loginButton.addEventListener("click", showLoginModal);
+regButton.addEventListener("click", showRegisterModal);
+forgotButton.addEventListener("click", showForgotModal);
+otpVerify.addEventListener("click", showOTPModal);
+continueButton.addEventListener("click", showSignInModal);
 
 function showRegisterModal() {
-    sendOTP.hide();
-    register.show();
+  login.hide();
+  register.show();
+}
+
+function showForgotModal() {
+  login.hide();
+  forgot.show();
+}
+
+function showOTPModal() {
+  forgot.hide();
+  sendOTP.show();
+}
+
+function showLoginModal() {
+  register.hide();
+  login.show();
+}
+
+function showSignInModal() {
+  sendOTP.hide();
+  login.show();
 }

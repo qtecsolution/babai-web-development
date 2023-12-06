@@ -1206,6 +1206,11 @@ button:focus,
   color: hsl(147, 67%, 45%);
 }
 
+#btn-forgot {
+  display: inline-block;
+  text-align: left;
+}
+
 .cardcart {
   display: flex;
   align-items: center;
@@ -5162,7 +5167,8 @@ table tr td {
   justify-content: center;
   background: hsl(0, 23%, 95%) url(../images/bg/authbg.png) no-repeat center center/cover;
 }
-.authsection .auth {
+
+.auth {
   background: hsl(0, 0%, 100%);
   border: solid 0.0625rem hsl(0, 0%, 91%);
   border-radius: 1.75rem;
@@ -5174,7 +5180,7 @@ table tr td {
   gap: 1.5rem;
   padding: 1.5rem 1.5rem 3rem;
 }
-.authsection .auth-header {
+.auth-header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5182,7 +5188,7 @@ table tr td {
   gap: 0.625rem;
   text-align: center;
 }
-.authsection .auth-header .authlogo {
+.auth-header .authlogo {
   width: 8.8125rem;
   height: 6.25rem;
   display: flex;
@@ -5190,25 +5196,25 @@ table tr td {
   justify-content: center;
   overflow: hidden;
 }
-.authsection .auth-header .authtitle {
+.auth-header .authtitle {
   color: hsl(230, 51%, 18%);
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 700;
 }
-.authsection .auth-body {
+.auth-body {
   width: 100%;
 }
-.authsection .auth-body .authform {
+.auth-body .authform {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
 }
-.authsection .auth-body .authform .inputbox {
+.auth-body .authform .inputbox {
   width: 100%;
 }
-.authsection .auth-body .authform .inputbox .inputfield {
+.auth-body .authform .inputbox .inputfield {
   background: hsl(0, 0%, 96%);
   color: hsl(0, 0%, 0%);
   border-radius: 0.5rem;
@@ -5217,23 +5223,23 @@ table tr td {
   padding: 0.84375rem 1.25rem;
   width: 100%;
 }
-.authsection .auth-body .authform .inputbox .inputfield::-moz-placeholder {
+.auth-body .authform .inputbox .inputfield::-moz-placeholder {
   font-weight: 400;
 }
-.authsection .auth-body .authform .inputbox .inputfield::placeholder {
+.auth-body .authform .inputbox .inputfield::placeholder {
   font-weight: 400;
 }
-.authsection .auth-body .authform .passwordbox {
+.auth-body .authform .passwordbox {
   width: 100%;
   display: flex;
   align-items: center;
   background: hsl(0, 0%, 96%);
   border-radius: 0.5rem;
 }
-.authsection .auth-body .authform .passwordbox .passinput {
+.auth-body .authform .passwordbox .passinput {
   width: calc(100% - 3rem);
 }
-.authsection .auth-body .authform .passwordbox .passinput .inputfield {
+.auth-body .authform .passwordbox .passinput .inputfield {
   background: transparent;
   color: hsl(0, 0%, 0%);
   border-radius: 0.5rem;
@@ -5242,13 +5248,13 @@ table tr td {
   padding: 0.84375rem 1.25rem;
   width: 100%;
 }
-.authsection .auth-body .authform .passwordbox .passinput .inputfield::-moz-placeholder {
+.auth-body .authform .passwordbox .passinput .inputfield::-moz-placeholder {
   font-weight: 400;
 }
-.authsection .auth-body .authform .passwordbox .passinput .inputfield::placeholder {
+.auth-body .authform .passwordbox .passinput .inputfield::placeholder {
   font-weight: 400;
 }
-.authsection .auth-body .authform .passwordbox .btn-showhide {
+.auth-body .authform .passwordbox .btn-showhide {
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -5257,33 +5263,33 @@ table tr td {
   overflow: hidden;
   padding: 0.75rem;
 }
-.authsection .auth-body .authform .passwordbox .btn-showhide:not([disabled]):hover svg path {
+.auth-body .authform .passwordbox .btn-showhide:not([disabled]):hover svg path {
   stroke: hsl(230, 51%, 18%);
 }
-.authsection .auth-body .authform .forgotlink,
-.authsection .auth-body .authform .authtext,
-.authsection .auth-body .authform .authlink {
+.auth-body .authform .forgotlink,
+.auth-body .authform .authtext,
+.auth-body .authform .authlink {
   font-size: 0.875rem;
   font-weight: 500;
 }
-.authsection .auth-body .authform .forgotlink {
+.auth-body .authform .forgotlink {
   color: hsl(230, 51%, 18%);
 }
-.authsection .auth-body .authform .forgotlink:not([disabled]):hover {
+.auth-body .authform .forgotlink:not([disabled]):hover {
   color: hsl(245, 81%, 13%);
 }
-.authsection .auth-body .authform .authtext {
+.auth-body .authform .authtext {
   color: hsl(230, 51%, 18%);
 }
-.authsection .auth-body .authform .authlink {
+.auth-body .authform .authlink {
   color: hsl(358, 86%, 43%);
   text-transform: uppercase;
   text-decoration: underline;
 }
-.authsection .auth-body .authform .authlink:not([disabled]):hover {
+.auth-body .authform .authlink:not([disabled]):hover {
   text-decoration: none;
 }
-.authsection .auth-body .authform .textverify {
+.auth-body .authform .textverify {
   color: hsl(230, 51%, 18%);
   font-size: 0.75rem;
   font-weight: 400;

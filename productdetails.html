@@ -686,7 +686,7 @@
 
             <div class="headaccount d-none d-md-flex">
               <div class="d-none d-lg-block">
-                <a href="#" class="btn-main">
+                <a href="#loginModal" role="button" class="btn-main" data-bs-toggle="modal" data-bs-target="#loginModal">
                   <span class="leftinfo">
                     <span class="usericon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -962,6 +962,200 @@
   </footer>
   <!-- FOOTER-END -->
 
+  <!-- LOGIN-MODAL START -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="auth border-0">
+            <div class="auth-header">
+              <figure class="authlogo">
+                <img src="assets/images/logo/authlogo.svg" alt="brand-logo" />
+              </figure>
+
+              <h5 class="authtitle">Best Shopping site for kids</h5>
+            </div>
+
+            <div class="auth-body">
+              <form class="authform">
+                <div class="d-flex flex-column gap-3">
+                  <div class="inputbox">
+                    <input type="tel" pattern="[0-9]{3}[0-9]{8}" class="inputfield" placeholder="Enter your Mobile number" />
+                  </div>
+
+                  <div class="passwordbox">
+                    <div class="passinput">
+                      <input type="password" class="inputfield" placeholder="Password" />
+                    </div>
+
+                    <button type="button" class="btn-showhide">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.97959 8.223C3.04405 9.32718 2.34741 10.6132 1.93359 12C3.22559 16.338 7.24359 19.5 11.9996 19.5C12.9926 19.5 13.9526 19.362 14.8626 19.105M6.22759 6.228C7.94021 5.09781 9.94767 4.49682 11.9996 4.5C16.7556 4.5 20.7726 7.662 22.0646 11.998C21.3565 14.3673 19.8366 16.4115 17.7716 17.772M6.22759 6.228L2.99959 3M6.22759 6.228L9.87759 9.878M17.7716 17.772L20.9996 21M17.7716 17.772L14.1216 14.122C14.4002 13.8434 14.6212 13.5127 14.772 13.1486C14.9227 12.7846 15.0003 12.3945 15.0003 12.0005C15.0003 11.6065 14.9227 11.2164 14.772 10.8524C14.6212 10.4883 14.4002 10.1576 14.1216 9.879C13.843 9.6004 13.5122 9.3794 13.1482 9.22863C12.7842 9.07785 12.3941 9.00025 12.0001 9.00025C11.6061 9.00025 11.216 9.07785 10.8519 9.22863C10.4879 9.3794 10.1572 9.6004 9.87859 9.879M14.1206 14.121L9.87959 9.88" stroke="#7D7F85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <button type="button" id="btn-forgot" class="forgotlink">Forgot Password?</button>
+                </div>
+
+                <div class="submitbox">
+                  <button type="submit" class="btn-submit w-100">Login</button>
+                </div>
+
+                <div class="d-flex justify-content-center text-center">
+                  <p class="authtext">
+                    Didn't have any account? <button type="button" id="btn-signup" class="authlink">SIGN UP</button>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- LOGIN-MODAL END -->
+
+  <!-- REGISTER-MODAL START -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="auth border-0">
+            <div class="auth-header">
+              <figure class="authlogo">
+                <img src="assets/images/logo/authlogo.svg" alt="brand-logo" />
+              </figure>
+
+              <h5 class="authtitle">Best Shopping site for kids</h5>
+            </div>
+
+            <div class="auth-body">
+              <form class="authform">
+                <div class="d-flex flex-column gap-3">
+                  <div class="inputbox">
+                    <input type="text" class="inputfield" placeholder="Your Name" />
+                  </div>
+
+                  <div class="inputbox">
+                    <input type="tel" pattern="[0-9]{3}[0-9]{8}" class="inputfield" placeholder="Enter your Mobile number" />
+                  </div>
+
+                  <div class="passwordbox">
+                    <div class="passinput">
+                      <input type="password" class="inputfield" placeholder="Enter Password" />
+                    </div>
+
+                    <button type="button" class="btn-showhide">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.97959 8.223C3.04405 9.32718 2.34741 10.6132 1.93359 12C3.22559 16.338 7.24359 19.5 11.9996 19.5C12.9926 19.5 13.9526 19.362 14.8626 19.105M6.22759 6.228C7.94021 5.09781 9.94767 4.49682 11.9996 4.5C16.7556 4.5 20.7726 7.662 22.0646 11.998C21.3565 14.3673 19.8366 16.4115 17.7716 17.772M6.22759 6.228L2.99959 3M6.22759 6.228L9.87759 9.878M17.7716 17.772L20.9996 21M17.7716 17.772L14.1216 14.122C14.4002 13.8434 14.6212 13.5127 14.772 13.1486C14.9227 12.7846 15.0003 12.3945 15.0003 12.0005C15.0003 11.6065 14.9227 11.2164 14.772 10.8524C14.6212 10.4883 14.4002 10.1576 14.1216 9.879C13.843 9.6004 13.5122 9.3794 13.1482 9.22863C12.7842 9.07785 12.3941 9.00025 12.0001 9.00025C11.6061 9.00025 11.216 9.07785 10.8519 9.22863C10.4879 9.3794 10.1572 9.6004 9.87859 9.879M14.1206 14.121L9.87959 9.88" stroke="#7D7F85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="passwordbox">
+                    <div class="passinput">
+                      <input type="password" class="inputfield" placeholder="Enter Confirm Password" />
+                    </div>
+
+                    <button type="button" class="btn-showhide">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.97959 8.223C3.04405 9.32718 2.34741 10.6132 1.93359 12C3.22559 16.338 7.24359 19.5 11.9996 19.5C12.9926 19.5 13.9526 19.362 14.8626 19.105M6.22759 6.228C7.94021 5.09781 9.94767 4.49682 11.9996 4.5C16.7556 4.5 20.7726 7.662 22.0646 11.998C21.3565 14.3673 19.8366 16.4115 17.7716 17.772M6.22759 6.228L2.99959 3M6.22759 6.228L9.87759 9.878M17.7716 17.772L20.9996 21M17.7716 17.772L14.1216 14.122C14.4002 13.8434 14.6212 13.5127 14.772 13.1486C14.9227 12.7846 15.0003 12.3945 15.0003 12.0005C15.0003 11.6065 14.9227 11.2164 14.772 10.8524C14.6212 10.4883 14.4002 10.1576 14.1216 9.879C13.843 9.6004 13.5122 9.3794 13.1482 9.22863C12.7842 9.07785 12.3941 9.00025 12.0001 9.00025C11.6061 9.00025 11.216 9.07785 10.8519 9.22863C10.4879 9.3794 10.1572 9.6004 9.87859 9.879M14.1206 14.121L9.87959 9.88" stroke="#7D7F85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="submitbox">
+                  <button type="submit" class="btn-submit w-100">Sign Up</button>
+                </div>
+
+                <div class="d-flex justify-content-center text-center">
+                  <p class="authtext">
+                    Already have an account? <button type="button" id="btn-signin" class="authlink">SIGN IN</button>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- REGISTER-MODAL END -->
+
+  <!-- FORGOT-MODAL START -->
+  <div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="forgotModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="auth border-0">
+            <div class="auth-header">
+              <figure class="authlogo">
+                <img src="assets/images/logo/authlogo.svg" alt="brand-logo" />
+              </figure>
+
+              <h5 class="authtitle">Best Shopping site for kids</h5>
+            </div>
+
+            <div class="auth-body">
+              <form class="authform">
+                <div class="inputbox">
+                  <input type="tel" pattern="[0-9]{3}[0-9]{8}" class="inputfield" placeholder="Enter your Mobile number" />
+                </div>
+
+                <div class="submitbox">
+                  <button type="button" id="btn-verify" class="btn-submit w-100">Continue</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FORGOT-MODAL END -->
+
+  <!-- OTP-VERIFY-MODAL START -->
+  <div class="modal fade" id="otpVerifyModal" tabindex="-1" aria-labelledby="otpVerifyModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="auth border-0">
+            <div class="auth-header">
+              <figure class="authlogo">
+                <img src="assets/images/logo/authlogo.svg" alt="brand-logo" />
+              </figure>
+
+              <h5 class="authtitle">Best Shopping site for kids</h5>
+            </div>
+
+            <div class="auth-body">
+              <form class="authform">
+                <div class="d-flex flex-column gap-2">
+                  <div class="inputbox">
+                    <input type="text" class="inputfield" placeholder="Enter code" />
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-between">
+                    <p class="textverify">Didn't receive any code?</p>
+
+                    <button type="button" class="btn-resend">Resend Code</button>
+                  </div>
+                </div>
+
+                <div class="submitbox">
+                  <button type="button" id="btn-continue" class="btn-submit w-100">Continue</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- OTP-VERIFY-MODAL END -->
+
   <!-- PRELOADER-JS -->
   <script src="assets/js/loader/loader.js"></script>
   <!-- COPYRIGHT-JS -->
@@ -973,6 +1167,8 @@
   <!-- BACK-TO-TOP-JS -->
   <script src="assets/js/back-top/back-top.js"></script>
   <script src="assets/js/back-top/backtotop.js"></script>
+  <!-- MODAL-JS -->
+  <script src="assets/js/modal/modal.js"></script>
 </body>
 
 </html>
