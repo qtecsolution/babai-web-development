@@ -149,7 +149,11 @@
 .orderstatus {
   @include flex-column;
   gap: size(32);
-  padding: size(24) size(32) size(36);
+  padding: size(12) size(16) size(18);
+
+  @include breakpoint(tab992) {
+    padding: size(24) size(32) size(36);
+  }
 
   &-header {
     @include flex-center-between;
@@ -177,6 +181,156 @@
   
         @include breakpoint(mobile768) {
           font-size: size(12);
+        }
+      }
+    }
+  }
+}
+
+.mystatus {
+  @include flex-center-between;
+  margin-bottom: size(36);
+
+  &-box {
+    @include flex-center-column;
+    gap: size(8);
+    text-align: center;
+
+    &:first-of-type {
+      .iconbox {
+        &::after {
+          width: 500%;
+
+          @include breakpoint(mobile414) {
+            width: 800%;
+          }
+
+          @include breakpoint(mobile768) {
+            width: 1000%;
+          }
+        }
+      }
+    }
+
+    .iconbox {
+      background: $statusbg;
+      @include circle;
+      @include square(20);
+      @include flex-center;
+      position: relative;
+
+      @include breakpoint(tab992) {
+        @include square(32);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: $statusbg;
+        top: 50%;
+        @include translateY(-50%);
+        left: 100%;
+        width: 300%;
+        height: size(3);
+
+        @include breakpoint(mobile414) {
+          width: 580%;
+        }
+
+        @include breakpoint(mobile500) {
+          width: 650%;
+        }
+
+        @include breakpoint(mobile768) {
+          width: 900%;
+        }
+
+        @include breakpoint(tab992) {
+          height: size(6);
+          width: 500%;
+        }
+
+        @include breakpoint(desktop1200) {
+          width: 580%;
+        }
+
+        @include breakpoint(desktop1400) {
+          width: 720%;
+        }
+      }
+
+      .defaulticon {
+        @include square(8);
+        @include circle;
+        @include flex-center;
+
+        @include breakpoint(tab992) {
+          @include square(12);
+        }
+      }
+
+      .activeicon {
+        @include square(12);
+        display: none;
+        overflow: hidden;
+
+        @include breakpoint(tab992) {
+          @include square(20);
+        }
+      }
+    }
+
+    .statustitle {
+      color: $textdark;
+      font-size: size(9);
+      font-weight: 400;
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+    }
+
+    &:last-of-type {
+      .iconbox {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+
+    &.active {
+      .iconbox {
+        background: $activebg;
+  
+        &::after {
+          background: $activebg;
+        }
+  
+        .defaulticon {
+          display: none;
+        }
+  
+        .activeicon {
+          @include flex-center;
+        }
+      }
+    }
+
+    &.completed {
+      .iconbox {
+        background: $activebg;
+  
+        &::after {
+          background: $activebg;
+        }
+  
+        .defaulticon {
+          display: none;
+        }
+  
+        .activeicon {
+          display: none;
         }
       }
     }

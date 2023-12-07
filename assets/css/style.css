@@ -5783,7 +5783,12 @@ table tr td {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1.5rem 2rem 2.25rem;
+  padding: 0.75rem 1rem 1.125rem;
+}
+@media screen and (min-width: 62rem) {
+  .orderstatus {
+    padding: 1.5rem 2rem 2.25rem;
+  }
 }
 .orderstatus-header {
   display: flex;
@@ -5812,6 +5817,157 @@ table tr td {
   .orderstatus-header .rightinfo .date {
     font-size: 0.75rem;
   }
+}
+
+.mystatus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+.mystatus-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+.mystatus-box:first-of-type .iconbox::after {
+  width: 500%;
+}
+@media screen and (min-width: 25.875rem) {
+  .mystatus-box:first-of-type .iconbox::after {
+    width: 800%;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .mystatus-box:first-of-type .iconbox::after {
+    width: 1000%;
+  }
+}
+.mystatus-box .iconbox {
+  background: hsl(0, 0%, 94%);
+  border-radius: 100%;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+@media screen and (min-width: 62rem) {
+  .mystatus-box .iconbox {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.mystatus-box .iconbox::after {
+  content: "";
+  position: absolute;
+  background: hsl(0, 0%, 94%);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+  width: 300%;
+  height: 0.1875rem;
+}
+@media screen and (min-width: 25.875rem) {
+  .mystatus-box .iconbox::after {
+    width: 580%;
+  }
+}
+@media screen and (min-width: 31.25rem) {
+  .mystatus-box .iconbox::after {
+    width: 650%;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .mystatus-box .iconbox::after {
+    width: 900%;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .mystatus-box .iconbox::after {
+    height: 0.375rem;
+    width: 500%;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .mystatus-box .iconbox::after {
+    width: 580%;
+  }
+}
+@media screen and (min-width: 87.5rem) {
+  .mystatus-box .iconbox::after {
+    width: 720%;
+  }
+}
+.mystatus-box .iconbox .defaulticon {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 62rem) {
+  .mystatus-box .iconbox .defaulticon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+.mystatus-box .iconbox .activeicon {
+  width: 0.75rem;
+  height: 0.75rem;
+  display: none;
+  overflow: hidden;
+}
+@media screen and (min-width: 62rem) {
+  .mystatus-box .iconbox .activeicon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+.mystatus-box .statustitle {
+  color: hsl(231, 100%, 6%);
+  font-size: 0.5625rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 62rem) {
+  .mystatus-box .statustitle {
+    font-size: 0.875rem;
+  }
+}
+.mystatus-box:last-of-type .iconbox::after {
+  width: 0;
+  height: 0;
+}
+.mystatus-box.active .iconbox {
+  background: hsl(123, 38%, 65%);
+}
+.mystatus-box.active .iconbox::after {
+  background: hsl(123, 38%, 65%);
+}
+.mystatus-box.active .iconbox .defaulticon {
+  display: none;
+}
+.mystatus-box.active .iconbox .activeicon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mystatus-box.completed .iconbox {
+  background: hsl(123, 38%, 65%);
+}
+.mystatus-box.completed .iconbox::after {
+  background: hsl(123, 38%, 65%);
+}
+.mystatus-box.completed .iconbox .defaulticon {
+  display: none;
+}
+.mystatus-box.completed .iconbox .activeicon {
+  display: none;
 }
 
 .statusinfo {
