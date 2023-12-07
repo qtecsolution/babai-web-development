@@ -700,3 +700,64 @@ button,
   display: inline-block;
   text-align: left;
 }
+
+.btn-shopping {
+  color: $secondetitle;
+  font-size: size(14);
+  font-weight: 500;
+    
+  @include breakpoint(tab992) {
+    font-size: size(16);
+  }
+
+  @include hover {
+    color: $primary;
+  }
+}
+
+.btn-wish {
+  @include flex-center-vert;
+  gap: size(8);
+
+  .icon {
+    @include square(16);
+    @include flex-center;
+    overflow: hidden;
+  }
+
+  .text {
+    color: $lightmoodtext;
+    font-size: size(14);
+    font-weight: 400;
+  }
+
+  &:hover:not(.active) {
+    .icon {
+      svg {
+        path {
+          fill: $primary;
+          stroke: $primary;
+        }
+      }
+    }
+
+    .text {
+      color: $primary;
+    }
+  }
+
+  &.active {
+    .icon {
+      svg {
+        path {
+          fill: $primary;
+          stroke: $primary;
+        }
+      }
+    }
+
+    .text {
+      color: $primary;
+    }
+  }
+}

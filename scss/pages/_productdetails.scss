@@ -107,3 +107,240 @@
     }
   }
 }
+
+.productinfos {
+  .titleinfo {
+    @include flex-column;
+    gap: size(16);
+    margin-bottom: size(16);
+
+    @include breakpoint(tab992) {
+      margin-bottom: size(24);
+    }
+
+    .producttitle {
+      color: $bg-color-dark;
+      font-family: $inter;
+      font-size: size(20);
+      font-weight: 700;
+      @include text-overflow;
+
+      @include breakpoint(tab992) {
+        font-size: size(30);
+      }
+    }
+
+    .info {
+      @include flex-column;
+      gap: size(12);
+
+      .text,
+      .modeltitle,
+      .productmodel {
+        font-size: size(12);
+        font-weight: 500;
+
+        @include breakpoint(tab992) {
+          font-size: size(14);
+        }
+      }
+
+      .text {
+        color: $lightmoodtext;
+        font-weight: 400;
+      }
+
+      .modeltitle {
+        color: $textplaceholder;
+      }
+
+      .productmodel {
+        color: $textprice;
+      }
+    }
+  }
+
+  .productprices {
+    @include flex-center-vert;
+    gap: size(8);
+    margin-bottom: size(16);
+
+    @include breakpoint(tab992) {
+      gap: size(12);
+      margin-bottom: size(24);
+    }
+
+    .previousprice {
+      color: $lightmoodtext;
+      font-family: $kalpurush;
+      font-size: size(16);
+      font-weight: 400;
+      text-decoration: line-through;
+
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+    }
+
+    .currentprice {
+      color: $textdark;
+      font-family: $kalpurush;
+      font-size: size(20);
+      font-weight: 400;
+
+      @include breakpoint(tab992) {
+        font-size: size(32);
+      }
+    }
+  }
+
+  .productcolors {
+    @include flex-column;
+    gap: size(4);
+    margin-bottom: size(24);
+
+    @include breakpoint(tab992) {
+      gap: size(8);
+    }
+
+    &-header {
+      .colortitle {
+        color: $textplaceholder;
+        font-size: size(12);
+        font-weight: 400;
+
+        @include breakpoint(tab992) {
+          font-size: size(16);
+        }
+      }
+    }
+
+    &-body {
+      @include flex-center-vert;
+      gap: size(8);
+    }
+  }
+
+  .productsizes {
+    @include flex-column;
+    gap: size(4);
+    margin-bottom: size(24);
+  
+    @include breakpoint(tab992) {
+      gap: size(8);
+    }
+  
+    &-header {
+      .sizetitle {
+        color: $textplaceholder;
+        font-size: size(12);
+        font-weight: 400;
+  
+        @include breakpoint(tab992) {
+          font-size: size(16);
+        }
+      }
+    }
+  
+    &-body {
+      .sizelist {
+        @include flex-column;
+        gap: size(8);
+        
+        @include breakpoint(mobile768) {
+          gap: size(4);
+        }
+      }
+    }
+  }
+
+  .quantityincrements {
+    @include flex-column;
+    gap: size(4);
+    margin-bottom: size(24);
+  
+    @include breakpoint(tab992) {
+      gap: size(8);
+    }
+
+    &-header {
+      @include flex-center-vert;
+      gap: size(5);
+
+      .title {
+        color: $textplaceholder;
+        font-size: size(16);
+        font-weight: 400;
+      }
+
+      .stock {
+        color: $success;
+        font-size: size(14);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .actions {
+    @include flex-column;
+    gap: size(10);
+    align-items: flex-start;
+
+    &-header {
+      @include flex-center-vert;
+      gap: size(10);
+    }
+  }
+}
+
+.formcounter {
+  background: $white;
+  @include border(solid, 1, rgba($black, 0.1));
+  @include radius(8);
+  @include flex-center-vert;
+  max-width: size(120);
+  overflow: hidden;
+  padding: size(4);
+
+  .inputfield {
+    color: $textdark;
+    width: calc(100% - size(48));
+    font-family: $inter;
+    font-size: size(14);
+    font-weight: 500;
+    padding-inline: size(5);
+    text-align: center;
+  }
+
+  button {
+    background: $inputbg;
+    @include radius(5);
+    @include flex-center;
+    @include square(24);
+    padding: size(8);
+
+    &.btn-decrement {
+      @include hover {
+        background: $primary;
+  
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  
+    &.btn-increment {
+      @include hover {
+        background: $success;
+  
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}
