@@ -209,13 +209,9 @@
 }
 
 .desktopnav {
-  background: rgba($white, 0.60);
-  backdrop-filter: blur(size(2));
-  @include radius(24);
-  width: size(270);
   max-height: size(296);
-  padding: size(16);
-  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   @include breakpoint(desktop1200) {
     min-height: size(408);
@@ -239,8 +235,13 @@
 }
 
 .desktoplist {
+  background: rgba($white, 0.60);
+  backdrop-filter: blur(size(2));
+  @include radius(24);
   @include list-vertical;
   gap: size(8);
+  width: size(270);
+  padding: size(16);
 
   &-link {
     background: $white;
