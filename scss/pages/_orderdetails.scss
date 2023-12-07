@@ -262,4 +262,234 @@
       margin-top: size(-4);
     }
   }
+
+  &-body {
+    overflow: hidden;
+
+    .table {
+      overflow: hidden;
+
+      thead {
+        @include border-single(bottom, solid, 1, rgba($black, 0.1));
+
+        tr {
+          th {
+            color: $textplaceholder;
+            font-size: size(14);
+            font-weight: 400;
+            padding: size(16);
+            text-align: center;
+
+            &:first-child {
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      tbody {
+        overflow: hidden;
+
+        tr {
+          @include border-single(bottom, solid, 1, rgba($black, 0.1));
+
+          th, td {
+            padding: size(16);
+          }
+
+          td {
+            color: $black;
+            font-size: size(14);
+            font-weight: 400;
+            text-align: center;
+          }
+        }
+
+        .orderproduct {
+          @include flex-center-vert;
+          gap: size(8);
+
+          &-thumb {
+            background: $inputbg;
+            @include radius(4);
+            @include square(106);
+            @include flex-center;
+            overflow: hidden;
+            padding: size(14) size(12);
+
+            img {
+              @include wh100;
+            }
+          }
+
+          .detail {
+            @include flex-column;
+            gap: size(4);
+
+            .productname {
+              color: $black;
+              font-size: size(14);
+              font-weight: 600;
+            }
+
+            .productsize {
+              color: $textplaceholder;
+              font-size: size(12);
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+
+    .totalinfo {
+      @include flex-end;
+      padding: size(8) size(60) size(48);
+
+      .mytotal {
+        @include flex-column;
+        gap: size(8);
+        min-width: size(160);
+        max-width: size(240);
+
+        &-row {
+          @include flex-center-between;
+
+          .title {
+            color: $textplaceholder;
+            font-size: size(14);
+            font-weight: 400;
+          }
+
+          .price {
+            color: $black;
+            font-size: size(14);
+            font-weight: 400;
+          }
+
+          .totaltitle {
+            color: $textdark;
+            font-size: size(16);
+            font-weight: 700;
+          }
+
+          .totalprice {
+            color: $textprice;
+            font-size: size(16);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .mobiledetail {
+      &-header {
+        @include flex-column;
+
+        .item {
+          @include border-single(bottom, solid, 1, rgba($black, 0.1));
+          @include flex-center-vert;
+          gap: size(24);
+          padding: size(16);
+
+          @include breakpoint(mobile768) {
+            padding: size(16) size(20);
+          }
+
+          .myprod {
+            @include flex-center-vert;
+            gap: size(8);
+
+            &-thumb {
+              background: $inputbg;
+              @include radius(4);
+              @include flex-center;
+              @include square(64);
+              overflow: hidden;
+              padding: size(10);
+
+              img {
+                @include wh100;
+              }
+            }
+
+            &-detail {
+              @include flex-column;
+              gap: size(8);
+              width: calc(100% - size(72));
+
+              .titlesize {
+                @include flex-column;
+
+                .title {
+                  color: $black;
+                  font-size: size(12);
+                  font-weight: 600;
+                }
+
+                .size {
+                  color: $textplaceholder;
+                  font-size: size(10);
+                  font-weight: 400;
+                }
+              }
+
+              .quantity {
+                color: $black;
+                font-size: size(12);
+                font-weight: 400;
+              }
+            }
+          }
+
+          .myprice,
+          .mytotalprice {
+            color: $black;
+            font-size: size(12);
+            font-weight: 400;
+          }
+        }
+      }
+
+      &-body {
+        @include flex-end;
+        padding: size(8) size(20) size(18);
+
+        .mytotal {
+          @include flex-column;
+          gap: size(8);
+          min-width: size(160);
+          max-width: size(240);
+  
+          &-row {
+            @include flex-center-between;
+  
+            .title {
+              color: $textplaceholder;
+              font-size: size(12);
+              font-weight: 400;
+            }
+  
+            .price {
+              color: $black;
+              font-size: size(12);
+              font-weight: 400;
+            }
+  
+            .totaltitle {
+              color: $textdark;
+              font-size: size(14);
+              font-weight: 700;
+            }
+  
+            .totalprice {
+              color: $textprice;
+              font-size: size(14);
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
 }
