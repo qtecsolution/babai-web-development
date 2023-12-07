@@ -594,3 +594,75 @@
     }
   }
 }
+
+.cardfeedback {
+  background: $cardbg;
+  @include border-single(left, solid, 2, $success);
+  @include radius(40);
+  @include flex-column;
+  gap: size(24);
+  padding: size(16);
+
+  @include breakpoint(mobile768) {
+    padding: size(16) size(32);
+  }
+
+  @include breakpoint(tab992) {
+    padding: size(32);
+  }
+
+  &-header {
+    @include flex-column;
+    gap: size(14);
+
+    .customer {
+      @include flex-center-vert;
+      gap: size(15);
+
+      &-thumb {
+        @include square(46);
+        @include circle;
+        @include flex-center;
+        overflow: hidden;
+
+        img {
+          @include wh100;
+        }
+      }
+
+      &-details {
+        @include flex-column;
+
+        .name {
+          color: $lightmoodtext;
+          font-size: size(16);
+          font-weight: 500;
+        }
+
+        .location {
+          color: $textplaceholder;
+          font-size: size(13);
+          font-weight: 500;
+        }
+      }
+    }
+
+    .info {
+      max-width: size(713);
+
+      .text {
+        color: $secondetitle;
+        font-size: size(14);
+        font-weight: 400;
+      }
+    }
+  }
+
+  &-body {
+    .date {
+      color: $lightmoodtext;
+      font-size: size(12);
+      font-weight: 400;
+    }
+  }
+}

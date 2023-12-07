@@ -344,3 +344,245 @@
     }
   }
 }
+
+.productdetailcards {
+  padding: size(32) 0;
+
+  @include breakpoint(tab992) {
+    padding: size(64) 0;
+  }
+}
+
+.productdetailcard {
+  background: $inputbg;
+  @include radius(13);
+  @include flex-center-vert;
+  gap: size(12);
+  padding: size(12) size(20);
+
+  @include breakpoint(tab992) {
+    padding: size(12);
+  }
+
+  .icon {
+    background: $white;
+    @include flex-center;
+    @include square(64);
+    @include radius(16);
+    padding: size(16);
+
+    @include breakpoint(tab992) {
+      @include square(48);
+      padding: size(10);
+    }
+  }
+
+  .title {
+    color: $textplaceholder;
+    width: calc(100% - size(64));
+    font-size: size(16);
+    font-weight: 500;
+
+    @include breakpoint(tab992) {
+      width: calc(100% - size(48));
+      font-size: size(14);
+    }
+  }
+}
+
+.specifications {
+  .nav-tabs {
+    background: $tableheadbg;
+    border: none;
+    @include radius(0);
+    @include border-single(bottom, solid, 1, $tableheadborder);
+    @include double-radius(top, left, 32, top, right, 32);
+    flex-wrap: nowrap;
+    gap: size(10);
+    padding-inline: size(14);
+
+    @include breakpoint(mobile768) {
+      gap: size(16);
+      padding-inline: size(32);
+    }
+
+    @include breakpoint(tab992) {
+      padding-inline: size(32);
+    }
+
+    @include breakpoint(desktop1200) {
+      gap: size(64);
+    }
+
+    .nav-link {
+      margin: 0;
+      border: 0;
+      @include setBgColor(transparent, $secondetitle);
+      @include border-single(bottom, solid, 4, transparent);
+      @include flex-center-vert;
+      font-size: size(9);
+      font-weight: 700;
+      padding: size(12) 0;
+
+      @include breakpoint(mobile576) {
+        font-size: size(10);
+      }
+
+      @include breakpoint(mobile768) {
+        font-size: size(14);
+        padding: size(14) 0;
+      }
+
+      @include breakpoint(tab992) {
+        font-size: size(16);
+      }
+
+      &.active {
+        border-color: $textprice;
+        color: $textprice;
+      }
+    }
+  }
+
+  .contentbox {
+    @include border(solid, 1, $tableheadborder);
+    border-top: 0;
+    @include double-radius(bottom, left, 32, bottom, right, 32);
+    padding: size(32) size(16);
+    @include flex-column;
+    gap: size(14);
+
+    @include breakpoint(tab992) {
+      padding: size(32) size(40);
+    }
+
+    &-header {
+      .title {
+        color: $secondetitle;
+        font-size: size(18);
+        font-weight: 500;
+
+        @include breakpoint(mobile768) {
+          font-size: size(20);
+        }
+
+        @include breakpoint(tab992) {
+          font-size: size(24);
+        }
+      }
+    }
+
+    &-body {
+      .specificationlist {
+        padding: 0;
+        padding-left: size(16);
+
+        &-item {
+          color: $lightmoodtext;
+          font-size: size(14);
+          font-weight: 400;
+        }
+      }
+
+      .mydescription {
+        @include flex-column;
+        gap: size(32);
+
+        @include breakpoint(mobile768) {
+          gap: size(48);
+        }
+
+        &-header {
+          @include flex-column;
+          gap: size(16);
+
+          @include breakpoint(mobile768) {
+            gap: size(24);
+          }
+
+          .info {
+            max-width: size(714);
+
+            .text {
+              color: $textplaceholder;
+              font-size: size(14);
+              font-weight: 400;
+            }
+          }
+
+          .videobox {
+            @include w100;
+            height: size(192);
+            @include flex-center;
+            overflow: hidden;
+
+            @include breakpoint(mobile768) {
+              height: size(430);
+            }
+
+            iframe,
+            img {
+              @include wh100;
+            }
+          }
+        }
+
+        &-body {
+          @include flex-column;
+          gap: size(16);
+
+          .title {
+            color: $black;
+            font-size: size(16);
+            font-weight: 500;
+          }
+
+          .descriptlist {
+            padding: 0;
+            padding-left: size(16);
+          
+            &-item {
+              color: $textplaceholder;
+              font-size: size(14);
+              font-weight: 400;
+              line-height: 1.7;
+            }
+          }
+        }
+      }
+
+      .sizechart-thumb {
+        @include wh100;
+        @include flex-center;
+        overflow: hidden;
+
+        img {
+          @include wh100;
+        }
+      }
+
+      .feedbacklist {
+        @include flex-column;
+        gap: size(20);
+      }
+    }
+  }
+
+  .relatedproducts {
+    @include flex-column;
+    gap: size(16);
+
+    &-header {
+      .title {
+        color: $textdark;
+        font-size: size(18);
+        font-weight: 500;
+      }
+    }
+
+    &-body {
+      @include flex-column;
+      gap: size(16);
+    }
+  }
+}
