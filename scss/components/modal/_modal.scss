@@ -59,6 +59,7 @@
 .addbabyprofile {
   .modal-content {
     @include radius(32);
+    max-width: size(500);
   }
   
   .modal-header {

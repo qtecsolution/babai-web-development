@@ -2372,6 +2372,7 @@ input[type=search]::-webkit-search-results-decoration:focus {
 
 .addbabyprofile .modal-content {
   border-radius: 2rem;
+  max-width: 31.25rem;
 }
 .addbabyprofile .modal-header {
   background: hsl(0, 38%, 95%);
