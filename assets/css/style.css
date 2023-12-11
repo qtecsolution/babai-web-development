@@ -1481,6 +1481,7 @@ button:focus,
   font-size: 0.9375rem;
   font-weight: 400;
   text-decoration: line-through;
+  text-decoration-color: hsl(358, 86%, 43%);
 }
 .product-body .prices .currentprice {
   color: hsl(0, 0%, 0%);
@@ -1921,6 +1922,7 @@ button:focus,
   font-size: 0.9375rem;
   font-weight: 400;
   text-decoration: line-through;
+  text-decoration-color: hsl(358, 86%, 43%);
 }
 .producthorizontal-body .prices .currentprice {
   color: hsl(0, 0%, 0%);
@@ -4416,6 +4418,7 @@ table tr td {
   font-size: 1rem;
   font-weight: 400;
   text-decoration: line-through;
+  text-decoration-color: hsl(358, 86%, 43%);
 }
 @media screen and (min-width: 62rem) {
   .productinfos .productprices .previousprice {

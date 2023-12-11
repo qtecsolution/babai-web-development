@@ -176,6 +176,7 @@
       font-size: size(16);
       font-weight: 400;
       text-decoration: line-through;
+      text-decoration-color: $primary;
 
       @include breakpoint(tab992) {
         font-size: size(24);
