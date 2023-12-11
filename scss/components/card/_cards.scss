@@ -499,6 +499,7 @@
       position: absolute;
       top: size(10);
       right: size(10);
+      z-index: 100;
 
       @include breakpoint(mobile768) {
         top: size(16);
@@ -523,16 +524,21 @@
         }
       }
     }
+
+    .cardlink {
+      @include flex-center;
+      @include wh100;
+      overflow: hidden;
+    }
   }
 
   &-thumbnail {
-    // width: size(160);
-    // height: size(110);
     @include flex-center;
+    @include wh100;
     overflow: hidden;
-    margin-inline: auto;
 
     img {
+      @include wh100;
       object-fit: contain;
       @include transitiontransform;
     }

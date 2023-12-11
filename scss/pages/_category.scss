@@ -11,6 +11,7 @@
   .mycategory {
     @include flex-column;
     gap: size(16);
+    max-width: size(240);
   }
 
   .categoriesdetail {
