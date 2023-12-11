@@ -3524,6 +3524,49 @@ table tr td {
   background: hsl(13, 33%, 95%);
 }
 
+.footercontactlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.footercontactlist-item {
+  color: hsl(228, 5%, 38%);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 62rem) {
+  .footercontactlist-item {
+    font-size: 1rem;
+  }
+}
+.footercontactlist-item strong {
+  color: hsl(0, 0%, 0%);
+  font-size: inherit;
+  font-weight: 600;
+}
+
+.footersociallist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.footersociallist-link {
+  background: hsl(0, 0%, 100%);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
 .pagination {
   gap: 0.5rem;
 }
