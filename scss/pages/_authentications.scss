@@ -5,6 +5,15 @@
   min-height: 100vh;
   @include flex-center;
   background: $sectionbg-1 url(../images/bg/authbg.png) no-repeat center center/cover;
+  padding: size(16) size(0);
+
+  @include breakpoint(mobile768) {
+    padding: size(32);
+  }
+  
+  @include breakpoint(tab992) {
+    padding: size(48);
+  }
 }
 
 .auth {

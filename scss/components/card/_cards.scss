@@ -75,13 +75,14 @@
   background: $white;
   @include border(solid, 1, $authborder);
   @include radius(30);
+  @include wh100;
 
   &-header {
     background: $inputbg;
     @include border(solid, 8, $white);
     @include radius(30);
     position: relative;
-    @include flex-column;
+    @include flex-center-column;
     height: size(220);
 
     .discount-badge {
@@ -101,8 +102,10 @@
       @include circle;
       @include flex-center;
       padding: size(5);
-      margin-top: size(20);
-      margin-right: size(16);
+      position: absolute;
+      top: size(20);
+      right: size(16);
+      z-index: 100;
 
       &:hover:not(.active) {
         svg {
@@ -124,14 +127,20 @@
     }
   }
 
-  &-thumbnail {
-    width: size(160);
-    height: size(110);
+  .productlink {
+    @include wh100;
     @include flex-center;
     overflow: hidden;
-    margin-inline: auto;
+  }
+
+  &-thumbnail {
+    @include wh100;
+    @include flex-center;
+    overflow: hidden;
 
     img {
+      @include wh100;
+      object-fit: contain;
       @include transitiontransform;
     }
 
@@ -156,9 +165,11 @@
       color: $lightmoodtext;
       font-size: size(14);
       @include line-clamp;
+      height: size(34);
 
       @include breakpoint(desktop1400) {
         font-size: size(16);
+        height: size(38.4);
       }
 
       @include hover {

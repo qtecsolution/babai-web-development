@@ -1331,6 +1331,8 @@ button:focus,
   background: hsl(0, 0%, 100%);
   border: solid 0.0625rem hsl(0, 0%, 91%);
   border-radius: 1.875rem;
+  width: 100%;
+  height: 100%;
 }
 .product-header {
   background: hsl(0, 0%, 96%);
@@ -1338,6 +1340,8 @@ button:focus,
   border-radius: 1.875rem;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   height: 13.75rem;
 }
@@ -1363,8 +1367,10 @@ button:focus,
   align-items: center;
   justify-content: center;
   padding: 0.3125rem;
-  margin-top: 1.25rem;
-  margin-right: 1rem;
+  position: absolute;
+  top: 1.25rem;
+  right: 1rem;
+  z-index: 100;
 }
 .product-header .btn-wish:hover:not(.active) svg path {
   fill: hsl(358, 86%, 43%);
@@ -1374,16 +1380,27 @@ button:focus,
   fill: hsl(358, 86%, 43%);
   stroke: hsl(358, 86%, 43%);
 }
-.product-thumbnail {
-  width: 10rem;
-  height: 6.875rem;
+.product .productlink {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-inline: auto;
+}
+.product-thumbnail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 .product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: transform 350ms ease-in-out;
 }
 .product-thumbnail:not([disabled]):hover img {
@@ -1411,10 +1428,12 @@ button:focus,
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
+  height: 2.125rem;
 }
 @media screen and (min-width: 87.5rem) {
   .product-body .product-title {
     font-size: 1rem;
+    height: 2.4rem;
   }
 }
 .product-body .product-title:not([disabled]):hover {
@@ -1960,6 +1979,16 @@ button:focus,
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (min-width: 62rem) {
+  .header-nav {
+    padding: 0rem 3rem 0rem 0rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .header-nav {
+    padding: 0rem 3rem 0rem 0rem;
+  }
 }
 .header-nav .desktopmenu {
   display: flex;
@@ -2926,6 +2955,7 @@ table tr td {
   display: flex;
   align-items: center;
   overflow: hidden;
+  min-width: 18.75rem;
 }
 @media screen and (min-width: 75rem) {
   .searchform {
@@ -3350,6 +3380,7 @@ table tr td {
   width: 100%;
   display: none;
   z-index: 100;
+  padding-left: 1.0625rem;
 }
 .menubox .submenubox {
   position: absolute;
@@ -3358,6 +3389,7 @@ table tr td {
   width: 100%;
   display: none;
   z-index: 100;
+  padding-left: 1.0625rem;
 }
 
 .submenu,
@@ -3839,27 +3871,27 @@ table tr td {
 }
 @media screen and (min-width: 62rem) {
   .homelinks .homelink.link-1 {
-    height: 39.125rem;
+    height: 33.875rem;
   }
 }
 @media screen and (min-width: 62rem) {
   .homelinks .homelink.link-2 {
-    height: 18rem;
+    height: 16.1875rem;
   }
 }
 @media screen and (min-width: 62rem) {
   .homelinks .homelink.link-3 {
-    height: 18rem;
+    height: 16.1875rem;
   }
 }
 @media screen and (min-width: 62rem) {
   .homelinks .homelink.link-4 {
-    height: 19.375rem;
+    height: 16.1875rem;
   }
 }
 @media screen and (min-width: 62rem) {
   .homelinks .homelink.link-5 {
-    height: 19.375rem;
+    height: 16.1875rem;
   }
 }
 .homelinks .homelink:not([disabled]):hover img {
@@ -3902,6 +3934,9 @@ table tr td {
     gap: 0rem;
   }
 }
+.bestselling .product {
+  max-width: 21.875rem;
+}
 
 .mainsection {
   background: hsl(0, 0%, 100%);
@@ -3926,6 +3961,9 @@ table tr td {
   .mainsection .mainthumbnail {
     margin-bottom: 3rem;
   }
+}
+.mainsection .mainthumbnail img {
+  width: 100%;
 }
 .mainsection .newitems {
   margin-bottom: 2rem;
@@ -3964,7 +4002,7 @@ table tr td {
 }
 @media screen and (min-width: 87.5rem) {
   .mainsection .newitems-body .btn-cart .rightinfo {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 }
 @media screen and (min-width: 75rem) {
@@ -3974,7 +4012,7 @@ table tr td {
 }
 @media screen and (min-width: 87.5rem) {
   .mainsection .newitems-body .btn-buy .rightinfo {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 }
 .mainsection .newitems-body .swiper {
@@ -4055,10 +4093,12 @@ table tr td {
 .mainsection .testimonials {
   background: url(../images/bg/testimonial-bg.png) no-repeat center center/cover;
   padding: 2.25rem 0.5rem;
+  display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 62rem) {
   .mainsection .testimonials {
-    padding: 4rem 0.5rem 10rem;
+    padding: 4rem 0.5rem 12.5rem;
   }
 }
 .mainsection .testimonials-content {
@@ -6347,6 +6387,17 @@ table tr td {
   align-items: center;
   justify-content: center;
   background: hsl(0, 23%, 95%) url(../images/bg/authbg.png) no-repeat center center/cover;
+  padding: 1rem 0rem;
+}
+@media screen and (min-width: 48rem) {
+  .authsection {
+    padding: 2rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .authsection {
+    padding: 3rem;
+  }
 }
 
 .auth {

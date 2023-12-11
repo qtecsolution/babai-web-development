@@ -340,6 +340,7 @@
   @include w100;
   display: none;
   z-index: 100;
+  padding-left: size(17);
 
   .submenubox {
     position: absolute;
@@ -348,6 +349,7 @@
     @include w100;
     display: none;
     z-index: 100;
+    padding-left: size(17);
   }
 }
 

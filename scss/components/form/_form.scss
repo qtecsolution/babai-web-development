@@ -6,6 +6,7 @@
   @include radius(8);
   @include flex-center-vert;
   overflow: hidden;
+  min-width: size(300);
 
   @include breakpoint(desktop1200) {
     min-width: size(400);

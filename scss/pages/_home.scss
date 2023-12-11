@@ -51,31 +51,31 @@
 
     &.link-1 {
       @include breakpoint(tab992) {
-        height: size(626);
+        height: size(542);
       }
     }
     
     &.link-2 {
       @include breakpoint(tab992) {
-        height: size(288);
+        height: size(259);
       }
     }
 
     &.link-3 {
       @include breakpoint(tab992) {
-        height: size(288);
+        height: size(259);
       }
     }
     
     &.link-4 {
       @include breakpoint(tab992) {
-        height: size(310);
+        height: size(259);
       }
     }
     
     &.link-5 {
       @include breakpoint(tab992) {
-        height: size(310);
+        height: size(259);
       }
     }
 
@@ -122,6 +122,10 @@
       }
     }
   }
+
+  .product {
+    max-width: size(350);
+  }
 }
 
 .mainsection {
@@ -143,6 +147,10 @@
 
     @include breakpoint(tab992) {
       margin-bottom: size(48);
+    }
+
+    img {
+      @include w100;
     }
   }
 
@@ -185,7 +193,7 @@
           }
 
           @include breakpoint(desktop1400) {
-            font-size: size(14);
+            font-size: size(12);
           }
         }
       }
@@ -197,7 +205,7 @@
           }
 
           @include breakpoint(desktop1400) {
-            font-size: size(14);
+            font-size: size(12);
           }
         }
       }
@@ -289,9 +297,10 @@
   .testimonials {
     background: url(../images/bg/testimonial-bg.png) no-repeat center center/cover;
     padding: size(36) size(8);
+    @include flex-center-vert;
 
     @include breakpoint(tab992) {
-      padding: size(64) size(8) size(160);
+      padding: size(64) size(8) size(200);
     }
 
     &-content {
