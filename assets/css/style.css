@@ -987,6 +987,36 @@ button:focus,
   stroke: hsl(358, 86%, 43%);
 }
 
+.btn-blogseemore {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-blogseemore .text {
+  color: hsl(358, 86%, 43%);
+  font-family: "Kohinoor Bangla";
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.btn-blogseemore .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 350ms ease-in-out;
+}
+.btn-blogseemore .icon svg path {
+  stroke: hsl(358, 86%, 43%);
+}
+.btn-blogseemore:not([disabled]):hover .text {
+  color: hsl(228, 5%, 38%);
+}
+.btn-blogseemore:not([disabled]):hover .icon svg path {
+  stroke: hsl(228, 5%, 38%);
+}
+
 .btn-order {
   background: hsl(358, 86%, 43%);
   border: solid 0.0625rem hsl(358, 86%, 43%);
@@ -3258,6 +3288,12 @@ table tr td {
     max-height: 32.5rem;
   }
 }
+@media screen and (min-width: 112.5rem) {
+  .desktopnav {
+    min-height: 43.75rem;
+    max-height: 46.25rem;
+  }
+}
 .desktopnav::-webkit-scrollbar {
   background: transparent;
   width: 0rem;
@@ -3933,9 +3969,6 @@ table tr td {
     justify-content: space-between;
     gap: 0rem;
   }
-}
-.bestselling .product {
-  max-width: 21.875rem;
 }
 
 .mainsection {

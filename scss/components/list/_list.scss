@@ -223,6 +223,11 @@
     max-height: size(520);
   }
 
+  @include breakpoint(desktop1800) {
+    min-height: size(700);
+    max-height: size(740);
+  }
+
   &::-webkit-scrollbar {
     background: transparent;
     width: size(0);

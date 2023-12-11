@@ -460,6 +460,45 @@ button,
   }
 }
 
+.btn-blogseemore {
+  @include flex-center-vert;
+  gap: size(8);
+
+  .text {
+    color: $primary;
+    font-family: $kohinoorbangla;
+    font-size: size(14);
+    font-weight: 700;
+  }
+
+  .icon {
+    @include square(24);
+    @include flex-center;
+    overflow: hidden;
+    @include transitionsall;
+
+    svg {
+      path {
+        stroke: $primary;
+      }
+    }
+  }
+
+  @include hover {
+    .text {
+      color: $lightmoodtext;
+    }
+
+    .icon {
+      svg {
+        path {
+          stroke: $lightmoodtext;
+        }
+      }
+    }
+  }
+}
+
 .btn-order {
   background: $primary;
   @include border(solid, 1, $primary);
