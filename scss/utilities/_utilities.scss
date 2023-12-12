@@ -42,3 +42,13 @@
 .herocontainer {
   padding-inline: size(74);
 }
+.topcontainer {
+  @include w100;
+  padding-inline: size(16);
+  @include breakpoint(mobile576) {
+    padding-inline: size(24);
+  }
+  @include breakpoint(tab992) {
+    padding-inline: size(80);
+  }
+}

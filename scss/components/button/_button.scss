@@ -51,7 +51,10 @@ button,
 .btn-main {
   background: $white;
   @include flex-center-vert;
-  @include border(solid, 1, $primary);
+  // @include border(solid, 1, $primary);
+  -webkit-box-shadow: inset 0px 0px 0px 1px $primary;
+  -moz-box-shadow: inset 0px 0px 0px 1px $primary;
+  box-shadow: inset 0px 0px 0px 1px $primary;
   @include radius(8);
 
   .leftinfo {
@@ -188,7 +191,10 @@ button,
 .btn-cart {
   background: $white;
   @include flex-center-vert;
-  @include border(solid, 1, $primary);
+  // @include border(solid, 1, $primary);
+  -webkit-box-shadow: inset 0px 0px 0px 1px $primary;
+  -moz-box-shadow: inset 0px 0px 0px 1px $primary;
+  box-shadow: inset 0px 0px 0px 1px $primary;
   @include radius(8);
 
   .leftinfo {
@@ -256,7 +262,10 @@ button,
 .btn-buy {
   background: $primary;
   @include flex-center-vert;
-  @include border(solid, 1, $primary);
+  // @include border(solid, 1, $primary);
+  -webkit-box-shadow: inset 0px 0px 0px 1px $primary;
+  -moz-box-shadow: inset 0px 0px 0px 1px $primary;
+  box-shadow: inset 0px 0px 0px 1px $primary;
   @include radius(8);
   overflow: hidden;
 
@@ -450,7 +459,7 @@ button,
       color: $primary;
     }
 
-    .icon {      
+    .icon {
       svg {
         path {
           stroke: $primary;
@@ -560,7 +569,7 @@ button,
 .btn-delete {
   @include flex-center-vert;
   gap: size(6);
-    
+
   @include breakpoint(mobile768) {
     gap: size(8);
   }
@@ -601,7 +610,7 @@ button,
 .btn-edit {
   @include flex-center-vert;
   gap: size(6);
-    
+
   @include breakpoint(mobile768) {
     gap: size(8);
   }
@@ -744,7 +753,7 @@ button,
   color: $secondetitle;
   font-size: size(14);
   font-weight: 500;
-    
+
   @include breakpoint(tab992) {
     font-size: size(16);
   }
