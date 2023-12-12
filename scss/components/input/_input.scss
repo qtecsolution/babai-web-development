@@ -167,3 +167,30 @@ input[type='search']::-webkit-search-results-decoration {
     }
   }
 }
+
+.btn-size {
+  @include border(solid, 1, rgba($black, 0.10));
+  @include radius(6);
+  color: $lightmoodtext;
+  cursor: pointer;
+  @include flex-center;
+  font-size: size(14);
+  font-weight: 400;
+  padding: size(11) size(16);
+  text-align: center;
+
+  @include breakpoint(tab992) {
+    font-size: size(10);
+    padding: size(8) size(10);
+  }
+
+  &:hover:not(.active) {
+    color: $textprice;
+    border-color: $textprice;
+  }
+
+  &.active {
+    color: $textprice;
+    border-color: $textprice;
+  }
+}
