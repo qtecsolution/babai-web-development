@@ -3,6 +3,7 @@
 
 .header {
   background: $white;
+  filter: $headershadow;
   @include flex-center-vert;
   padding: size(10) size(12) size(12);
   height: size(80);

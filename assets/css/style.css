@@ -2009,6 +2009,7 @@ button:focus,
 
 .header {
   background: hsl(0, 0%, 100%);
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.06));
   display: flex;
   align-items: center;
   padding: 0.625rem 0.75rem 0.75rem;
@@ -3098,6 +3099,9 @@ table tr td {
 .iconlist-link:not([disabled]):hover svg path {
   stroke: hsl(358, 86%, 43%);
 }
+.iconlist .cartitem {
+  padding-right: 0.5rem;
+}
 .iconlist .cartitem .iconlist-link {
   position: relative;
 }
@@ -3109,9 +3113,9 @@ table tr td {
   height: 1.125rem;
   border-radius: 100%;
   position: absolute;
-  top: -0.3125rem;
+  top: 0rem;
   right: -0.5rem;
-  background: hsl(358, 86%, 43%);
+  background: hsl(140, 75%, 25%);
   color: hsl(0, 0%, 100%);
   font-size: 0.5625rem;
   font-weight: 600;
