@@ -150,11 +150,12 @@
       }
     }
   }
-  
+
   &-body {
     @include flex-center-column;
     gap: size(16);
     padding: size(16) size(16) size(32);
+    padding-bottom: size(16);
     text-align: center;
 
     @include breakpoint(desktop1400) {
@@ -244,7 +245,7 @@
       @include circle;
       @include flex-center;
       overflow: hidden;
-      
+
       @include breakpoint(mobile576) {
         @include square(28);
       }
@@ -267,15 +268,15 @@
         color: $textprice;
         font-size: size(11);
         font-weight: 600;
-        
+
         @include breakpoint(mobile576) {
           font-size: size(12);
         }
-        
+
         @include breakpoint(mobile768) {
           font-size: size(18);
         }
-        
+
         @include breakpoint(tab992) {
           font-size: size(24);
         }
@@ -284,15 +285,15 @@
       .details {
         max-width: size(240);
         margin-inline: auto;
-        
+
         @include breakpoint(mobile576) {
           max-width: size(329);
         }
-        
+
         @include breakpoint(mobile768) {
           max-width: size(432);
         }
-        
+
         @include breakpoint(tab992) {
           max-width: size(569);
         }
@@ -300,7 +301,7 @@
         .text {
           font-size: size(9);
           font-weight: 400;
-          
+
           @include breakpoint(mobile576) {
             font-size: size(10);
           }
@@ -312,7 +313,7 @@
           @include breakpoint(mobile768) {
             font-size: size(14);
           }
-        
+
           @include breakpoint(tab992) {
             font-size: size(17);
           }
@@ -338,7 +339,7 @@
         @include circle;
         @include flex-center;
         overflow: hidden;
-          
+
         @include breakpoint(tab992) {
           @include square(48);
         }
@@ -351,11 +352,11 @@
           color: $black;
           font-size: size(10);
           font-weight: 500;
-        
+
           @include breakpoint(mobile768) {
             font-size: size(13);
           }
-          
+
           @include breakpoint(tab992) {
             font-size: size(16);
           }
@@ -365,11 +366,11 @@
           color: $textplaceholder;
           font-size: size(8);
           font-weight: 400;
-        
+
           @include breakpoint(mobile768) {
             font-size: size(11);
           }
-          
+
           @include breakpoint(tab992) {
             font-size: size(14);
           }
@@ -402,7 +403,7 @@
         @include wh100;
         @include transitiontransform;
       }
-  
+
       @include hover {
         img {
           @include transform(scale(1.1) rotate(-3deg));
