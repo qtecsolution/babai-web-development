@@ -42,12 +42,30 @@
   .productslider {
     overflow: hidden;
 
+    .gallery-top {
+      background: $white;
+      max-height: size(540);
+      overflow: hidden;
+      padding: size(10);
+      @include border(solid, 1, $authborder);
+      @include radius(16);
+      margin-bottom: size(12);
+
+      @include breakpoint(tab992) {
+        margin-bottom: size(20);
+        padding: size(18);
+        @include radius(30);
+      }
+    }
+
     .topsliderthumb {
       cursor: pointer;
       @include wh100;
+      @include border(solid, 1, $authborder);
       @include radius(25);
       overflow: hidden;
       position: relative;
+      max-height: size(500);
 
       img {
         @include wh100;

@@ -5,7 +5,7 @@ const galleryTop = new Swiper(".gallery-top", {
   },
   loop: true,
   speed: 750,
-  spaceBetween: 0,
+  spaceBetween: 40,
   pagination: false,
   navigation: false,
   parallax: true,
