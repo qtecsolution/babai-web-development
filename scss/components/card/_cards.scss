@@ -160,6 +160,7 @@
 
     @include breakpoint(desktop1400) {
       padding: size(24) size(24) size(48);
+      padding-bottom: size(24);
     }
 
     .product-title {
