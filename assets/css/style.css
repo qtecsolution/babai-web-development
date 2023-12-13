@@ -647,7 +647,7 @@ button:focus,
   color: hsl(358, 86%, 43%);
   font-size: 0.75rem;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .btn-resend:not([disabled]):hover {
   color: hsl(0, 91%, 54%);
