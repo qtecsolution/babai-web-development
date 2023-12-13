@@ -212,6 +212,7 @@
   @include wh100;
   @include flex-center;
   overflow: hidden;
+  max-height: size(380);
 
   img {
     @include wh100;
